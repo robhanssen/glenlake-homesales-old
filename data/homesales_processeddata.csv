@@ -110,21 +110,21 @@ address,listingdate,saledate,amount,hometype,inventory,listingcount,listingyear,
 460 Shoreline,2020-05-22,NA,NA,residential,9,17,2020,5,NA,NA,143,NA,For Sale
 817 Culverhouse,2020-05-26,NA,NA,residential,9,18,2020,5,NA,NA,147,NA,For Sale
 242 Bridgeport,2020-05-29,NA,NA,residential,10,19,2020,5,NA,NA,150,NA,For Sale
-733 Maya,2020-06-02,2020-08-25,232900,residential,11,20,2020,6,2020,8,154,84,Sold
+733 Maya,2020-06-02,NA,232900,residential,11,20,2020,6,NA,NA,154,NA,For Sale
 255 Stewarts Landing,2020-06-07,2020-07-30,217450,patio home,12,21,2020,6,2020,7,159,53,Sold
 452 Shoreline,2020-06-12,NA,NA,residential,13,22,2020,6,NA,NA,164,NA,For Sale
 762 Maya,2020-06-17,2020-08-17,186900,residential,13,23,2020,6,2020,8,169,61,Sold
 613 Cordelia,2020-06-20,2020-08-07,280000,residential,14,24,2020,6,2020,8,172,48,Sold
 413 Pierview,2020-06-24,2020-07-29,202000,residential,14,25,2020,6,2020,7,176,35,Sold
-572 Marchbanks,2020-06-25,2020-08-08,265000,residential,15,26,2020,6,2020,8,177,44,Sold
+572 Marchbanks,2020-06-25,NA,265000,residential,15,26,2020,6,NA,NA,177,NA,For Sale
 290 Bridgeport,2020-06-26,2020-06-26,190000,residential,16,27,2020,6,2020,6,178,0,Sold
 855 Vandenburg,2020-07-03,2020-08-13,210000,residential,15,28,2020,7,2020,8,185,41,Sold
 709 Maya,2020-07-09,NA,NA,residential,16,29,2020,7,NA,NA,191,NA,For Sale
 270 Bridgeport,2020-07-14,NA,NA,residential,16,30,2020,7,NA,NA,196,NA,For Sale
 282 Bridgeport,2020-07-18,NA,NA,residential,17,31,2020,7,NA,NA,200,NA,For Sale
-580 Marchbanks,2020-08-06,2020-08-23,210000,residential,15,32,2020,8,2020,8,219,17,Sold
-223 Bridgeport Rd,2020-08-22,NA,NA,residential,11,33,2020,8,NA,NA,235,NA,For Sale
-596 Marchbanks,2020-08-24,NA,NA,residential,11,34,2020,8,NA,NA,237,NA,For Sale
-823 Vandenburg,2020-08-30,NA,NA,residential,11,35,2020,8,NA,NA,243,NA,For Sale
-410 Pierview,2020-08-31,NA,NA,townhome,12,36,2020,8,NA,NA,244,NA,For Sale
-909 Palmdale,2020-08-31,NA,NA,residential,13,37,2020,8,NA,NA,244,NA,For Sale
+580 Marchbanks,2020-08-06,NA,210000,residential,15,32,2020,8,NA,NA,219,NA,For Sale
+223 Bridgeport Rd,2020-08-22,NA,NA,residential,12,33,2020,8,NA,NA,235,NA,For Sale
+596 Marchbanks,2020-08-24,NA,NA,residential,13,34,2020,8,NA,NA,237,NA,For Sale
+823 Vandenburg,2020-08-30,NA,NA,residential,14,35,2020,8,NA,NA,243,NA,For Sale
+410 Pierview,2020-08-31,NA,NA,townhome,15,36,2020,8,NA,NA,244,NA,For Sale
+909 Palmdale,2020-08-31,NA,NA,residential,16,37,2020,8,NA,NA,244,NA,For Sale

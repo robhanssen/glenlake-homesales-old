@@ -110,19 +110,19 @@ address,listingdate,saledate,amount,hometype
 460 Shoreline,05-22-2020,,,residential
 817 Culverhouse,05-26-2020,,,residential
 242 Bridgeport,05-29-2020,,,residential
-733 Maya,06-02-2020,08-25-2020,232900,residential
+733 Maya,06-02-2020,,232900,residential
 255 Stewarts Landing,06-07-2020,07-30-2020,217450,patio home
 452 Shoreline,06-12-2020,,,residential
 762 Maya,06-17-2020,08-17-2020,186900,residential
 613 Cordelia,06-20-2020,08-07-2020,280000,residential
 413 Pierview,06-24-2020,07-29-2020,202000,residential
-572 Marchbanks,06-25-2020,08-08-2020,265000,residential
+572 Marchbanks,06-25-2020,,265000,residential
 290 Bridgeport,06-26-2020,06-26-2020,190000,residential
 855 Vandenburg,07-03-2020,08-13-2020,210000,residential
 709 Maya,07-09-2020,,,residential
 270 Bridgeport,07-14-2020,,,residential
 282 Bridgeport,07-18-2020,,,residential
-580 Marchbanks,08-06-2020,08-23-2020,210000,residential
+580 Marchbanks,08-06-2020,,210000,residential
 223 Bridgeport Rd,08-22-2020,,,residential
 596 Marchbanks,08-24-2020,,,residential
 823 Vandenburg,08-30-2020,,,residential
