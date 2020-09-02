@@ -109,7 +109,7 @@ address,listingdate,saledate,amount,hometype,inventory,listingyear,listingmonth,
 408 Pierview,2020-05-21,2020-06-29,207500,townhome,8,2020,5,2020,6,142,39,Sold
 460 Shoreline,2020-05-22,NA,NA,residential,9,2020,5,NA,NA,143,NA,For Sale
 817 Culverhouse,2020-05-26,NA,NA,residential,9,2020,5,NA,NA,147,NA,For Sale
-242 Bridgeport,2020-05-29,NA,NA,residential,10,2020,5,NA,NA,150,NA,For Sale
+242 Bridgeport,2020-05-29,2020-09-13,NA,residential,10,2020,5,2020,9,150,107,Sold
 733 Maya,2020-06-02,2020-08-25,232900,residential,11,2020,6,2020,8,154,84,Sold
 255 Stewarts Landing,2020-06-07,2020-07-30,217450,patio home,12,2020,6,2020,7,159,53,Sold
 452 Shoreline,2020-06-12,NA,NA,residential,13,2020,6,NA,NA,164,NA,For Sale
@@ -125,3 +125,6 @@ address,listingdate,saledate,amount,hometype,inventory,listingyear,listingmonth,
 580 Marchbanks,2020-08-06,2020-08-23,210000,residential,15,2020,8,2020,8,219,17,Sold
 223 Bridgeport Rd,2020-08-22,NA,NA,residential,11,2020,8,NA,NA,235,NA,For Sale
 596 Marchbanks,2020-08-24,NA,NA,residential,11,2020,8,NA,NA,237,NA,For Sale
+823 Vandenburg,2020-08-30,NA,NA,residential,11,2020,8,NA,NA,243,NA,For Sale
+410 Pierview,2020-08-31,NA,NA,townhome,12,2020,8,NA,NA,244,NA,For Sale
+909 Palmdale,2020-08-31,NA,NA,residential,13,2020,8,NA,NA,244,NA,For Sale

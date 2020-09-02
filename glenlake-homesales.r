@@ -21,8 +21,8 @@ n_residential = 484 - (n_townhomes + n_patiohomes)
 #
 homesale_file = "homesalesdata-source.csv"
 homesales <- read_csv(homesale_file, 
-        col_types = cols(listingdate = col_date(format = "%m/%d/%Y"), 
-                         saledate = col_date(format = "%m/%d/%Y")
+        col_types = cols(listingdate = col_date(format = "%m-%d-%Y"), 
+                         saledate = col_date(format = "%m-%d-%Y")
                          )
                     )
 
