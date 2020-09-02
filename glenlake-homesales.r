@@ -1,21 +1,22 @@
 #
-# R script to calculate home inventory in Glen Lake
+# R script to analyze homesales in Glen Lake
 #
+# (C) Rob Hanssen, 2020. Licensed under GNU GENERAL PUBLIC LICENSE v3
+#
+
 
 #
 # load the required libraries
 #
 library(tidyverse)
 library(lubridate)
-
-
 #
 # constants
 #
+source = "Sources: realtor.com, zillow.com, spartanburgdeeds.com"
 n_townhomes = 32
 n_patiohomes = 32
 n_residential = 484 - (n_townhomes + n_patiohomes)
-
 #
 # import via files
 #
@@ -25,7 +26,6 @@ homesales <- read_csv(homesale_file,
                          saledate = col_date(format = "%m-%d-%Y")
                          )
                     )
-
 
 #
 # calculation for inventory
@@ -55,7 +55,7 @@ write_csv(homesales, "data/homesales_processeddata.csv")
 
 # for-sale inventory by year
 homesales %>% ggplot() + aes(dayofyear, inventory, color=factor(listingyear)) + geom_line() + geom_point() +
-                xlab("Day of year") + ylab("Current sale inventory") + ggtitle("Inventory of homes for sale in Glen Lake") + labs(color = "Year")
+                xlab("Day of year") + ylab("Current sale inventory") + ggtitle("Inventory of homes for sale in Glen Lake") + labs(color = "Year", caption=source)
 
 ggsave("graphs/homeinventory.pdf")
 
@@ -66,12 +66,17 @@ write_csv(yearoverview, "data/overview-by-year.csv")
 # median time on market by hometype
 timeonmarket <- homesales %>% group_by(listingyear,hometype) %>% summarise(mediantimeonmarket = median(timeonmarket, na.rm=TRUE)) 
 timeonmarket %>% ggplot() + aes(x=listingyear,y=mediantimeonmarket, fill=hometype) + geom_bar(stat="identity", position="dodge") +
-                    xlab("Year of listing") + ylab("Median time on market (in days)") + ggtitle("Median time on market for sold homes in Glen Lake") + labs(fill = "Home type") +
-                    geom_text(aes(label=floor(mediantimeonmarket)), position=position_dodge(width=0.9), vjust=-1)
-
+                    xlab("Year of listing") + ylab("Median time on market (in days)") + ggtitle("Median time on market for sold homes in Glen Lake") + labs(fill = "Home type", caption=source) +
+                    geom_text(aes(label=round(mediantimeonmarket,0)), position=position_dodge(width=0.9), vjust=-1)
 
 write_csv(timeonmarket,"data/median-time-on-market.csv")
 ggsave("graphs/median-time-on-market.pdf")
+
+homesales %>% ggplot() + aes(x=factor(listingyear),y=timeonmarket) + geom_boxplot() + facet_wrap(.~hometype) +
+                    xlab("Year of listing") + ylab("Time on market (in days)") + ggtitle("Distribution of time on market for sold homes in Glen Lake") + labs(fill = "Home type", caption=source) +
+                    scale_y_continuous(limits=c(0,350))
+ggsave("graphs/boxplot-time-on-market.pdf")                
+
 
 # percentage of homes sold per year by hometype
 soldhomes <- homesales %>% filter(status=="Sold") %>% group_by(listingyear, hometype) %>% summarise(soldhomes=n()) 
@@ -81,8 +86,8 @@ soldhomes$percent[soldhomes$hometype=="townhome"] = soldhomes$soldhomes[soldhome
 soldhomes$percent[soldhomes$hometype=="patio home"] = soldhomes$soldhomes[soldhomes$hometype=="patio home"] / n_patiohomes * 100
 
 soldhomes %>% ggplot() + aes(x=listingyear, y=percent, fill=hometype) + geom_bar(stat="identity", position="dodge") +
-                    xlab("Year of listing") + ylab("Percentage of homes sold") + ggtitle("Percentage of homes sold in Glen Lake") + labs(fill = "Home type") +
-                    geom_text(aes(label=paste(floor(percent),"%")), position=position_dodge(width=0.9), vjust=-1)
+                    xlab("Year of listing") + ylab("Percentage of homes sold") + ggtitle("Percentage of homes sold in Glen Lake") + labs(fill = "Home type", caption=source) +
+                    geom_text(aes(label=paste(round(percent,0),"%")), position=position_dodge(width=0.9), vjust=-1)
 
 
 
