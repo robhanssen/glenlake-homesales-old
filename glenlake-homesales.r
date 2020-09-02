@@ -49,6 +49,10 @@ homesales$status = "Sold"
 homesales$status[is.na(homesales$saledate)] = "For Sale"
 
 write_csv(homesales, "data/homesales_processeddata.csv")
+
+# update source tag
+latestlistingdate = max(homesales$listingdate)
+source <- paste(source,"\nLast updated: ",format(latestlistingdate, format="%b %d, %Y"))
 #
 # processing and data output
 #
