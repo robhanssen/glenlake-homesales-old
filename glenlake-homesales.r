@@ -82,7 +82,7 @@ homesales %>% ggplot() + aes(x=factor(listingyear),y=timeonmarket) + geom_boxplo
 ggsave("graphs/boxplot-time-on-market.pdf")                
 
 
-# percentage of homes sold per year by hometype
+# turn-over rate per year by hometype
 soldhomes <- homesales %>% filter(status=="Sold") %>% group_by(listingyear, hometype) %>% summarise(soldhomes=n()) 
 soldhomes$percent = 0
 soldhomes$percent[soldhomes$hometype=="residential"] = soldhomes$soldhomes[soldhomes$hometype=="residential"] / n_residential * 100
@@ -90,7 +90,7 @@ soldhomes$percent[soldhomes$hometype=="townhome"] = soldhomes$soldhomes[soldhome
 soldhomes$percent[soldhomes$hometype=="patio home"] = soldhomes$soldhomes[soldhomes$hometype=="patio home"] / n_patiohomes * 100
 
 soldhomes %>% ggplot() + aes(x=listingyear, y=percent, fill=hometype) + geom_bar(stat="identity", position="dodge") +
-                    xlab("Year of listing") + ylab("Percentage of homes sold") + ggtitle("Percentage of homes sold in Glen Lake") + labs(fill = "Home type", caption=source) +
+                    xlab("Year of listing") + ylab("Turn-over rate") + ggtitle("Turn-over rate in Glen Lake") + labs(fill = "Home type", caption=source) +
                     geom_text(aes(label=paste(round(percent,0),"%")), position=position_dodge(width=0.9), vjust=-1)
 
 write_csv(soldhomes,"data/percentages-sold.csv")
