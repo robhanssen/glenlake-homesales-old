@@ -54,7 +54,9 @@ write_csv(homesales, "data/homesales_processeddata.csv")
 #
 
 # for-sale inventory by year
-homesales %>% ggplot() + aes(dayofyear, inventory, color=factor(listingyear)) + geom_line() + geom_point()
+homesales %>% ggplot() + aes(dayofyear, inventory, color=factor(listingyear)) + geom_line() + geom_point() +
+                xlab("Day of year") + ylab("Current sale inventory") + ggtitle("Inventory of homes for sale in Glen Lake") + labs(color = "Year")
+
 ggsave("graphs/homeinventory.pdf")
 
 # sold per year
@@ -63,7 +65,11 @@ write_csv(yearoverview, "data/overview-by-year.csv")
 
 # median time on market by hometype
 timeonmarket <- homesales %>% group_by(listingyear,hometype) %>% summarise(mediantimeonmarket = median(timeonmarket, na.rm=TRUE)) 
-timeonmarket %>% ggplot() + aes(x=listingyear,y=mediantimeonmarket, fill=hometype) + geom_bar(stat="identity", position="dodge")
+timeonmarket %>% ggplot() + aes(x=listingyear,y=mediantimeonmarket, fill=hometype) + geom_bar(stat="identity", position="dodge") +
+                    xlab("Year of listing") + ylab("Median time on market (in days)") + ggtitle("Median time on market for sold homes in Glen Lake") + labs(fill = "Home type") +
+                    geom_text(aes(label=floor(mediantimeonmarket)), position=position_dodge(width=0.9), vjust=-1)
+
+
 write_csv(timeonmarket,"data/median-time-on-market.csv")
 ggsave("graphs/median-time-on-market.pdf")
 
@@ -73,6 +79,12 @@ soldhomes$percent = 0
 soldhomes$percent[soldhomes$hometype=="residential"] = soldhomes$soldhomes[soldhomes$hometype=="residential"] / n_residential * 100
 soldhomes$percent[soldhomes$hometype=="townhome"] = soldhomes$soldhomes[soldhomes$hometype=="townhome"] / n_townhomes * 100
 soldhomes$percent[soldhomes$hometype=="patio home"] = soldhomes$soldhomes[soldhomes$hometype=="patio home"] / n_patiohomes * 100
-soldhomes %>% ggplot() + aes(x=listingyear, y=percent, fill=hometype) + geom_bar(stat="identity", position="dodge")
+
+soldhomes %>% ggplot() + aes(x=listingyear, y=percent, fill=hometype) + geom_bar(stat="identity", position="dodge") +
+                    xlab("Year of listing") + ylab("Percentage of homes sold") + ggtitle("Percentage of homes sold in Glen Lake") + labs(fill = "Home type") +
+                    geom_text(aes(label=paste(floor(percent),"%")), position=position_dodge(width=0.9), vjust=-1)
+
+
+
 write_csv(soldhomes,"data/percentages-sold.csv")
 ggsave("graphs/percentage-sold.pdf")
