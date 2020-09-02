@@ -10,6 +10,7 @@
 #
 library(tidyverse)
 library(lubridate)
+#library(dplyr)
 #
 # constants
 #
@@ -35,6 +36,8 @@ saledate <- tibble(address=homesales$address, listingdate=homesales$saledate, ty
 summation = bind_rows(listingdate, saledate) %>% arrange(listingdate) %>% mutate(inventory=cumsum(y)) %>% select(-y) %>% filter(type=="listing")
 homesales <- homesales %>% inner_join(summation) %>% select(-type)
 
+cumulativelisting <- listingdate %>% mutate(year = year(listingdate)) %>% group_by(year) %>% summarise(listingcount=cumsum(y))
+homesales <- bind_cols(homesales,cumulativelisting) %>% select(-year)
 #
 # create additional information
 #
@@ -95,3 +98,12 @@ soldhomes %>% ggplot() + aes(x=listingyear, y=percent, fill=hometype) + geom_bar
 
 write_csv(soldhomes,"data/percentages-sold.csv")
 ggsave("graphs/percentage-sold.pdf")
+
+# listing counter
+homesales %>% ggplot() + aes(x=dayofyear, y=listingcount, color=factor(listingyear)) + geom_line() + geom_point()
+ggsave("graphs/listings-by-dayofyear.pdf")
+
+# sale counter
+salecounter <- saledate %>% arrange(listingdate, na.rm=TRUE) %>% mutate(year=year(listingdate)) %>% group_by(year) %>% mutate(salecount=cumsum(-y), dayofyear=yday(listingdate)) %>% filter(year > 0)
+salecounter %>% ggplot() + aes(x=dayofyear, y=salecount, color=factor(year)) + geom_line() + geom_point()
+ggsave("graphs/sales-by-dayofyear.pdf")
