@@ -58,6 +58,7 @@ write_csv(homesales, "data/homesales_processeddata.csv")
 # update source tag
 lastupdate = max(max(homesales$listingdate, na.rm=TRUE), max(homesales$saledate, na.rm=TRUE))
 source <- paste(source,"\nLast updated: ",format(lastupdate, format="%b %d, %Y"))
+maxyear = year(lastupdate)
 #
 # processing and data output
 #
@@ -96,7 +97,7 @@ soldhomes$percent[soldhomes$hometype=="patio home"] = soldhomes$soldhomes[soldho
 
 soldhomes %>% ggplot() + aes(x=listingyear, y=percent, fill=hometype) + geom_bar(stat="identity", position="dodge") +
                     xlab("Year of listing") + ylab("Turn-over rate") + ggtitle("Turn-over rate in Glen Lake") + labs(fill = "Home type", caption=source) +
-                    geom_text(aes(label=paste(round(percent,0),"%")), position=position_dodge(width=0.9), vjust=-1)
+                    geom_text(aes(label=paste(round(percent,0),"%")), position=position_dodge(width=0.9), vjust=-1) + annotate("text",x=maxyear,y=1,label=paste(maxyear,"YTD", sep=""))
 
 write_csv(soldhomes,"data/turnover-by-hometype.csv")
 ggsave("graphs/turnover-by-hometype.pdf")
@@ -116,3 +117,13 @@ salecounter %>% ggplot() + aes(x=dayofyear, y=salecount, color=factor(year)) + g
                 xlab("Day of year") + ylab("Cumulative number of home sales per year") + labs(color="Year", caption=source) +
                 ggtitle("Glen Lake cumulative numbers of home sales by year")
 ggsave("graphs/sales-by-dayofyear.pdf")
+
+
+# sales price by hometype
+
+homesales %>% filter(status=="Sold") %>% ggplot()+aes(x=factor(saleyear), y=amount, fill=hometype) + geom_boxplot() + facet_wrap(.~hometype) +
+                                                xlab("Year of sale") + ylab("Sales price") + 
+                                                labs(caption=source) + ggtitle("Glen Lake sales price distribution by year and hometype")
+ggsave("graphs/sales-price-distribution.pdf")
+medianprice <- homesales %>% filter(status=="Sold") %>% group_by(saleyear, hometype) %>% summarise(medianprice=median(amount))
+write_csv(medianprice, "data/median-price.csv")
