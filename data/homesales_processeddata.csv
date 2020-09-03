@@ -100,7 +100,7 @@ address,listingdate,saledate,amount,hometype,inventory,listingcount,listingyear,
 718 Ethridge,2020-02-25,2020-07-13,240000,residential,11,7,2020,2,2020,7,56,139,Sold
 734 Ethridge,2020-02-26,2020-06-23,203000,residential,12,8,2020,2,2020,6,57,118,Sold
 605 Cordelia,2020-03-04,2020-05-15,210000,residential,12,9,2020,3,2020,5,64,72,Sold
-220 Stewarts Landing,2020-03-05,NA,NA,townhome,13,10,2020,3,NA,NA,65,NA,For Sale
+220 Stewarts Landing,2020-03-05,2020-09-03,175000,townhome,13,10,2020,3,2020,9,65,182,Sold
 210 Bridgeport,2020-03-05,2020-05-15,209900,residential,14,11,2020,3,2020,5,65,71,Sold
 607 Marchbanks,2020-03-05,2020-04-30,229000,residential,15,12,2020,3,2020,4,65,56,Sold
 910 Fenway,2020-03-18,2020-04-29,297500,residential,14,13,2020,3,2020,4,78,42,Sold

@@ -47,9 +47,11 @@ homesales$saleyear = year(homesales$saledate)
 homesales$salemonth = month(homesales$saledate)
 homesales$dayofyear = yday(homesales$listingdate)
 homesales$timeonmarket = homesales$saledate - homesales$listingdate
+homesales$hometype= factor(homesales$hometype, levels=c("residential","patio home", "townhome"))
 
 homesales$status = "Sold"
 homesales$status[is.na(homesales$saledate)] = "For Sale"
+homesales$status = factor(homesales$status, levels=c("For Sale", "Sold"))
 
 write_csv(homesales, "data/homesales_processeddata.csv")
 
@@ -79,7 +81,7 @@ write_csv(timeonmarket,"data/median-time-on-market.csv")
 ggsave("graphs/median-time-on-market.pdf")
 
 # boxplot of time on market by year and hometype
-homesales %>% ggplot() + aes(x=factor(listingyear),y=timeonmarket, fill=hometype) + geom_boxplot() + facet_wrap(.~hometype) + geom_jitter() +
+homesales %>% ggplot() + aes(x=factor(listingyear),y=timeonmarket, fill=hometype) + geom_boxplot() + facet_wrap(.~hometype) + #geom_jitter() +
                     xlab("Year of listing") + ylab("Time on market (in days)") + ggtitle("Distribution of time on market for sold homes in Glen Lake") + labs(fill = "Home type", caption=source) +
                     scale_y_continuous(limits=c(0,350))
 ggsave("graphs/boxplot-time-on-market.pdf")                
@@ -96,8 +98,8 @@ soldhomes %>% ggplot() + aes(x=listingyear, y=percent, fill=hometype) + geom_bar
                     xlab("Year of listing") + ylab("Turn-over rate") + ggtitle("Turn-over rate in Glen Lake") + labs(fill = "Home type", caption=source) +
                     geom_text(aes(label=paste(round(percent,0),"%")), position=position_dodge(width=0.9), vjust=-1)
 
-write_csv(soldhomes,"data/percentages-sold.csv")
-ggsave("graphs/percentage-sold.pdf")
+write_csv(soldhomes,"data/turnover-by-hometype.csv")
+ggsave("graphs/turnover-by-hometype.pdf")
 
 # listing counter
 homesales %>% ggplot() + aes(x=dayofyear, y=listingcount, color=factor(listingyear)) + geom_line() + geom_point() +
@@ -106,7 +108,10 @@ homesales %>% ggplot() + aes(x=dayofyear, y=listingcount, color=factor(listingye
 ggsave("graphs/listings-by-dayofyear.pdf")
 
 # sale counter
-salecounter <- saledate %>% arrange(listingdate, na.rm=TRUE) %>% mutate(year=year(listingdate)) %>% group_by(year) %>% mutate(salecount=cumsum(-y), dayofyear=yday(listingdate)) %>% filter(year > 0)
+salecounter <- saledate %>% arrange(listingdate, na.rm=TRUE) %>% mutate(year=year(listingdate)) %>% 
+                        group_by(year) %>% mutate(salecount=cumsum(-y), dayofyear=yday(listingdate)) %>% 
+                        filter(year > 0)
+
 salecounter %>% ggplot() + aes(x=dayofyear, y=salecount, color=factor(year)) + geom_line() + geom_point() + 
                 xlab("Day of year") + ylab("Cumulative number of home sales per year") + labs(color="Year", caption=source) +
                 ggtitle("Glen Lake cumulative numbers of home sales by year")
