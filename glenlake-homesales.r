@@ -10,18 +10,11 @@
 #
 library(tidyverse)
 library(lubridate)
-#library(dplyr)
+source("config.r")
+
 #
-# constants
+# read datafile
 #
-source = "Sources: realtor.com, zillow.com, spartanburgdeeds.com"
-n_townhomes = 32
-n_patiohomes = 32
-n_residential = 484 - (n_townhomes + n_patiohomes)
-#
-# import via files
-#
-homesale_file = "homesalesdata-source.csv"
 homesales <- read_csv(homesale_file, 
         col_types = cols(listingdate = col_date(format = "%m-%d-%Y"), 
                          saledate = col_date(format = "%m-%d-%Y")
