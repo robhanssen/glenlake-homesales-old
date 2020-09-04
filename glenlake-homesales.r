@@ -115,7 +115,7 @@ salecounter <- saledate %>% arrange(listingdate, na.rm=TRUE) %>% mutate(year=yea
 
 salecounter %>% ggplot() + aes(x=dayofyear, y=salecount, color=factor(year)) + geom_line() + geom_point() + 
                 xlab("Day of year") + ylab("Cumulative number of home sales per year") + labs(color="Year", caption=source) +
-                ggtitle("Glen Lake cumulative numbers of home sales by year")
+                ggtitle("Glen Lake cumulative numbers of home sales by year") 
 ggsave("graphs/sales-by-dayofyear.pdf")
 
 
