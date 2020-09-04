@@ -59,7 +59,6 @@ maxyear = year(lastupdate)
 # for-sale inventory by year
 homesales %>% ggplot() + aes(dayofyear, inventory, color=factor(listingyear)) + geom_line() + geom_point() +
                 xlab("Day of year") + ylab("Current sale inventory") + ggtitle("Inventory of homes for sale in Glen Lake") + labs(color = "Year", caption=source)
-
 ggsave("graphs/homeinventory.pdf")
 
 # sold per year
