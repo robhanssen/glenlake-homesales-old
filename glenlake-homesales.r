@@ -63,6 +63,11 @@ ggsave("graphs/homeinventory.pdf")
 
 # sold per year
 yearoverview <- homesales %>% group_by(listingyear,hometype, status) %>% summarise(listedtotal = n())
+yearoverview %>% ggplot() + aes(x=factor(listingyear), y=listedtotal, fill=status) + geom_bar(stat="identity", position="dodge") + facet_wrap(.~hometype) +
+                    xlab("Year of listing") + ylab("Homes listed") + ggtitle("Number of homes listed in Glen Lake") + labs(fill = "Sales status", caption=source) +
+                    geom_text(aes(label=listedtotal), position=position_dodge(width=0.9), vjust=-1) 
+
+ggsave("graphs/overview-by-year.pdf")
 write_csv(yearoverview, "data/overview-by-year.csv")
 
 # median time on market by year and hometype
