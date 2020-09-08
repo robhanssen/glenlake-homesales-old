@@ -19,7 +19,7 @@ homesales <- read_csv(homesale_file,
         col_types = cols(listingdate = col_date(format = "%m-%d-%Y"), 
                          saledate = col_date(format = "%m-%d-%Y")
                          )
-                    )
+                    ) %>% arrange(listingdate)
 
 #
 # calculation for inventory
