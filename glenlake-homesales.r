@@ -40,12 +40,13 @@ homesales$saleyear = year(homesales$saledate)
 homesales$salemonth = month(homesales$saledate)
 homesales$dayofyear = yday(homesales$listingdate)
 homesales$timeonmarket = homesales$saledate - homesales$listingdate
+homesales$timeonmarket[is.na(homesales$saledate)] = today()-homesales$listingdate[is.na(homesales$saledate)]
 homesales$hometype= factor(homesales$hometype, levels=c("residential","patio home", "townhome"))
 
 homesales$status = "Sold"
 homesales$status[is.na(homesales$saledate)] = "For Sale"
 homesales$status[is.na(homesales$saledate) & homesales$undercontract==1] = "Under contract"
-homesales$status = factor(homesales$status, levels=c("For Sale", "Under contract", "Sold"))
+homesales$status = factor(homesales$status, levels=c("Sold", "Under contract", "For Sale"))
 
 write_csv(homesales, "data/homesales_processeddata.csv")
 
@@ -74,10 +75,10 @@ ggsave("graphs/overview-by-year.pdf")
 write_csv(yearoverview, "data/overview-by-year.csv")
 
 # median time on market by year and hometype
-timeonmarket <- homesales %>% group_by(listingyear,hometype) %>% summarise(mediantimeonmarket = median(timeonmarket, na.rm=TRUE)) 
+timeonmarket <- homesales %>% group_by(listingyear,hometype, status) %>% summarise(mediantimeonmarket = median(timeonmarket, na.rm=TRUE)) 
 timeonmarket %>% ggplot() + aes(x=listingyear,y=mediantimeonmarket, fill=hometype) + geom_bar(stat="identity", position="dodge") +
-                    xlab("Year of listing") + ylab("Median time on market (in days)") + ggtitle("Median time on market for sold homes in Glen Lake") + labs(fill = "Home type", caption=source) +
-                    geom_text(aes(label=round(mediantimeonmarket,0)), position=position_dodge(width=0.9), vjust=-1) + facet_wrap(.~hometype)
+                    xlab("Year of listing") + ylab("Median time on market (in days)") + ggtitle("Median time on market for homes in Glen Lake") + labs(fill = "Home type", caption=source) +
+                    geom_text(aes(label=round(mediantimeonmarket,0)), position=position_dodge(width=0.9), vjust=-1) + facet_wrap(hometype ~ status, ncol=3)
 write_csv(timeonmarket,"data/median-time-on-market.csv")
 ggsave("graphs/median-time-on-market.pdf")
 
