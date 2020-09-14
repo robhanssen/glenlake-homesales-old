@@ -44,7 +44,8 @@ homesales$hometype= factor(homesales$hometype, levels=c("residential","patio hom
 
 homesales$status = "Sold"
 homesales$status[is.na(homesales$saledate)] = "For Sale"
-homesales$status = factor(homesales$status, levels=c("For Sale", "Sold"))
+homesales$status[is.na(homesales$saledate) & homesales$undercontract==1] = "Under contract"
+homesales$status = factor(homesales$status, levels=c("For Sale", "Under contract", "Sold"))
 
 write_csv(homesales, "data/homesales_processeddata.csv")
 
@@ -57,7 +58,9 @@ maxyear = year(lastupdate)
 #
 
 # for-sale inventory by year
-homesales %>% ggplot() + aes(dayofyear, inventory, color=factor(listingyear)) + geom_line() + geom_point() +
+maxinventory = ceiling(max(summation$inventory)/10)*10
+
+homesales %>% ggplot() + aes(dayofyear, inventory, color=factor(listingyear)) + geom_line() + geom_point() + scale_y_continuous(limits=c(0,maxinventory)) +
                 xlab("Day of year") + ylab("Current sale inventory") + ggtitle("Inventory of homes for sale in Glen Lake") + labs(color = "Year", caption=source)
 ggsave("graphs/homeinventory.pdf")
 
@@ -100,7 +103,10 @@ write_csv(soldhomes,"data/turnover-by-hometype.csv")
 ggsave("graphs/turnover-by-hometype.pdf")
 
 # listing counter
-homesales %>% ggplot() + aes(x=dayofyear, y=listingcount, color=factor(listingyear)) + geom_line() + geom_point() +
+
+maxlisting = ceiling(max(homesales$listingcount)/10)*10
+
+homesales %>% ggplot() + aes(x=dayofyear, y=listingcount, color=factor(listingyear)) + geom_line() + geom_point() + scale_y_continuous(limit=c(0,maxlisting)) +
                 xlab("Day of year") + ylab("Cumulative number of listings per year") + labs(color="Year", caption=source) +
                 ggtitle("Glen Lake cumulative numbers of listings by year")
 ggsave("graphs/listings-by-dayofyear.pdf")
@@ -109,6 +115,8 @@ ggsave("graphs/listings-by-dayofyear.pdf")
 salecounter <- saledate %>% arrange(listingdate, na.rm=TRUE) %>% mutate(year=year(listingdate)) %>% 
                         group_by(year) %>% mutate(salecount=cumsum(-y), dayofyear=yday(listingdate)) %>% 
                         filter(year > 0)
+
+maxsales = ceiling(max(salecounter$salecount)/10)*10
 
 salecounter %>% ggplot() + aes(x=dayofyear, y=salecount, color=factor(year)) + geom_line() + geom_point() + 
                 xlab("Day of year") + ylab("Cumulative number of home sales per year") + labs(color="Year", caption=source) +
