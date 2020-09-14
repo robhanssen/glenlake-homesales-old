@@ -7,9 +7,9 @@ listingyear,hometype,status,listedtotal
 2019,residential,Sold,37
 2019,patio home,Sold,2
 2019,townhome,Sold,9
-2020,residential,For Sale,3
-2020,residential,Under contract,12
 2020,residential,Sold,16
+2020,residential,Under contract,12
+2020,residential,For Sale,3
 2020,patio home,Sold,3
-2020,townhome,For Sale,1
 2020,townhome,Sold,2
+2020,townhome,For Sale,1
