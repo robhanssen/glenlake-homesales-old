@@ -61,8 +61,10 @@ maxyear = year(lastupdate)
 # for-sale inventory by year
 maxinventory = ceiling(max(summation$inventory)/10)*10
 
-homesales %>% ggplot() + aes(dayofyear, inventory, color=factor(listingyear)) + geom_line() + geom_point() + scale_y_continuous(limits=c(0,maxinventory)) +
-                xlab("Day of year") + ylab("Current sale inventory") + ggtitle("Inventory of homes for sale in Glen Lake") + labs(color = "Year", caption=source)
+homesales %>%   mutate(date=dayofyear-1+as.Date("2020-01-01", format="%Y-%m-%d")) %>%
+                ggplot() + aes(date, inventory, color=factor(listingyear)) + geom_line() + geom_point() + scale_y_continuous(limits=c(0,maxinventory)) +
+                scale_x_date(date_break="3 months",date_minor_breaks="1 month",date_labels = "%b %d") +
+                xlab("Date") + ylab("Current sale inventory") + ggtitle("Inventory of homes for sale in Glen Lake") + labs(color = "Year", caption=source)
 ggsave("graphs/homeinventory.pdf")
 
 # sold per year
@@ -107,7 +109,7 @@ ggsave("graphs/turnover-by-hometype.pdf")
 
 maxlisting = ceiling(max(homesales$listingcount)/10)*10
 
-homesales %>% mutate(date=dayofyear+as.Date("2020-01-01", format="%Y-%m-%d")) %>%
+homesales %>% mutate(date=dayofyear-1+as.Date("2020-01-01", format="%Y-%m-%d")) %>%
                 ggplot() + aes(x=date, y=listingcount, color=factor(listingyear)) + geom_line() + geom_point() + scale_y_continuous(limit=c(0,maxlisting)) +
                 scale_x_date(date_break="3 months",date_minor_breaks="1 month",date_labels = "%b %d") +
                 xlab("Date") + ylab("Cumulative number of listings per year") + labs(color="Year", caption=source) +
@@ -117,7 +119,7 @@ ggsave("graphs/listings-by-dayofyear.pdf")
 # sale counter
 salecounter <- saledate %>% arrange(listingdate, na.rm=TRUE) %>% mutate(year=year(listingdate)) %>% 
                         group_by(year) %>% mutate(salecount=cumsum(-y), dayofyear=yday(listingdate)) %>% 
-                        filter(year > 0) %>% mutate(date=dayofyear+as.Date("2020-01-01", format="%Y-%m-%d"))
+                        filter(year > 0) %>% mutate(date=dayofyear-1+as.Date("2020-01-01", format="%Y-%m-%d"))
 
 maxsales = ceiling(max(salecounter$salecount)/10)*10
 
