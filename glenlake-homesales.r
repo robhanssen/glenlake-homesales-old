@@ -90,7 +90,7 @@ ggsave("graphs/boxplot-time-on-market.pdf")
 
 
 # turn-over rate per year by hometype
-soldhomes <- homesales %>% filter(status=="Sold" | status=="Under contract") %>% group_by(listingyear, hometype) %>% summarise(soldhomes=n()) 
+soldhomes <- homesales %>% group_by(listingyear, hometype) %>% summarise(soldhomes=n()) 
 soldhomes$percent = 0
 soldhomes$percent[soldhomes$hometype=="residential"] = soldhomes$soldhomes[soldhomes$hometype=="residential"] / n_residential * 100
 soldhomes$percent[soldhomes$hometype=="townhome"] = soldhomes$soldhomes[soldhomes$hometype=="townhome"] / n_townhomes * 100
