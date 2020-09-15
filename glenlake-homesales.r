@@ -107,20 +107,23 @@ ggsave("graphs/turnover-by-hometype.pdf")
 
 maxlisting = ceiling(max(homesales$listingcount)/10)*10
 
-homesales %>% ggplot() + aes(x=dayofyear, y=listingcount, color=factor(listingyear)) + geom_line() + geom_point() + scale_y_continuous(limit=c(0,maxlisting)) +
-                xlab("Day of year") + ylab("Cumulative number of listings per year") + labs(color="Year", caption=source) +
+homesales %>% mutate(date=dayofyear+as.Date("2020-01-01", format="%Y-%m-%d")) %>%
+                ggplot() + aes(x=date, y=listingcount, color=factor(listingyear)) + geom_line() + geom_point() + scale_y_continuous(limit=c(0,maxlisting)) +
+                scale_x_date(date_break="3 months",date_minor_breaks="1 month",date_labels = "%b %d") +
+                xlab("Date") + ylab("Cumulative number of listings per year") + labs(color="Year", caption=source) +
                 ggtitle("Glen Lake cumulative numbers of listings by year")
 ggsave("graphs/listings-by-dayofyear.pdf")
 
 # sale counter
 salecounter <- saledate %>% arrange(listingdate, na.rm=TRUE) %>% mutate(year=year(listingdate)) %>% 
                         group_by(year) %>% mutate(salecount=cumsum(-y), dayofyear=yday(listingdate)) %>% 
-                        filter(year > 0)
+                        filter(year > 0) %>% mutate(date=dayofyear+as.Date("2020-01-01", format="%Y-%m-%d"))
 
 maxsales = ceiling(max(salecounter$salecount)/10)*10
 
-salecounter %>% ggplot() + aes(x=dayofyear, y=salecount, color=factor(year)) + geom_line() + geom_point() + 
-                xlab("Day of year") + ylab("Cumulative number of home sales per year") + labs(color="Year", caption=source) +
+salecounter %>% ggplot() + aes(x=date, y=salecount, color=factor(year)) + geom_line() + geom_point() + 
+                scale_x_date(date_break="3 months",date_minor_breaks="1 month",date_labels = "%b %d") +
+                xlab("Date") + ylab("Cumulative number of home sales per year") + labs(color="Year", caption=source) +
                 ggtitle("Glen Lake cumulative numbers of home sales by year") 
 ggsave("graphs/sales-by-dayofyear.pdf")
 
