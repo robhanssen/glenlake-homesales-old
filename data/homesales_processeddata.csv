@@ -116,7 +116,7 @@ address,listingdate,saledate,amount,hometype,undercontract,inventory,listingcoun
 762 Maya,2020-06-17,2020-08-17,186900,residential,NA,13,23,2020,6,2020,8,169,61,Sold
 613 Cordelia,2020-06-20,2020-08-07,280000,residential,NA,14,24,2020,6,2020,8,172,48,Sold
 413 Pierview,2020-06-24,2020-07-29,202000,residential,NA,14,25,2020,6,2020,7,176,35,Sold
-572 Marchbanks,2020-06-25,2020-09-16,269900,residential,NA,15,26,2020,6,2020,9,177,83,Sold
+572 Marchbanks,2020-06-25,2020-09-16,264900,residential,NA,15,26,2020,6,2020,9,177,83,Sold
 290 Bridgeport,2020-06-26,2020-06-26,190000,residential,NA,16,27,2020,6,2020,6,178,0,Sold
 855 Vandenburg,2020-07-03,2020-08-13,210000,residential,NA,15,28,2020,7,2020,8,185,41,Sold
 709 Maya,2020-07-09,NA,NA,residential,1,16,29,2020,7,NA,NA,191,69,Under contract

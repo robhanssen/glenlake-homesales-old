@@ -52,7 +52,7 @@ write_csv(homesales, "data/homesales_processeddata.csv")
 
 # update source tag
 lastupdate = max(max(homesales$listingdate, na.rm=TRUE), max(homesales$saledate, na.rm=TRUE))
-source <- paste(source,"\nLast updated: ",format(lastupdate, format="%b %d, %Y"))
+source <- paste(source,"\nLast updated: ",format(today(), format="%b %d, %Y"),"\nLatest data:", format(lastupdate, format="%b %d, %Y") )
 maxyear = year(lastupdate)
 #
 # processing and data output
