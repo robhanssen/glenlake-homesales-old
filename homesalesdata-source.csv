@@ -1,124 +1,124 @@
 address,listingdate,saledate,amount,hometype,undercontract
-540 Shoreline,01-02-2017,07-12-2017,217000,residential,""
-408 Seymour,01-11-2017,08-30-2017,235000,residential,""
-582 Shoreline,01-11-2017,09-11-2017,223500,residential,""
-571 Shoreline,02-24-2017,05-19-2017,177777,residential,""
-143 Dewfield,03-24-2017,05-15-2017,182000,residential,""
-219 Bridgeport,04-24-2017,07-28-2017,252999,residential,""
-811 Vandenburg,05-01-2017,08-14-2017,189900,residential,""
-608 Marchbanks,05-01-2017,08-01-2017,177000,residential,""
-124 Dewfield,05-18-2017,08-21-2017,218000,residential,""
-206 Bridgeport,06-05-2017,09-21-2017,198000,residential,""
-878 Vandenburg,07-28-2017,10-02-2017,175000,residential,""
-247 Bridgeport,09-19-2017,04-13-2018,219500,residential,""
-239 Stewarts Landing,11-09-2017,12-21-2017,189900,townhome,""
-537 Marchbanks,01-01-2018,05-07-2018,232500,residential,""
-127 Walkers Bluff,01-19-2018,06-22-2018,355000,residential,""
-113 Dewfield,01-22-2018,02-01-2018,208900,residential,""
-504 Marchbanks,02-05-2018,03-19-2018,212500,residential,""
-843 Vandenburg,02-06-2018,08-21-2018,198500,residential,""
-412 Pierview,02-06-2018,03-29-2018,165000,townhome,""
-851 Culverhouse,02-09-2018,05-14-2018,314900,residential,""
-826 Vandenburg,02-11-2018,03-20-2018,190000,residential,""
-710 Ethridge,02-12-2018,09-13-2018,268000,residential,""
-411 Pierview,03-05-2018,09-28-2018,221000,patio home,""
-417 Pierview,03-08-2018,04-17-2018,187000,townhome,""
-214 Bridgeport,03-23-2018,07-03-2018,235900,residential,""
-568 Marchbanks,04-11-2018,12-29-2018,210000,residential,""
-512 Inner Banks,05-03-2018,08-02-2019,290000,residential,""
-831 Vandenburg,05-25-2018,08-07-2019,223000,residential,""
-564 Shoreline,07-10-2018,08-31-2018,212900,residential,""
-115 Walkers Bluff,07-22-2018,09-18-2019,365000,residential,""
-544 Shoreline,07-30-2018,06-16-2019,203000,residential,""
-114 Bridgeville,08-03-2018,09-21-2018,181700,residential,""
-609 Cordelia,08-15-2018,10-04-2018,200000,residential,""
-711 Ethridge,08-29-2018,10-11-2018,225000,residential,""
-419 Pierview,09-17-2018,03-08-2019,200000,patio home,""
-569 Marchbanks,09-25-2018,11-19-2018,220000,residential,""
-802 Hartscove,10-06-2018,11-14-2018,354000,residential,""
-805 Nola,10-09-2018,12-06-2019,285000,residential,""
-460 Shoreline,10-18-2018,11-28-2018,295000,residential,""
-590 Marchbanks,10-25-2018,12-17-2018,210000,residential,""
-556 Shoreline,10-25-2018,03-04-2019,232000,residential,""
-211 Stewarts Landing,11-06-2018,08-28-2019,200000,townhome,""
-408 Pierview,11-20-2018,06-25-2019,197000,townhome,""
-592 Marchbanks,12-26-2018,12-09-2019,225000,residential,""
-722 Grays Harbor,01-01-2019,02-20-2019,210000,residential,""
-415 Pierview,01-03-2019,08-28-2019,197000,townhome,""
-556 Marchbanks,01-09-2019,03-08-2019,255000,residential,""
-906 Fenway,01-18-2019,02-27-2019,380000,residential,""
-904 Palmdale,01-22-2019,03-29-2019,269900,residential,""
-273 Bridgeport,01-29-2019,03-27-2019,196000,residential,""
-413 Pierview,02-05-2019,10-07-2019,195900,townhome,""
-312 Hamilton Gaines,02-28-2019,05-15-2019,365000,residential,""
-871 Culverhouse,02-28-2019,06-07-2019,239000,residential,""
-239 Stewarts Landing,03-01-2019,04-30-2019,194900,patio home,""
-831 Culverhouse,03-08-2019,04-30-2019,210000,residential,""
-504 Inner Banks,03-18-2019,04-24-2019,238900,residential,""
-604 Marchbanks,03-22-2019,05-08-2019,230000,residential,""
-620 Marchbanks,03-25-2019,05-28-2019,245000,residential,""
-504 Witherspoon,03-26-2019,05-09-2019,300000,residential,""
-115 Bridgeville,04-04-2019,08-09-2019,203000,residential,""
-111 Bridgeville,04-05-2019,04-30-2019,176500,residential,""
-234 Bridgeport,04-18-2019,10-25-2019,209000,residential,""
-216 Stewarts Landing,04-27-2019,08-12-2019,194000,townhome,""
-871 Vandenburg,04-30-2019,07-26-2019,186500,residential,""
-410 Pierview,05-10-2019,12-17-2019,180000,townhome,""
-742 Ethridge,05-15-2019,12-06-2019,216000,residential,""
-729 Ethridge,05-29-2019,09-20-2019,203500,residential,""
-459 Shoreline,05-29-2019,08-20-2019,267000,residential,""
-733 Maya,06-10-2019,08-23-2019,218000,residential,""
-109 Dewfield,06-14-2019,10-21-2019,273000,residential,""
-603 Marchbanks,06-17-2019,08-16-2019,209900,residential,""
-103 Walkers Bluff,06-21-2019,08-12-2019,379900,residential,""
-901 Fenway,07-12-2019,01-06-2020,280000,residential,""
-553 Shoreline,07-15-2019,08-27-2019,256800,residential,""
-719 Ethridge,07-17-2019,11-24-2019,190000,residential,""
-830 Culverhouse,07-18-2019,11-13-2019,280000,residential,""
-578 Shoreline,07-19-2019,09-27-2019,214000,residential,""
-416 Pierview,07-26-2019,08-26-2019,190000,townhome,""
-419 Seymour,07-29-2019,06-15-2020,365000,residential,""
-213 Stewarts Landing,08-09-2019,11-25-2019,198000,townhome,""
-742 Maya,08-31-2019,02-21-2020,229000,residential,""
-152 Dewfield,09-10-2019,12-12-2019,222000,residential,""
-235 Bridgeport,09-12-2019,12-10-2019,266000,residential,""
-600 Marchbanks,09-30-2019,11-21-2019,235000,residential,""
-267 Stewarts Landing,10-19-2019,01-07-2020,205600,patio home,""
-526 Inner Banks,11-07-2019,01-08-2020,271000,residential,""
-105 Dewfield,11-08-2019,03-03-2020,229000,residential,""
-417 Pierview Way,11-11-2019,02-06-2020,194900,townhome,""
-858 Vandenburg,12-03-2019,04-13-2020,210000,residential,""
-135 Walkers Bluff,12-08-2019,05-01-2020,370000,residential,""
-208 Stewarts Landing,12-13-2019,12-13-2019,192000,townhome,""
-206 Stewarts Landing,12-17-2019,01-06-2020,193000,townhome,""
-504 Witherspoon,01-09-2020,03-17-2020,318000,residential,""
-125 Bridgeville,01-20-2020,08-21-2020,229000,residential,""
-214 Stewarts Landing,01-23-2020,04-22-2020,187750,townhome,""
-703 Grays Harbor,01-27-2020,03-09-2020,194900,patio home,""
-905 Belize,02-13-2020,05-19-2020,291500,residential,""
-592 Shoreline,02-19-2020,03-26-2020,246900,residential,""
-718 Ethridge,02-25-2020,07-13-2020,240000,residential,""
-734 Ethridge,02-26-2020,06-23-2020,203000,residential,""
-605 Cordelia,03-04-2020,05-15-2020,210000,residential,""
-220 Stewarts Landing,03-05-2020,,,townhome,""
-210 Bridgeport,03-05-2020,05-15-2020,209900,residential,""
-607 Marchbanks,03-05-2020,04-30-2020,229000,residential,""
-910 Fenway,03-18-2020,04-29-2020,297500,residential,""
-548 Shoreline,03-30-2020,07-28-2020,224900,residential,""
-722 Grays Harbor,04-20-2020,05-22-2020,245000,patio home,""
-408 Pierview,05-21-2020,06-29-2020,207500,townhome,""
+540 Shoreline,01-02-2017,07-12-2017,217000,residential,
+408 Seymour,01-11-2017,08-30-2017,235000,residential,
+582 Shoreline,01-11-2017,09-11-2017,223500,residential,
+571 Shoreline,02-24-2017,05-19-2017,177777,residential,
+143 Dewfield,03-24-2017,05-15-2017,182000,residential,
+219 Bridgeport,04-24-2017,07-28-2017,252999,residential,
+811 Vandenburg,05-01-2017,08-14-2017,189900,residential,
+608 Marchbanks,05-01-2017,08-01-2017,177000,residential,
+124 Dewfield,05-18-2017,08-21-2017,218000,residential,
+206 Bridgeport,06-05-2017,09-21-2017,198000,residential,
+878 Vandenburg,07-28-2017,10-02-2017,175000,residential,
+247 Bridgeport,09-19-2017,04-13-2018,219500,residential,
+239 Stewarts Landing,11-09-2017,12-21-2017,189900,townhome,
+537 Marchbanks,01-01-2018,05-07-2018,232500,residential,
+127 Walkers Bluff,01-19-2018,06-22-2018,355000,residential,
+113 Dewfield,01-22-2018,02-01-2018,208900,residential,
+504 Marchbanks,02-05-2018,03-19-2018,212500,residential,
+843 Vandenburg,02-06-2018,08-21-2018,198500,residential,
+412 Pierview,02-06-2018,03-29-2018,165000,townhome,
+851 Culverhouse,02-09-2018,05-14-2018,314900,residential,
+826 Vandenburg,02-11-2018,03-20-2018,190000,residential,
+710 Ethridge,02-12-2018,09-13-2018,268000,residential,
+411 Pierview,03-05-2018,09-28-2018,221000,patio home,
+417 Pierview,03-08-2018,04-17-2018,187000,townhome,
+214 Bridgeport,03-23-2018,07-03-2018,235900,residential,
+568 Marchbanks,04-11-2018,12-29-2018,210000,residential,
+512 Inner Banks,05-03-2018,08-02-2019,290000,residential,
+831 Vandenburg,05-25-2018,08-07-2019,223000,residential,
+564 Shoreline,07-10-2018,08-31-2018,212900,residential,
+115 Walkers Bluff,07-22-2018,09-18-2019,365000,residential,
+544 Shoreline,07-30-2018,06-16-2019,203000,residential,
+114 Bridgeville,08-03-2018,09-21-2018,181700,residential,
+609 Cordelia,08-15-2018,10-04-2018,200000,residential,
+711 Ethridge,08-29-2018,10-11-2018,225000,residential,
+419 Pierview,09-17-2018,03-08-2019,200000,patio home,
+569 Marchbanks,09-25-2018,11-19-2018,220000,residential,
+802 Hartscove,10-06-2018,11-14-2018,354000,residential,
+805 Nola,10-09-2018,12-06-2019,285000,residential,
+460 Shoreline,10-18-2018,11-28-2018,295000,residential,
+590 Marchbanks,10-25-2018,12-17-2018,210000,residential,
+556 Shoreline,10-25-2018,03-04-2019,232000,residential,
+211 Stewarts Landing,11-06-2018,08-28-2019,200000,townhome,
+408 Pierview,11-20-2018,06-25-2019,197000,townhome,
+592 Marchbanks,12-26-2018,12-09-2019,225000,residential,
+722 Grays Harbor,01-01-2019,02-20-2019,210000,residential,
+415 Pierview,01-03-2019,08-28-2019,197000,townhome,
+556 Marchbanks,01-09-2019,03-08-2019,255000,residential,
+906 Fenway,01-18-2019,02-27-2019,380000,residential,
+904 Palmdale,01-22-2019,03-29-2019,269900,residential,
+273 Bridgeport,01-29-2019,03-27-2019,196000,residential,
+413 Pierview,02-05-2019,10-07-2019,195900,townhome,
+312 Hamilton Gaines,02-28-2019,05-15-2019,365000,residential,
+871 Culverhouse,02-28-2019,06-07-2019,239000,residential,
+239 Stewarts Landing,03-01-2019,04-30-2019,194900,patio home,
+831 Culverhouse,03-08-2019,04-30-2019,210000,residential,
+504 Inner Banks,03-18-2019,04-24-2019,238900,residential,
+604 Marchbanks,03-22-2019,05-08-2019,230000,residential,
+620 Marchbanks,03-25-2019,05-28-2019,245000,residential,
+504 Witherspoon,03-26-2019,05-09-2019,300000,residential,
+115 Bridgeville,04-04-2019,08-09-2019,203000,residential,
+111 Bridgeville,04-05-2019,04-30-2019,176500,residential,
+234 Bridgeport,04-18-2019,10-25-2019,209000,residential,
+216 Stewarts Landing,04-27-2019,08-12-2019,194000,townhome,
+871 Vandenburg,04-30-2019,07-26-2019,186500,residential,
+410 Pierview,05-10-2019,12-17-2019,180000,townhome,
+742 Ethridge,05-15-2019,12-06-2019,216000,residential,
+729 Ethridge,05-29-2019,09-20-2019,203500,residential,
+459 Shoreline,05-29-2019,08-20-2019,267000,residential,
+733 Maya,06-10-2019,08-23-2019,218000,residential,
+109 Dewfield,06-14-2019,10-21-2019,273000,residential,
+603 Marchbanks,06-17-2019,08-16-2019,209900,residential,
+103 Walkers Bluff,06-21-2019,08-12-2019,379900,residential,
+901 Fenway,07-12-2019,01-06-2020,280000,residential,
+553 Shoreline,07-15-2019,08-27-2019,256800,residential,
+719 Ethridge,07-17-2019,11-24-2019,190000,residential,
+830 Culverhouse,07-18-2019,11-13-2019,280000,residential,
+578 Shoreline,07-19-2019,09-27-2019,214000,residential,
+416 Pierview,07-26-2019,08-26-2019,190000,townhome,
+419 Seymour,07-29-2019,06-15-2020,365000,residential,
+213 Stewarts Landing,08-09-2019,11-25-2019,198000,townhome,
+742 Maya,08-31-2019,02-21-2020,229000,residential,
+152 Dewfield,09-10-2019,12-12-2019,222000,residential,
+235 Bridgeport,09-12-2019,12-10-2019,266000,residential,
+600 Marchbanks,09-30-2019,11-21-2019,235000,residential,
+267 Stewarts Landing,10-19-2019,01-07-2020,205600,patio home,
+526 Inner Banks,11-07-2019,01-08-2020,271000,residential,
+105 Dewfield,11-08-2019,03-03-2020,229000,residential,
+417 Pierview Way,11-11-2019,02-06-2020,194900,townhome,
+858 Vandenburg,12-03-2019,04-13-2020,210000,residential,
+135 Walkers Bluff,12-08-2019,05-01-2020,370000,residential,
+208 Stewarts Landing,12-13-2019,12-13-2019,192000,townhome,
+206 Stewarts Landing,12-17-2019,01-06-2020,193000,townhome,
+504 Witherspoon,01-09-2020,03-17-2020,318000,residential,
+125 Bridgeville,01-20-2020,08-21-2020,229000,residential,
+214 Stewarts Landing,01-23-2020,04-22-2020,187750,townhome,
+703 Grays Harbor,01-27-2020,03-09-2020,194900,patio home,
+905 Belize,02-13-2020,05-19-2020,291500,residential,
+592 Shoreline,02-19-2020,03-26-2020,246900,residential,
+718 Ethridge,02-25-2020,07-13-2020,240000,residential,
+734 Ethridge,02-26-2020,06-23-2020,203000,residential,
+605 Cordelia,03-04-2020,05-15-2020,210000,residential,
+220 Stewarts Landing,03-05-2020,,,townhome,
+210 Bridgeport,03-05-2020,05-15-2020,209900,residential,
+607 Marchbanks,03-05-2020,04-30-2020,229000,residential,
+910 Fenway,03-18-2020,04-29-2020,297500,residential,
+548 Shoreline,03-30-2020,07-28-2020,224900,residential,
+722 Grays Harbor,04-20-2020,05-22-2020,245000,patio home,
+408 Pierview,05-21-2020,06-29-2020,207500,townhome,
 460 Shoreline,05-22-2020,,,residential,1
-817 Culverhouse,05-26-2020,,,residential,""
+817 Culverhouse,05-26-2020,,,residential,
 242 Bridgeport,05-29-2020,,,residential,1
 733 Maya,06-02-2020,,,residential,1
-255 Stewarts Landing,06-07-2020,07-30-2020,217450,patio home,""
+255 Stewarts Landing,06-07-2020,07-30-2020,217450,patio home,
 452 Shoreline,06-12-2020,,,residential,1
-762 Maya,06-17-2020,08-17-2020,186900,residential,""
-613 Cordelia,06-20-2020,08-07-2020,280000,residential,""
-413 Pierview,06-24-2020,07-29-2020,202000,residential,""
-572 Marchbanks,06-25-2020,,,residential,1
-290 Bridgeport,06-26-2020,06-26-2020,190000,residential,""
-855 Vandenburg,07-03-2020,08-13-2020,210000,residential,""
+762 Maya,06-17-2020,08-17-2020,186900,residential,
+613 Cordelia,06-20-2020,08-07-2020,280000,residential,
+413 Pierview,06-24-2020,07-29-2020,202000,residential,
+572 Marchbanks,06-25-2020,09-16-2020,264900,residential,
+290 Bridgeport,06-26-2020,06-26-2020,190000,residential,
+855 Vandenburg,07-03-2020,08-13-2020,210000,residential,
 709 Maya,07-09-2020,,,residential,1
 270 Bridgeport,07-14-2020,,,residential,1
 282 Bridgeport,07-18-2020,,,residential,1
@@ -126,6 +126,6 @@ address,listingdate,saledate,amount,hometype,undercontract
 223 Bridgeport Rd,08-22-2020,,,residential,1
 596 Marchbanks,08-24-2020,,,residential,1
 823 Vandenburg,08-30-2020,,,residential,1
-410 Pierview,08-31-2020,,,residential,""
+410 Pierview,08-31-2020,,,residential,
 909 Palmdale,08-31-2020,,,residential,
 540 Shoreline,09-15-2020,,,residential,
