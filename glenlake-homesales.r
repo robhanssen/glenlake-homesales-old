@@ -165,7 +165,7 @@ homesales %>% filter(year(listingdate)>2017) %>%
                 ggplot() + aes(x=date, y=avsales) + geom_bar(stat="identity") +
                 scale_y_continuous(limit=c(0,60),breaks=seq(0,60,10)) +
                 xlab("Date") + ylab("Number of home sales in the last 12 months") + labs(caption=source) +
-                ggtitle("Glen Lake average home sales in 12 months")
+                ggtitle("Glen Lake average home sales in 12 months") + geom_smooth(method="loess", linetype="longdash", color="white")
 
 ggsave("graphs/average-homesales-per-12-months.pdf")
 
@@ -176,6 +176,6 @@ homesales %>% filter(year(listingdate)>2017) %>%
                 ggplot() + aes(x=date, y=avinvtime) + geom_line() +
                 scale_y_continuous(limit=c(0,12),breaks=seq(0,12,2)) +
                 xlab("Date") + ylab("Average inventory time (months)") + labs(caption=source) +
-                ggtitle("Glen Lake average inventory time")
+                ggtitle("Glen Lake average inventory time") + geom_smooth(method="loess", linetype="longdash", color="white")
 
 ggsave("graphs/average-inventory-time.pdf")
