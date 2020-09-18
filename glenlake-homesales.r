@@ -149,16 +149,16 @@ homesales$yearlysales = 0
 
 for (i in 1:nrow(homesales))
 {
-        sdt = homesales$saledate[i]
-        x <- homesales %>% filter( as.Date(sdt)-saledate > 0 & as.Date(sdt)-saledate < 365) %>% summarise(count=n())
-        homesales$yearlysales[i] = as.numeric(x[1])
+        sdt = as.Date(homesales$saledate[i])
+        x <- homesales %>% filter( sdt - saledate >= 0 & sdt - saledate < 365) %>% summarise(count=n())
+        homesales$yearlysales[i] = x$count[1]
 }
 
 homesales$inventorytime = homesales$inventory / homesales$yearlysales * 12
 homesales$inventorytime[is.na(homesales$saledate)] = NA
 homesales$inventorytime[homesales$yearlysales==0] = NA
 
-homesales %>% filter(year(listingdate)>2017) %>% 
+homesales %>% filter(listingyear > 2017) %>% 
                 group_by(saleyear,salemonth) %>% 
                 summarise(avsales = mean(yearlysales, na.rm=TRUE)) %>% 
                 mutate(date=as.Date(paste(saleyear,"-",salemonth,"-01", sep=""), format="%Y-%m-%d")) %>%
@@ -169,9 +169,9 @@ homesales %>% filter(year(listingdate)>2017) %>%
 
 ggsave("graphs/average-homesales-per-12-months.pdf")
 
-homesales %>% filter(year(listingdate)>2017) %>% 
+homesales %>% filter(listingyear > 2017) %>% 
                 group_by(saleyear,salemonth) %>% 
-                summarise(avinvtime = mean(inventorytime)) %>% 
+                summarise(avinvtime = mean(inventorytime, na.rm=TRUE)) %>% 
                 mutate(date=as.Date(paste(saleyear,"-",salemonth,"-01", sep=""), format="%Y-%m-%d")) %>%
                 ggplot() + aes(x=date, y=avinvtime) + geom_line() +
                 scale_y_continuous(limit=c(0,12),breaks=seq(0,12,2)) +
