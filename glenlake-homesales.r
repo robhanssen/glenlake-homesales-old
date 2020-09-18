@@ -11,7 +11,7 @@
 library(tidyverse)
 library(lubridate)
 source("config.r")
-
+library(zoo)
 #
 # read datafile
 #
@@ -138,3 +138,13 @@ homesales %>% filter(status=="Sold") %>% ggplot()+aes(x=factor(saleyear), y=amou
 ggsave("graphs/sales-price-distribution.pdf")
 medianprice <- homesales %>% filter(status=="Sold") %>% group_by(saleyear, hometype) %>% summarise(medianprice=median(amount))
 write_csv(medianprice, "data/median-price.csv")
+
+# sales inventory time
+#
+# sales inventory is defined as #homes listed / #homes sold per month(avg last 12 months)
+#
+oneyearago = today() - months(12)
+salesnum <- homesales %>% filter( (today() - saledate) < 365)  %>%  summarise(count=n()) / 12
+listnum <- sum(saledate$y[!is.na(saledate$listingdate)]) + sum(listingdate$y)
+inventorytime = listnum/salesnum
+print(paste("Current inventory is",inventorytime,"months"))
