@@ -143,8 +143,39 @@ write_csv(medianprice, "data/median-price.csv")
 #
 # sales inventory is defined as #homes listed / #homes sold per month(avg last 12 months)
 #
-oneyearago = today() - months(12)
-salesnum <- homesales %>% filter( (today() - saledate) < 365)  %>%  summarise(count=n()) / 12
-listnum <- sum(saledate$y[!is.na(saledate$listingdate)]) + sum(listingdate$y)
-inventorytime = listnum/salesnum
-print(paste("Current inventory is",inventorytime,"months"))
+# inventory v2
+
+homesales$yearlysales = 0
+
+for (i in 1:nrow(homesales))
+{
+        sdt = homesales$saledate[i]
+        x <- homesales %>% filter( as.Date(sdt)-saledate > 0 & as.Date(sdt)-saledate < 365) %>% summarise(count=n())
+        homesales$yearlysales[i] = as.numeric(x[1])
+}
+
+homesales$inventorytime = homesales$inventory / homesales$yearlysales * 12
+homesales$inventorytime[is.na(homesales$saledate)] = NA
+homesales$inventorytime[homesales$yearlysales==0] = NA
+
+homesales %>% filter(year(listingdate)>2017) %>% 
+                group_by(saleyear,salemonth) %>% 
+                summarise(avsales = mean(yearlysales)) %>% 
+                mutate(date=as.Date(paste(saleyear,"-",salemonth,"-01", sep=""), format="%Y-%m-%d")) %>%
+                ggplot() + aes(x=date, y=avsales) + geom_bar(stat="identity") +
+                scale_y_continuous(limit=c(0,60),breaks=seq(0,60,10)) +
+                xlab("Date") + ylab("Number of home sales in the last 12 months") + labs(caption=source) +
+                ggtitle("Glen Lake average home sales in 12 months")
+
+ggsave("graphs/average-homesales-per-12-months.pdf")
+
+homesales %>% filter(year(listingdate)>2017) %>% 
+                group_by(saleyear,salemonth) %>% 
+                summarise(avinvtime = mean(inventorytime)) %>% 
+                mutate(date=as.Date(paste(saleyear,"-",salemonth,"-01", sep=""), format="%Y-%m-%d")) %>%
+                ggplot() + aes(x=date, y=avinvtime) + geom_line() +
+                scale_y_continuous(limit=c(0,12),breaks=seq(0,12,2)) +
+                xlab("Date") + ylab("Average inventory time (months)") + labs(caption=source) +
+                ggtitle("Glen Lake average inventory time")
+
+ggsave("graphs/average-inventory-time.pdf")
