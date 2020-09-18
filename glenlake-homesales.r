@@ -160,7 +160,7 @@ homesales$inventorytime[homesales$yearlysales==0] = NA
 
 homesales %>% filter(year(listingdate)>2017) %>% 
                 group_by(saleyear,salemonth) %>% 
-                summarise(avsales = mean(yearlysales)) %>% 
+                summarise(avsales = mean(yearlysales, na.rm=TRUE)) %>% 
                 mutate(date=as.Date(paste(saleyear,"-",salemonth,"-01", sep=""), format="%Y-%m-%d")) %>%
                 ggplot() + aes(x=date, y=avsales) + geom_bar(stat="identity") +
                 scale_y_continuous(limit=c(0,60),breaks=seq(0,60,10)) +
