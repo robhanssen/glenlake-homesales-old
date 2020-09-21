@@ -120,7 +120,7 @@ address,listingdate,saledate,amount,hometype,undercontract,inventory,listingcoun
 290 Bridgeport,2020-06-26,2020-06-26,190000,residential,NA,16,27,2020,6,2020,6,178,0,Sold
 855 Vandenburg,2020-07-03,2020-08-13,210000,residential,NA,15,28,2020,7,2020,8,185,41,Sold
 709 Maya,2020-07-09,NA,NA,residential,1,16,29,2020,7,NA,NA,191,74,Under contract
-270 Bridgeport,2020-07-14,2020-09-15,289999,residential,1,16,30,2020,7,2020,9,196,63,Sold
+270 Bridgeport,2020-07-14,2020-09-17,285000,residential,NA,16,30,2020,7,2020,9,196,65,Sold
 282 Bridgeport,2020-07-18,NA,NA,residential,1,17,31,2020,7,NA,NA,200,65,Under contract
 580 Marchbanks,2020-08-06,2020-09-09,220000,residential,NA,15,32,2020,8,2020,9,219,34,Sold
 223 Bridgeport Rd,2020-08-22,NA,NA,residential,1,12,33,2020,8,NA,NA,235,30,Under contract
