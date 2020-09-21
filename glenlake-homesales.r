@@ -143,7 +143,8 @@ write_csv(medianprice, "data/median-price.csv")
 #
 # sales inventory is defined as #homes listed / #homes sold per month(avg last 12 months)
 #
-# inventory v2
+# Since the average sales per month as defined over 12 months, the calculations will only be valid 12 months after the first sale.
+# To accomodate for this, the graphs will only start 12 months after the first sale.
 
 homesales$yearlysales = 0
 
@@ -151,14 +152,17 @@ for (i in 1:nrow(homesales))
 {
         sdt = as.Date(homesales$saledate[i])
         x <- homesales %>% filter( sdt - saledate >= 0 & sdt - saledate < 365) %>% summarise(count=n())
-        homesales$yearlysales[i] = x$count[1]
+        homesales$yearlysales[i] =x$count[1]
 }
 
 homesales$inventorytime = homesales$inventory / homesales$yearlysales * 12
 homesales$inventorytime[is.na(homesales$saledate)] = NA
 homesales$inventorytime[homesales$yearlysales==0] = NA
 
-homesales %>% filter(listingyear > 2017) %>% 
+# define first sale + 1 year
+yearafterfirstsale = min(homesales$saledate, na.rm=TRUE) + years(1)
+
+homesales %>% filter(saledate > yearafterfirstsale) %>% 
                 group_by(saleyear,salemonth) %>% 
                 summarise(avsales = mean(yearlysales, na.rm=TRUE)) %>% 
                 mutate(date=as.Date(paste(saleyear,"-",salemonth,"-01", sep=""), format="%Y-%m-%d")) %>%
@@ -169,7 +173,7 @@ homesales %>% filter(listingyear > 2017) %>%
 
 ggsave("graphs/average-homesales-per-12-months.pdf")
 
-homesales %>% filter(listingyear > 2017) %>% 
+homesales %>% filter(saledate > yearafterfirstsale) %>% 
                 group_by(saleyear,salemonth) %>% 
                 summarise(avinvtime = mean(inventorytime, na.rm=TRUE)) %>% 
                 mutate(date=as.Date(paste(saleyear,"-",salemonth,"-01", sep=""), format="%Y-%m-%d")) %>%
