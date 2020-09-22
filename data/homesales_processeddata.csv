@@ -126,7 +126,7 @@ address,listingdate,saledate,amount,hometype,undercontract,inventory,listingcoun
 223 Bridgeport Rd,2020-08-22,NA,NA,residential,1,12,33,2020,8,NA,NA,235,31,Under contract
 596 Marchbanks,2020-08-24,NA,NA,residential,1,13,34,2020,8,NA,NA,237,29,Under contract
 823 Vandenburg,2020-08-30,NA,NA,residential,1,14,35,2020,8,NA,NA,243,23,Under contract
-410 Pierview,2020-08-31,NA,NA,residential,NA,15,36,2020,8,NA,NA,244,22,For Sale
+410 Pierview,2020-08-31,NA,NA,townhome,NA,15,36,2020,8,NA,NA,244,22,For Sale
 909 Palmdale,2020-08-31,NA,NA,residential,NA,16,37,2020,8,NA,NA,244,22,For Sale
 540 Shoreline,2020-09-15,NA,NA,residential,NA,16,38,2020,9,NA,NA,259,7,For Sale
 508 Shoreline,2020-09-21,NA,NA,residential,NA,14,39,2020,9,NA,NA,265,1,For Sale
