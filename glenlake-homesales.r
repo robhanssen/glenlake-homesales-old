@@ -45,8 +45,8 @@ homesales$hometype= factor(homesales$hometype, levels=c("residential","patio hom
 
 homesales$status = "Sold"
 homesales$status[is.na(homesales$saledate)] = "For Sale"
-homesales$status[is.na(homesales$saledate) & homesales$undercontract==1] = "Under contract"
-homesales$status = factor(homesales$status, levels=c("Sold", "Under contract", "For Sale"))
+homesales$status[is.na(homesales$saledate) & homesales$undercontract==1] = "Under Contract"
+homesales$status = factor(homesales$status, levels=c("Sold", "Under Contract", "For Sale"))
 
 write_csv(homesales, "data/homesales_processeddata.csv")
 
