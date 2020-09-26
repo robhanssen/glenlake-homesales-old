@@ -150,8 +150,8 @@ homesales$yearlysales = 0
 
 for (i in 1:nrow(homesales))
 {
-        sdt = as.Date(homesales$saledate[i])
-        x <- homesales %>% filter( sdt - saledate >= 0 & sdt - saledate < 365) %>% summarise(count=n())
+        ldt = as.Date(homesales$listingdate[i])
+        x <- homesales %>% filter( ldt - saledate >= 0 & ldt - saledate < 365) %>% summarise(count=n())
         homesales$yearlysales[i] =x$count[1]
 }
 
@@ -160,9 +160,9 @@ homesales$inventorytime[is.na(homesales$saledate)] = NA
 homesales$inventorytime[homesales$yearlysales==0] = NA
 
 # define first sale + 1 year
-yearafterfirstsale = min(homesales$saledate, na.rm=TRUE) + years(1)
+yearafterfirstlist = min(homesales$listingdate, na.rm=TRUE) + years(1)
 
-homesales %>% filter(saledate > yearafterfirstsale) %>% 
+homesales %>% filter(saledate > yearafterfirstlist) %>% 
                 group_by(saleyear,salemonth) %>% 
                 summarise(avsales = mean(yearlysales, na.rm=TRUE)) %>% 
                 mutate(date=as.Date(paste(saleyear,"-",salemonth,"-01", sep=""), format="%Y-%m-%d")) %>%
@@ -173,7 +173,7 @@ homesales %>% filter(saledate > yearafterfirstsale) %>%
 
 ggsave("graphs/average-homesales-per-12-months.pdf")
 
-homesales %>% filter(saledate > yearafterfirstsale) %>% 
+homesales %>% filter(saledate > yearafterfirstlist) %>% 
                 group_by(saleyear,salemonth) %>% 
                 summarise(avinvtime = mean(inventorytime, na.rm=TRUE)) %>% 
                 mutate(date=as.Date(paste(saleyear,"-",salemonth,"-01", sep=""), format="%Y-%m-%d")) %>%
