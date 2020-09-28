@@ -67,14 +67,24 @@ homesales %>%   mutate(date=dayofyear-1+as.Date("2020-01-01", format="%Y-%m-%d")
                 xlab("Date") + ylab("Current sale inventory") + ggtitle("Inventory of homes for sale in Glen Lake") + labs(color = "Year", caption=source)
 ggsave("graphs/homeinventory.pdf")
 
-# sold per year
+# listed per year
 yearoverview <- homesales %>% group_by(listingyear,hometype, status) %>% summarise(listedtotal = n())
 yearoverview %>% ggplot() + aes(x=factor(listingyear), y=listedtotal, fill=status) + geom_bar(stat="identity", position="dodge") + facet_wrap(.~hometype) +
                     xlab("Year of listing") + ylab("Homes listed") + ggtitle("Number of homes listed in Glen Lake") + labs(fill = "Sales status", caption=source) +
                     geom_text(aes(label=listedtotal), position=position_dodge(width=0.9), vjust=-1) 
 
-ggsave("graphs/overview-by-year.pdf")
-write_csv(yearoverview, "data/overview-by-year.csv")
+ggsave("graphs/listing-overview-by-year.pdf")
+write_csv(yearoverview, "data/listing-overview-by-year.csv")
+
+# sold per year
+yearoverview <- homesales %>% group_by(saleyear,hometype, status) %>% summarise(soldtotal = n())
+yearoverview %>% filter(!is.na(saleyear)) %>%
+                ggplot() + aes(x=factor(saleyear), y=soldtotal) + geom_bar(stat="identity", position="dodge") + facet_wrap(.~hometype) +
+                    xlab("Year of sale") + ylab("Homes sold") + ggtitle("Number of homes sold in Glen Lake") + labs(fill = "Sales status", caption=source) +
+                    geom_text(aes(label=soldtotal), position=position_dodge(width=0.9), vjust=-1) 
+
+ggsave("graphs/sales-overview-by-year.pdf")
+write_csv(yearoverview, "data/sales-overview-by-year.csv")
 
 # median time on market by year and hometype
 timeonmarket <- homesales %>% group_by(listingyear,hometype, status) %>% summarise(mediantimeonmarket = median(timeonmarket, na.rm=TRUE)) 
