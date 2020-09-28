@@ -3,7 +3,7 @@
 #
 # (C) Rob Hanssen, 2020. Licensed under GNU GENERAL PUBLIC LICENSE v3
 #
-
+# written with R 4.0.2 and tidyverse 1.3.0
 
 #
 # load the required libraries
