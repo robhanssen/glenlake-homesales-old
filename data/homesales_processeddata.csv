@@ -109,7 +109,7 @@ address,listingdate,saledate,amount,hometype,undercontract,inventory,listingcoun
 408 Pierview,2020-05-21,2020-06-29,207500,townhome,NA,8,16,2020,5,2020,6,142,39,Sold
 460 Shoreline,2020-05-22,NA,NA,residential,1,9,17,2020,5,NA,NA,143,129,Under Contract
 817 Culverhouse,2020-05-26,NA,NA,residential,NA,9,18,2020,5,NA,NA,147,125,For Sale
-242 Bridgeport,2020-05-29,NA,NA,residential,1,10,19,2020,5,NA,NA,150,122,Under Contract
+242 Bridgeport,2020-05-29,2020-09-25,240000,residential,NA,10,19,2020,5,2020,9,150,119,Sold
 733 Maya,2020-06-02,NA,NA,residential,1,11,20,2020,6,NA,NA,154,118,Under Contract
 255 Stewarts Landing,2020-06-07,2020-07-30,217450,patio home,NA,12,21,2020,6,2020,7,159,53,Sold
 452 Shoreline,2020-06-12,2020-09-24,282000,residential,NA,13,22,2020,6,2020,9,164,104,Sold
