@@ -34,21 +34,22 @@ homesales <- bind_cols(homesales,cumulativelisting) %>% select(-year)
 #
 # create additional information
 #
-homesales$listingyear = year(homesales$listingdate)
-homesales$listingmonth = month(homesales$listingdate)
-homesales$saleyear = year(homesales$saledate)
-homesales$salemonth = month(homesales$saledate)
-homesales$dayofyear = yday(homesales$listingdate)
-homesales$timeonmarket = homesales$saledate - homesales$listingdate
-homesales$timeonmarket[is.na(homesales$saledate)] = today()-homesales$listingdate[is.na(homesales$saledate)]
-homesales$hometype= factor(homesales$hometype, levels=c("residential","patio home", "townhome"))
+homesales %>% mutate(
+                        listingyear = year(listingdate),
+                        listingmonth = month(listingdate),
+                        saleyear = year(saledate),
+                        salemonth = month(saledate),
+                        dayofyear = yday(listingdate),
+                        timeonmarket = saledate - listingdate,
+                        hometype = factor(hometype, levels=c("residential","patio home", "townhome")),
+                        status = "Sold"
+) -> homesales
 
-homesales$status = "Sold"
+# data clean-up for unsold homes
+homesales$timeonmarket[is.na(homesales$saledate)] = today()-homesales$listingdate[is.na(homesales$saledate)]
 homesales$status[is.na(homesales$saledate)] = "For Sale"
 homesales$status[is.na(homesales$saledate) & homesales$undercontract==1] = "Under Contract"
 homesales$status = factor(homesales$status, levels=c("Sold", "Under Contract", "For Sale"))
-
-write_csv(homesales, "data/homesales_processeddata.csv")
 
 # update source tag
 lastupdate = max(max(homesales$listingdate, na.rm=TRUE), max(homesales$saledate, na.rm=TRUE))
@@ -193,3 +194,7 @@ homesales %>% filter(saledate > yearafterfirstlist) %>%
                 ggtitle("Glen Lake average inventory time") + geom_smooth(method="loess", linetype="longdash", color="white")
 
 ggsave("graphs/average-inventory-time.pdf")
+
+
+# dump final data file
+write_csv(homesales, "data/homesales_processeddata.csv")
