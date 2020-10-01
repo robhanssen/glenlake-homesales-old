@@ -62,11 +62,20 @@ maxyear = year(lastupdate)
 # for-sale inventory by year
 maxinventory = ceiling(max(summation$inventory)/10)*10
 
-homesales %>%   mutate(date=dayofyear-1+as.Date("2020-01-01", format="%Y-%m-%d")) %>%
-                ggplot() + aes(date, inventory, color=factor(listingyear)) + geom_line() + geom_point() + scale_y_continuous(limits=c(0,maxinventory)) +
+# homesales %>%   mutate(date=dayofyear-1+as.Date("2020-01-01", format="%Y-%m-%d")) %>%
+#                 ggplot() + aes(date, inventory, color=factor(listingyear)) + geom_line() + geom_point() + scale_y_continuous(limits=c(0,maxinventory)) +
+#                 scale_x_date(date_break="3 months",date_minor_breaks="1 month",date_labels = "%b %d") +
+#                 xlab("Date") + ylab("Current sale inventory") + ggtitle("Inventory of homes for sale in Glen Lake") + labs(color = "Year", caption=source)
+
+
+# alternative way 
+
+summation = bind_rows(listingdate, saledate) %>% arrange(listingdate) %>% mutate(inventory=cumsum(y)) %>% select(-y) 
+summation %>% mutate(dayofyear = yday(listingdate), year=year(listingdate), date=dayofyear-1+as.Date("2020-01-01", format="%Y-%m-%d")) %>% 
+                ggplot() + aes(date, inventory, color=factor(year)) + geom_line() + geom_point() + scale_y_continuous(limits=c(0,maxinventory)) +
                 scale_x_date(date_break="3 months",date_minor_breaks="1 month",date_labels = "%b %d") +
                 xlab("Date") + ylab("Current sale inventory") + ggtitle("Inventory of homes for sale in Glen Lake") + labs(color = "Year", caption=source)
-ggsave("graphs/homeinventory.pdf")
+ggsave("graphs/home-inventory.pdf")
 
 # listed per year
 yearoverview <- homesales %>% group_by(listingyear,hometype, status) %>% summarise(listedtotal = n())
