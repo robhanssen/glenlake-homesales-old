@@ -107,7 +107,7 @@ address,listingdate,saledate,amount,hometype,undercontract,inventory,listingcoun
 548 Shoreline,2020-03-30,2020-07-28,224900,residential,NA,14,14,2020,3,2020,7,90,120,Sold,51,3.294117647058824
 722 Grays Harbor,2020-04-20,2020-05-22,245000,patio home,NA,14,15,2020,4,2020,5,111,32,Sold,52,3.230769230769231
 408 Pierview,2020-05-21,2020-06-29,207500,townhome,NA,8,16,2020,5,2020,6,142,39,Sold,52,1.8461538461538463
-460 Shoreline,2020-05-22,NA,NA,residential,1,9,17,2020,5,NA,NA,143,133,Under Contract,53,NA
+460 Shoreline,2020-05-22,2020-09-30,343900,residential,NA,9,17,2020,5,2020,9,143,131,Sold,53,2.0377358490566038
 817 Culverhouse,2020-05-26,NA,NA,residential,NA,9,18,2020,5,NA,NA,147,129,For Sale,53,NA
 242 Bridgeport,2020-05-29,2020-09-25,240000,residential,NA,10,19,2020,5,2020,9,150,119,Sold,52,2.307692307692308
 733 Maya,2020-06-02,NA,NA,residential,1,11,20,2020,6,NA,NA,154,122,Under Contract,52,NA

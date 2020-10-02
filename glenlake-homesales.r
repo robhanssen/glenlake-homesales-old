@@ -183,9 +183,9 @@ homesales$inventorytime[homesales$yearlysales==0] = NA
 yearafterfirstlist = min(homesales$listingdate, na.rm=TRUE) + years(1)
 
 homesales %>% filter(saledate > yearafterfirstlist) %>% 
-                group_by(saleyear,salemonth) %>% 
-                summarise(avsales = mean(yearlysales, na.rm=TRUE)) %>% 
-                mutate(date=as.Date(paste(saleyear,"-",salemonth,"-01", sep=""), format="%Y-%m-%d")) %>%
+                group_by(listingyear,listingmonth) %>%  
+                summarise(avsales = mean(yearlysales, na.rm=TRUE)) %>% fill(avsales) %>%
+                mutate(date=as.Date(paste(listingyear,"-",listingmonth,"-01", sep=""), format="%Y-%m-%d")) %>%
                 ggplot() + aes(x=date, y=avsales) + geom_bar(stat="identity") +
                 scale_y_continuous(limit=c(0,60),breaks=seq(0,60,10)) +
                 xlab("Date") + ylab("Number of home sales in the last 12 months") + labs(caption=source) +
@@ -194,9 +194,9 @@ homesales %>% filter(saledate > yearafterfirstlist) %>%
 ggsave("graphs/average-homesales-per-12-months.pdf")
 
 homesales %>% filter(saledate > yearafterfirstlist) %>% 
-                group_by(saleyear,salemonth) %>% 
+                group_by(listingyear,listingmonth) %>% 
                 summarise(avinvtime = mean(inventorytime, na.rm=TRUE)) %>% 
-                mutate(date=as.Date(paste(saleyear,"-",salemonth,"-01", sep=""), format="%Y-%m-%d")) %>%
+                mutate(date=as.Date(paste(listingyear,"-",listingmonth,"-01", sep=""), format="%Y-%m-%d")) %>%
                 ggplot() + aes(x=date, y=avinvtime) + geom_line() +
                 scale_y_continuous(limit=c(0,12),breaks=seq(0,12,2)) +
                 xlab("Date") + ylab("Average inventory time (months)") + labs(caption=source) +
