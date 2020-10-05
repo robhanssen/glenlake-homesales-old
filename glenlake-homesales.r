@@ -207,3 +207,16 @@ ggsave("graphs/average-inventory-time.pdf")
 
 # dump final data file
 write_csv(homesales, "data/homesales_processeddata.csv")
+
+# alldates <- tibble(listingdate = seq(yearafterfirstlist, today(), by="days"), yearlysales=0) %>% mutate(year=year(listingdate),month=month(listingdate))
+
+# for (i in 1:nrow(alldates))
+# {
+#         ldt = as.Date(alldates$listingdate[i])
+#         x <- saledate %>% filter( ldt - listingdate >= 0 & ldt - listingdate < 365) %>% summarise(count=n())
+#         alldates$yearlysales[i] =x$count[1]
+# }
+
+# alldates %>% left_join(homesales %>% select(listingdate, inventory)) %>% filter(!is.na(inventory)) %>% 
+#                 group_by(year, month) %>% summarise(yearlysalesav = mean(yearlysales),monthlyinvav=mean(inventory)) %>% 
+#                 ggplot() + aes( as.Date(paste0(year,"-",month,"-01")), monthlyinvav/yearlysalesav*12) +geom_point() + geom_smooth(method="loess")
