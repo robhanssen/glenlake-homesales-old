@@ -1,12 +1,12 @@
 listingyear,hometype,soldhomes,percent
 2017,residential,12,2.857142857142857
-2017,townhome,1,3.125
+2017,patio home,1,3.125
 2018,residential,25,5.952380952380952
-2018,patio home,2,6.25
-2018,townhome,4,12.5
-2019,residential,37,8.80952380952381
-2019,patio home,2,6.25
+2018,patio home,1,3.125
+2018,townhome,5,15.625
+2019,residential,36,8.571428571428571
+2019,patio home,3,9.375
 2019,townhome,9,28.125
-2020,residential,33,7.857142857142857
+2020,residential,32,7.6190476190476195
 2020,patio home,3,9.375
-2020,townhome,4,12.5
+2020,townhome,5,15.625
