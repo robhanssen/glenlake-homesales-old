@@ -119,18 +119,18 @@ address,listingdate,saledate,amount,hometype,undercontract,inventory,listingcoun
 572 Marchbanks,2020-06-25,2020-09-16,269900,residential,NA,15,26,2020,6,2020,9,177,83,Sold,51,3.5294117647058822
 290 Bridgeport,2020-06-26,2020-06-26,190000,residential,NA,16,27,2020,6,2020,6,178,0,Sold,52,3.6923076923076925
 855 Vandenburg,2020-07-03,2020-08-13,210000,residential,NA,15,28,2020,7,2020,8,185,41,Sold,53,3.3962264150943398
-709 Maya,2020-07-09,NA,NA,residential,NA,16,29,2020,7,NA,NA,191,100,For Sale,53,NA
+709 Maya,2020-07-09,NA,NA,residential,1,16,29,2020,7,NA,NA,191,102,Under Contract,53,NA
 270 Bridgeport,2020-07-14,2020-09-17,285000,residential,NA,16,30,2020,7,2020,9,196,65,Sold,54,3.5555555555555554
-282 Bridgeport,2020-07-18,NA,NA,residential,1,17,31,2020,7,NA,NA,200,91,Under Contract,54,NA
+282 Bridgeport,2020-07-18,NA,NA,residential,1,17,31,2020,7,NA,NA,200,93,Under Contract,54,NA
 580 Marchbanks,2020-08-06,2020-09-09,220000,residential,NA,15,32,2020,8,2020,9,219,34,Sold,54,3.3333333333333335
 223 Bridgeport Rd,2020-08-22,2020-10-02,225600,residential,NA,12,33,2020,8,2020,10,235,41,Sold,52,2.769230769230769
-596 Marchbanks,2020-08-24,NA,NA,residential,1,13,34,2020,8,NA,NA,237,54,Under Contract,52,NA
+596 Marchbanks,2020-08-24,NA,NA,residential,1,13,34,2020,8,NA,NA,237,56,Under Contract,52,NA
 823 Vandenburg,2020-08-30,2020-10-15,243000,residential,NA,14,35,2020,8,2020,10,243,46,Sold,48,3.5
-410 Pierview,2020-08-31,NA,NA,townhome,1,15,36,2020,8,NA,NA,244,47,Under Contract,48,NA
-909 Palmdale,2020-08-31,NA,NA,residential,1,16,37,2020,8,NA,NA,244,47,Under Contract,48,NA
-540 Shoreline,2020-09-15,NA,NA,residential,NA,16,38,2020,9,NA,NA,259,32,For Sale,49,NA
-508 Shoreline,2020-09-21,NA,NA,residential,1,14,39,2020,9,NA,NA,265,26,Under Contract,50,NA
-532 Shoreline,2020-09-25,NA,NA,residential,1,15,40,2020,9,NA,NA,269,22,Under Contract,52,NA
-863 Vandenburg,2020-10-06,NA,NA,residential,NA,11,41,2020,10,NA,NA,280,11,For Sale,53,NA
-835 Culverhouse,2020-10-08,NA,NA,residential,1,12,42,2020,10,NA,NA,282,9,Under Contract,53,NA
-123 Dewfield,2020-10-16,NA,NA,residential,0,11,43,2020,10,NA,NA,290,1,For Sale,55,NA
+410 Pierview,2020-08-31,NA,NA,townhome,1,15,36,2020,8,NA,NA,244,49,Under Contract,48,NA
+909 Palmdale,2020-08-31,NA,NA,residential,1,16,37,2020,8,NA,NA,244,49,Under Contract,48,NA
+540 Shoreline,2020-09-15,NA,NA,residential,NA,16,38,2020,9,NA,NA,259,34,For Sale,49,NA
+508 Shoreline,2020-09-21,NA,NA,residential,1,14,39,2020,9,NA,NA,265,28,Under Contract,50,NA
+532 Shoreline,2020-09-25,NA,NA,residential,1,15,40,2020,9,NA,NA,269,24,Under Contract,52,NA
+863 Vandenburg,2020-10-06,NA,NA,residential,NA,11,41,2020,10,NA,NA,280,13,For Sale,53,NA
+835 Culverhouse,2020-10-08,NA,NA,residential,1,12,42,2020,10,NA,NA,282,11,Under Contract,53,NA
+123 Dewfield,2020-10-16,NA,NA,residential,0,11,43,2020,10,NA,NA,290,3,For Sale,55,NA
