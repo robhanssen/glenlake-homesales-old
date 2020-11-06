@@ -29,7 +29,7 @@ saledate <- tibble(address=homesales$address, listingdate=homesales$saledate, ty
 summation = bind_rows(listingdate, saledate) %>% arrange(listingdate) %>% mutate(inventory=cumsum(y)) %>% select(-y) %>% filter(type=="listing")
 homesales <- homesales %>% inner_join(summation) %>% select(-type)
 
-cumulativelisting <- listingdate %>% mutate(year = year(listingdate)) %>% group_by(year) %>% summarise(listingcount=cumsum(y))
+cumulativelisting <- listingdate %>% mutate(year = year(listingdate)) %>% group_by(year) %>% summarise(listingcount=cumsum(y)) 
 homesales <- bind_cols(homesales,cumulativelisting) %>% select(-year)
 #
 # create additional information
@@ -226,3 +226,18 @@ write_csv(homesales, "data/homesales_processeddata.csv")
 # alldates %>% left_join(homesales %>% select(listingdate, inventory)) %>% filter(!is.na(inventory)) %>% 
 #                 group_by(year, month) %>% summarise(yearlysalesav = mean(yearlysales),monthlyinvav=mean(inventory)) %>% 
 #                 ggplot() + aes( as.Date(paste0(year,"-",month,"-01")), monthlyinvav/yearlysalesav*12) +geom_point() + geom_smooth(method="loess")
+homesales %>%   select(address, listingdate, saledate) %>% 
+                pivot_longer(listingdate:saledate, names_to="datetype", values_to="date") %>% arrange(date) %>%
+                mutate( year = year(date),
+                        dayofyear = yday(date), 
+                        pdate = dayofyear + as.Date("2020-01-01"),
+                        y = ifelse(datetype=="listingdate",1,-1)
+                        ) %>% 
+                group_by(year, datetype) %>%
+                summarize(pdate=pdate, 
+                          countup = cumsum(y),
+                          countup = abs(countup)
+                          ) %>% ungroup() %>% #filter(year==2020) %>% View()
+                ggplot() + aes(pdate,countup, color=datetype) + geom_line() + facet_wrap(.~year)
+
+ggsave("graphs/listings-and-sales-by-date.pdf", height=8, width=11)
