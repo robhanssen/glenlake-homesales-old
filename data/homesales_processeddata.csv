@@ -130,7 +130,7 @@ address,listingdate,saledate,amount,hometype,undercontract,inventory,listingcoun
 909 Palmdale,2020-08-31,NA,NA,residential,1,16,37,2020,8,NA,NA,244,67,Under Contract,48,NA
 540 Shoreline,2020-09-15,NA,NA,residential,NA,16,38,2020,9,NA,NA,259,52,For Sale,49,NA
 508 Shoreline,2020-09-21,NA,NA,residential,1,14,39,2020,9,NA,NA,265,46,Under Contract,50,NA
-532 Shoreline,2020-09-25,NA,NA,residential,1,15,40,2020,9,NA,NA,269,42,Under Contract,52,NA
+532 Shoreline,2020-09-25,2020-11-05,234900,residential,NA,15,40,2020,9,2020,11,269,41,Sold,52,3.4615384615384612
 863 Vandenburg,2020-10-06,NA,NA,residential,NA,11,41,2020,10,NA,NA,280,31,For Sale,53,NA
 835 Culverhouse,2020-10-08,NA,NA,residential,1,12,42,2020,10,NA,NA,282,29,Under Contract,53,NA
 123 Dewfield,2020-10-16,NA,NA,residential,NA,12,43,2020,10,NA,NA,290,21,For Sale,54,NA
