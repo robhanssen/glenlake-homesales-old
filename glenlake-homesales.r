@@ -110,7 +110,8 @@ ggsave("graphs/median-time-on-market.pdf")
 #                     scale_y_continuous(limits=c(0,350))
 # ggsave("graphs/boxplot-time-on-market.pdf")
 
-homesales %>% ggplot() + aes(x=factor(listingyear),y=timeonmarket, fill=hometype) + geom_violin(draw_quantiles = 0.5) + facet_wrap(.~hometype) + #geom_jitter() +
+homesales %>%   filter(status=="Sold") %>%
+                ggplot() + aes(x=factor(listingyear),y=timeonmarket, fill=hometype) + geom_violin(draw_quantiles = 0.5) + facet_wrap(.~hometype) + #geom_jitter() +
                     xlab("Year of listing") + ylab("Time on market (in days)") + ggtitle("Distribution of time on market for sold homes in Glen Lake") + labs(fill = "Home type", caption=source) +
                     scale_y_continuous(limits=c(0,350)) + geom_jitter(alpha=.5, width=.2)
 ggsave("graphs/violinplot-time-on-market.pdf", width=11, height=8)
