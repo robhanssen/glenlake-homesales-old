@@ -158,12 +158,19 @@ ggsave("graphs/sales-by-dayofyear.pdf")
 
 # sales price by hometype
 
-homesales %>% filter(status=="Sold") %>% ggplot()+aes(x=factor(saleyear), y=amount, fill=hometype) + geom_boxplot() + facet_wrap(.~hometype) +
-                                                xlab("Year of sale") + ylab("Sales price") + 
-                                                labs(caption=source) + ggtitle("Glen Lake sales price distribution by year and hometype")
-ggsave("graphs/sales-price-distribution.pdf")
+# homesales %>% filter(status=="Sold") %>% ggplot()+aes(x=factor(saleyear), y=amount, fill=hometype) + geom_boxplot() + facet_wrap(.~hometype) +
+#                                                 xlab("Year of sale") + ylab("Sales price") + 
+#                                                 labs(caption=source) + ggtitle("Glen Lake sales price distribution by year and hometype")
+# ggsave("graphs/sales-price-distribution.pdf")
 medianprice <- homesales %>% filter(status=="Sold") %>% group_by(saleyear, hometype) %>% summarise(medianprice=median(amount))
 write_csv(medianprice, "data/median-price.csv")
+
+homesales %>% filter(status=="Sold") %>% ggplot(aes(x=factor(saleyear), y=amount, fill=hometype)) + geom_violin(draw_quantiles=.5) + facet_wrap(.~hometype) +
+                                                xlab("Year of sale") + ylab("Sales price") + 
+                                                geom_jitter(width=.1, alpha=.2) + theme(legend.position = "none")  +
+                                                labs(caption=source) + ggtitle("Glen Lake sales price distribution by year and hometype")
+ggsave("graphs/sales-price-distribution.pdf")
+
 
 # sales inventory time
 #
