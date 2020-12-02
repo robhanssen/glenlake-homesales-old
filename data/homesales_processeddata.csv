@@ -127,14 +127,14 @@ address,listingdate,saledate,amount,hometype,undercontract,inventory,listingcoun
 596 Marchbanks,2020-08-24,2020-11-17,246000,residential,NA,13,34,2020,8,2020,11,237,85,Sold,52,3
 823 Vandenburg,2020-08-30,2020-10-15,243000,residential,NA,14,35,2020,8,2020,10,243,46,Sold,48,3.5
 410 Pierview,2020-08-31,2020-10-30,209900,townhome,NA,15,36,2020,8,2020,10,244,60,Sold,48,3.75
-909 Palmdale,2020-08-31,NA,NA,residential,1,16,37,2020,8,NA,NA,244,91,Under Contract,48,NA
-540 Shoreline,2020-09-15,NA,NA,residential,NA,16,38,2020,9,NA,NA,259,76,For Sale,49,NA
+909 Palmdale,2020-08-31,2020-11-30,270000,residential,NA,16,37,2020,8,2020,11,244,91,Sold,48,4
+540 Shoreline,2020-09-15,NA,NA,residential,NA,16,38,2020,9,NA,NA,259,78,For Sale,49,NA
 508 Shoreline,2020-09-21,2020-11-13,214900,residential,NA,14,39,2020,9,2020,11,265,53,Sold,50,3.3600000000000003
 532 Shoreline,2020-09-25,2020-11-05,234900,residential,NA,15,40,2020,9,2020,11,269,41,Sold,52,3.4615384615384612
-863 Vandenburg,2020-10-06,NA,NA,residential,1,11,41,2020,10,NA,NA,280,55,Under Contract,53,NA
+863 Vandenburg,2020-10-06,NA,NA,residential,1,11,41,2020,10,NA,NA,280,57,Under Contract,53,NA
 835 Culverhouse,2020-10-08,2020-11-10,246000,residential,NA,12,42,2020,10,2020,11,282,33,Sold,53,2.716981132075472
-123 Dewfield,2020-10-16,NA,NA,residential,1,12,43,2020,10,NA,NA,290,45,Under Contract,54,NA
-500 Shoreline,2020-10-30,NA,NA,residential,1,12,44,2020,10,NA,NA,304,31,Under Contract,54,NA
-635 Cordelia,2020-10-31,NA,NA,residential,NA,12,45,2020,10,NA,NA,305,30,For Sale,54,NA
-758 Maya,2020-11-04,NA,NA,residential,NA,13,46,2020,11,NA,NA,309,26,For Sale,54,NA
-277 Bridgeport,2020-11-10,NA,NA,residential,NA,12,47,2020,11,NA,NA,315,20,For Sale,57,NA
+123 Dewfield,2020-10-16,NA,NA,residential,1,12,43,2020,10,NA,NA,290,47,Under Contract,54,NA
+500 Shoreline,2020-10-30,NA,NA,residential,1,12,44,2020,10,NA,NA,304,33,Under Contract,54,NA
+635 Cordelia,2020-10-31,NA,NA,residential,NA,12,45,2020,10,NA,NA,305,32,For Sale,54,NA
+758 Maya,2020-11-04,NA,NA,residential,NA,13,46,2020,11,NA,NA,309,28,For Sale,54,NA
+277 Bridgeport,2020-11-10,NA,NA,residential,NA,12,47,2020,11,NA,NA,315,22,For Sale,57,NA
