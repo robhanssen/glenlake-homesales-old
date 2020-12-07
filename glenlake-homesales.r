@@ -53,7 +53,7 @@ homesales$status = factor(homesales$status, levels=c("Sold", "Under Contract", "
 
 # update source tag
 lastupdate = max(max(homesales$listingdate, na.rm=TRUE), max(homesales$saledate, na.rm=TRUE))
-source <- paste(source,"\nLast updated: ",format(today(), format="%b %d, %Y"),"\nLatest data:", format(lastupdate, format="%b %d, %Y"), sep="" )
+source <- paste(source,"\nLast updated: ",format(today(), format="%b %d, %Y"),"\nLatest data: ", format(lastupdate, format="%b %d, %Y"), sep="" )
 maxyear = year(lastupdate)
 #
 # processing and data output
