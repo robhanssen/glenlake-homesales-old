@@ -134,7 +134,7 @@ address,listingdate,saledate,amount,hometype,undercontract,inventory,listingcoun
 863 Vandenburg,2020-10-06,2020-12-23,239000,residential,NA,11,41,2020,10,2020,12,280,78,Sold,53,2.4905660377358494
 835 Culverhouse,2020-10-08,2020-11-10,246000,residential,NA,12,42,2020,10,2020,11,282,33,Sold,53,2.716981132075472
 123 Dewfield,2020-10-16,2021-01-08,285000,residential,NA,12,43,2020,10,2021,1,290,84,Sold,54,2.6666666666666665
-500 Shoreline,2020-10-30,NA,NA,residential,1,12,44,2020,10,NA,NA,304,93,Under Contract,54,NA
+500 Shoreline,2020-10-30,2021-01-25,238000,residential,NA,12,44,2020,10,2021,1,304,87,Sold,54,2.6666666666666665
 635 Cordelia,2020-10-31,NA,NA,residential,1,12,45,2020,10,NA,NA,305,92,Under Contract,54,NA
 758 Maya,2020-11-04,NA,NA,residential,1,13,46,2020,11,NA,NA,309,88,Under Contract,54,NA
 277 Bridgeport,2020-11-10,2021-01-25,285000,residential,NA,12,47,2020,11,2021,1,315,76,Sold,57,2.526315789473684
