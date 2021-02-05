@@ -86,7 +86,7 @@
 267 Stewarts Landing,10-19-2019,01-07-2020,205600,patio home,
 526 Inner Banks,11-07-2019,01-08-2020,271000,residential,
 105 Dewfield,11-08-2019,03-03-2020,229000,residential,
-417 Pierview Way,11-11-2019,02-06-2020,194900,townhome,
+417 Pierview,11-11-2019,02-06-2020,194900,townhome,
 858 Vandenburg,12-03-2019,04-13-2020,210000,residential,
 135 Walkers Bluff,12-08-2019,05-01-2020,370000,residential,
 208 Stewarts Landing,12-13-2019,12-13-2019,192000,townhome,
@@ -128,7 +128,7 @@
 823 Vandenburg,08-30-2020,10-15-2020,243000,residential,
 410 Pierview,08-31-2020,10-30-2020,209900,townhome,
 909 Palmdale,08-31-2020,11-30-2020,270000,residential,
-540 Shoreline,09-15-2020,,,residential,
+#540 Shoreline,09-15-2020,,,residential,
 508 Shoreline,09-21-2020,11-13-2020,214900,residential,
 532 Shoreline,09-25-2020,11-05-2020,234900,residential,
 863 Vandenburg,10-06-2020,12-23-2020,239000,residential,
@@ -141,4 +141,4 @@
 126 Bridgeville,12-29-2020,,,residential,1
 251 Stewarts Landing, 01-01-2021,,,patio home,1
 269 Bridgeport,01-13-2021,,,residential,1
-610 Delany,02-04-2021,,,residential,
+610 Delany,02-04-2021,,,residential,1

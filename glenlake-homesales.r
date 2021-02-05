@@ -19,7 +19,9 @@ homesales <- read_csv(homesale_file,
         col_types = cols(listingdate = col_date(format = "%m-%d-%Y"), 
                          saledate = col_date(format = "%m-%d-%Y")
                          )
-                    ) %>% arrange(listingdate)
+                    ) %>% 
+                    filter(substr(address,1,1)!="#") %>%  # added support for commenting out homes that might come back onto the market: add hashtag in front of address
+                    arrange(listingdate)
 
 #
 # calculation for inventory
