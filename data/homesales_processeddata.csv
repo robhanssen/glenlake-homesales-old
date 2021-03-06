@@ -134,12 +134,12 @@ address,listingdate,saledate,amount,hometype,undercontract,inventory,listingcoun
 835 Culverhouse,2020-10-08,2020-11-10,246000,residential,NA,11,41,2020,10,2020,11,282,33,Sold,53,2.4905660377358494
 123 Dewfield,2020-10-16,2021-01-08,285000,residential,NA,11,42,2020,10,2021,1,290,84,Sold,54,2.444444444444444
 500 Shoreline,2020-10-30,2021-01-26,238000,residential,NA,11,43,2020,10,2021,1,304,88,Sold,54,2.444444444444444
-635 Cordelia,2020-10-31,NA,NA,residential,1,11,44,2020,10,NA,NA,305,125,Under Contract,54,NA
+635 Cordelia,2020-10-31,NA,NA,residential,1,11,44,2020,10,NA,NA,305,126,Under Contract,54,NA
 758 Maya,2020-11-04,2021-02-01,269900,residential,NA,12,45,2020,11,2021,2,309,89,Sold,54,2.6666666666666665
 277 Bridgeport,2020-11-10,2021-01-25,285000,residential,NA,11,46,2020,11,2021,1,315,76,Sold,57,2.3157894736842106
-126 Bridgeville,2020-12-29,NA,NA,residential,1,6,47,2020,12,NA,NA,364,66,Under Contract,51,NA
+126 Bridgeville,2020-12-29,NA,NA,residential,1,6,47,2020,12,NA,NA,364,67,Under Contract,51,NA
 251 Stewarts Landing,2021-01-01,2021-02-04,249999,patio home,NA,7,1,2021,1,2021,2,1,34,Sold,51,1.647058823529412
 269 Bridgeport,2021-01-13,2021-02-16,240000,residential,NA,7,2,2021,1,2021,2,13,34,Sold,48,1.75
-610 Delany,2021-02-04,NA,NA,residential,1,5,3,2021,2,NA,NA,35,29,Under Contract,52,NA
-419 Pierview,2021-02-06,NA,NA,townhome,1,5,4,2021,2,NA,NA,37,27,Under Contract,51,NA
-444 Shoreline,2021-02-07,NA,NA,residential,1,6,5,2021,2,NA,NA,38,26,Under Contract,51,NA
+610 Delany,2021-02-04,2021-03-03,385000,residential,NA,5,3,2021,2,2021,3,35,27,Sold,52,1.153846153846154
+419 Pierview,2021-02-06,NA,NA,townhome,1,5,4,2021,2,NA,NA,37,28,Under Contract,51,NA
+444 Shoreline,2021-02-07,NA,NA,residential,1,6,5,2021,2,NA,NA,38,27,Under Contract,51,NA
