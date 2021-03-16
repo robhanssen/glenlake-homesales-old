@@ -142,6 +142,5 @@ address,listingdate,saledate,amount,hometype,undercontract,inventory,listingcoun
 269 Bridgeport,2021-01-13,2021-02-16,240000,residential,NA,7,2,2021,1,2021,2,13,34,Sold,48,1.75
 610 Delany,2021-02-04,2021-03-03,385000,residential,NA,5,3,2021,2,2021,3,35,27,Sold,52,1.153846153846154
 419 Pierview,2021-02-06,NA,NA,townhome,1,5,4,2021,2,NA,NA,37,38,Under Contract,51,NA
-444 Shoreline,2021-02-07,NA,NA,residential,1,6,5,2021,2,NA,NA,38,37,Under Contract,51,NA
-505 Witherspoon,2021-03-05,NA,NA,residential,1,5,6,2021,3,NA,NA,64,11,Under Contract,52,NA
-636 Cordelia,2021-03-08,NA,NA,residential,1,5,7,2021,3,NA,NA,67,8,Under Contract,52,NA
+505 Witherspoon,2021-03-05,NA,NA,residential,1,4,5,2021,3,NA,NA,64,11,Under Contract,52,NA
+636 Cordelia,2021-03-08,NA,NA,residential,1,4,6,2021,3,NA,NA,67,8,Under Contract,52,NA
