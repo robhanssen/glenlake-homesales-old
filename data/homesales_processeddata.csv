@@ -145,3 +145,4 @@ address,listingdate,saledate,amount,hometype,undercontract,inventory,listingcoun
 505 Witherspoon,2021-03-05,NA,NA,residential,1,4,5,2021,3,NA,NA,64,12,Under Contract,52,NA
 636 Cordelia,2021-03-08,NA,NA,residential,1,4,6,2021,3,NA,NA,67,9,Under Contract,52,NA
 604 Marchbanks,2021-03-16,NA,NA,residential,NA,4,7,2021,3,NA,NA,75,1,For Sale,52,NA
+564 Shoreline,2021-03-17,NA,NA,residential,1,5,8,2021,3,NA,NA,76,0,Under Contract,51,NA
