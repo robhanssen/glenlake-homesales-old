@@ -146,3 +146,4 @@ address,listingdate,saledate,amount,hometype,undercontract,inventory,listingcoun
 636 Cordelia,2021-03-08,NA,NA,residential,1,4,6,2021,3,NA,NA,67,11,Under Contract,52,NA
 604 Marchbanks,2021-03-16,NA,NA,residential,NA,4,7,2021,3,NA,NA,75,3,For Sale,52,NA
 564 Shoreline,2021-03-17,NA,NA,residential,1,5,8,2021,3,NA,NA,76,2,Under Contract,51,NA
+891 Vandenburg,2021-03-18,NA,NA,residential,NA,6,9,2021,3,NA,NA,77,1,For Sale,51,NA
