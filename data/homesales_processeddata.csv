@@ -141,9 +141,9 @@ address,listingdate,saledate,amount,hometype,undercontract,inventory,listingcoun
 251 Stewarts Landing,2021-01-01,2021-02-04,249999,patio home,NA,7,1,2021,1,2021,2,1,34,Sold,51,1.647058823529412
 269 Bridgeport,2021-01-13,2021-02-16,240000,residential,NA,7,2,2021,1,2021,2,13,34,Sold,48,1.75
 610 Delany,2021-02-04,2021-03-03,385000,residential,NA,5,3,2021,2,2021,3,35,27,Sold,52,1.153846153846154
-419 Pierview,2021-02-06,NA,NA,townhome,1,5,4,2021,2,NA,NA,37,41,Under Contract,51,NA
-505 Witherspoon,2021-03-05,NA,NA,residential,1,4,5,2021,3,NA,NA,64,14,Under Contract,52,NA
-636 Cordelia,2021-03-08,NA,NA,residential,1,4,6,2021,3,NA,NA,67,11,Under Contract,52,NA
-604 Marchbanks,2021-03-16,NA,NA,residential,NA,4,7,2021,3,NA,NA,75,3,For Sale,52,NA
-564 Shoreline,2021-03-17,NA,NA,residential,1,5,8,2021,3,NA,NA,76,2,Under Contract,51,NA
-891 Vandenburg,2021-03-18,NA,NA,residential,NA,6,9,2021,3,NA,NA,77,1,For Sale,51,NA
+419 Pierview,2021-02-06,NA,NA,townhome,1,5,4,2021,2,NA,NA,37,42,Under Contract,51,NA
+505 Witherspoon,2021-03-05,NA,NA,residential,1,4,5,2021,3,NA,NA,64,15,Under Contract,52,NA
+636 Cordelia,2021-03-08,NA,NA,residential,1,4,6,2021,3,NA,NA,67,12,Under Contract,52,NA
+604 Marchbanks,2021-03-16,NA,NA,residential,NA,4,7,2021,3,NA,NA,75,4,For Sale,52,NA
+564 Shoreline,2021-03-17,NA,NA,residential,1,5,8,2021,3,NA,NA,76,3,Under Contract,51,NA
+891 Vandenburg,2021-03-18,NA,NA,residential,NA,6,9,2021,3,NA,NA,77,2,For Sale,51,NA
