@@ -144,6 +144,7 @@ address,listingdate,saledate,amount,hometype,undercontract,inventory,listingcoun
 419 Pierview,2021-02-06,NA,NA,townhome,1,5,4,2021,2,NA,NA,37,44,Under Contract,51,NA
 505 Witherspoon,2021-03-05,NA,NA,residential,1,4,5,2021,3,NA,NA,64,17,Under Contract,52,NA
 636 Cordelia,2021-03-08,NA,NA,residential,1,4,6,2021,3,NA,NA,67,14,Under Contract,52,NA
-604 Marchbanks,2021-03-16,NA,NA,residential,NA,4,7,2021,3,NA,NA,75,6,For Sale,52,NA
-564 Shoreline,2021-03-17,NA,NA,residential,1,5,8,2021,3,NA,NA,76,5,Under Contract,51,NA
-891 Vandenburg,2021-03-18,NA,NA,residential,1,6,9,2021,3,NA,NA,77,4,Under Contract,51,NA
+599 Marchbank,2021-03-09,2021-03-09,220000,residential,NA,5,7,2021,3,2021,3,68,0,Sold,52,1.153846153846154
+604 Marchbanks,2021-03-16,NA,NA,residential,NA,4,8,2021,3,NA,NA,75,6,For Sale,53,NA
+564 Shoreline,2021-03-17,NA,NA,residential,1,5,9,2021,3,NA,NA,76,5,Under Contract,52,NA
+891 Vandenburg,2021-03-18,NA,NA,residential,1,6,10,2021,3,NA,NA,77,4,Under Contract,52,NA
