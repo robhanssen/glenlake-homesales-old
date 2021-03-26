@@ -195,6 +195,7 @@ homesales$inventorytime[homesales$yearlysales==0] = NA
 
 # define first sale + 1 year
 yearafterfirstlist = min(homesales$listingdate, na.rm=TRUE) + years(1)
+lastdate = max(homesales$listingdate, na.rm=TRUE) - months(6)
 
 homesales %>% filter(saledate > yearafterfirstlist) %>% 
                 group_by(listingyear,listingmonth) %>%  
@@ -211,10 +212,13 @@ homesales %>% filter(saledate > yearafterfirstlist) %>%
                 group_by(listingyear,listingmonth) %>% 
                 summarise(avinvtime = mean(inventorytime, na.rm=TRUE)) %>% 
                 mutate(date=as.Date(paste(listingyear,"-",listingmonth,"-01", sep=""), format="%Y-%m-%d")) %>%
-                ggplot() + aes(x=date, y=avinvtime) + geom_line() +
+                ggplot() + aes(x=date, y=avinvtime) + 
+                geom_hline(yintercept=6, lty=2, color="red") + annotate("text", x=lastdate, y=6.5, label="Buyer's Market") + annotate("text", x=lastdate, y=5.5, label="Seller's Market")  +
+                geom_line() +
                 scale_y_continuous(limit=c(0,12),breaks=seq(0,12,2)) +
                 xlab("Date") + ylab("Average inventory time (months)") + labs(caption=source) +
-                ggtitle("Glen Lake average inventory time") + geom_smooth(method="loess", linetype="longdash", color="white")
+                ggtitle("Glen Lake average inventory time") + geom_smooth(method="loess", linetype="longdash", color="white") 
+
 
 ggsave("graphs/average-inventory-time.pdf")
 
