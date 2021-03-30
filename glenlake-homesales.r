@@ -166,6 +166,11 @@ ggsave("graphs/sales-by-dayofyear.pdf")
 medianprice <- homesales %>% filter(status=="Sold") %>% group_by(saleyear, hometype) %>% summarise(medianprice=median(amount))
 write_csv(medianprice, "data/median-price.csv")
 
+medianprice %>% ggplot(aes(x=saleyear, y=medianprice, fill=hometype)) + geom_bar(stat="identity", position="dodge") + facet_wrap(.~hometype) +
+                    xlab("Year of sale") + ylab("Median sale price") + ggtitle("Yearly median sale price of homes") + labs(fill = "Home type", caption=source) +
+                    geom_text(aes(label=paste("$", round(medianprice,0))), position=position_dodge(width=0.9), vjust=-1) + annotate("text",x=maxyear,y=10000,label=paste(maxyear,"YTD", sep=""))
+ggsave("graphs/median-saleprice.pdf", width=11, height=8)
+
 homesales %>% filter(status=="Sold") %>% ggplot(aes(x=factor(saleyear), y=amount, fill=hometype)) + geom_violin(draw_quantiles=.5) + facet_wrap(.~hometype) +
                                                 xlab("Year of sale") + ylab("Sales price") + 
                                                 geom_jitter(width=.1, alpha=.2) + theme(legend.position = "none")  +
