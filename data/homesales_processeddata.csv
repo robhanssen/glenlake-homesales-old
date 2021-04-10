@@ -145,8 +145,8 @@ address,listingdate,saledate,amount,hometype,undercontract,inventory,listingcoun
 505 Witherspoon,2021-03-05,2021-03-31,372000,residential,NA,4,5,2021,3,2021,3,64,26,Sold,52,0.9230769230769231
 636 Cordelia,2021-03-08,2021-04-05,275000,residential,NA,4,6,2021,3,2021,4,67,28,Sold,52,0.9230769230769231
 599 Marchbank,2021-03-09,2021-03-09,220000,residential,NA,5,7,2021,3,2021,3,68,0,Sold,52,1.153846153846154
-604 Marchbanks,2021-03-16,NA,NA,residential,1,4,8,2021,3,NA,NA,75,24,Under Contract,53,NA
-564 Shoreline,2021-03-17,NA,NA,residential,1,5,9,2021,3,NA,NA,76,23,Under Contract,52,NA
-891 Vandenburg,2021-03-18,NA,NA,residential,1,6,10,2021,3,NA,NA,77,22,Under Contract,52,NA
-127 Dewfield,2021-04-05,NA,NA,residential,1,5,11,2021,4,NA,NA,95,4,Under Contract,54,NA
-604 Delany,2021-04-08,NA,NA,residential,NA,5,12,2021,4,NA,NA,98,1,For Sale,54,NA
+604 Marchbanks,2021-03-16,NA,NA,residential,1,4,8,2021,3,NA,NA,75,25,Under Contract,53,NA
+564 Shoreline,2021-03-17,NA,NA,residential,1,5,9,2021,3,NA,NA,76,24,Under Contract,52,NA
+891 Vandenburg,2021-03-18,NA,NA,residential,1,6,10,2021,3,NA,NA,77,23,Under Contract,52,NA
+127 Dewfield,2021-04-05,NA,NA,residential,1,5,11,2021,4,NA,NA,95,5,Under Contract,54,NA
+604 Delany,2021-04-08,NA,NA,residential,NA,5,12,2021,4,NA,NA,98,2,For Sale,54,NA
