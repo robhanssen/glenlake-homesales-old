@@ -154,10 +154,10 @@
 222 Bridgeport,04-09-2021,,,residential,1
 415 Pierview,04-14-2021,,,townhome,
 463 Shoreline,04-15-2021,,,residential,
-467 Shoreline,04-15-2021,,,residential,
+467 Shoreline,04-15-2021,,,residential,1
 247 Bridgeport,04-15-2021,,,residential,
 143 Dewfield,04-16-2021,,,residential,
-# still expected to list
+# still expected to list,,,,,
 # 209 Stewarts Landing,04-xx-2021,,,townhome,
 # 111 Bridgeville,04-xx-2021,,,residential,
 # 286 Bridgeport,04-xx-2021,,,residential,
