@@ -145,14 +145,14 @@ address,listingdate,saledate,amount,hometype,undercontract,inventory,listingcoun
 505 Witherspoon,2021-03-05,2021-03-31,372000,residential,NA,4,5,2021,3,2021,3,64,26,Sold,52,0.9230769230769231
 636 Cordelia,2021-03-08,2021-04-05,275000,residential,NA,4,6,2021,3,2021,4,67,28,Sold,52,0.9230769230769231
 599 Marchbank,2021-03-09,2021-03-09,220000,residential,NA,5,7,2021,3,2021,3,68,0,Sold,52,1.153846153846154
-604 Marchbanks,2021-03-16,NA,NA,residential,1,4,8,2021,3,NA,NA,75,35,Under Contract,53,NA
+604 Marchbanks,2021-03-16,NA,NA,residential,1,4,8,2021,3,NA,NA,75,36,Under Contract,53,NA
 564 Shoreline,2021-03-17,2021-04-19,248000,residential,NA,5,9,2021,3,2021,4,76,33,Sold,52,1.153846153846154
-891 Vandenburg,2021-03-18,NA,NA,residential,1,6,10,2021,3,NA,NA,77,33,Under Contract,52,NA
-127 Dewfield,2021-04-05,NA,NA,residential,1,5,11,2021,4,NA,NA,95,15,Under Contract,54,NA
-603 Delany,2021-04-08,NA,NA,residential,1,5,12,2021,4,NA,NA,98,12,Under Contract,54,NA
-222 Bridgeport,2021-04-09,NA,NA,residential,1,6,13,2021,4,NA,NA,99,11,Under Contract,54,NA
-415 Pierview,2021-04-14,NA,NA,townhome,NA,7,14,2021,4,NA,NA,104,6,For Sale,53,NA
-463 Shoreline,2021-04-15,NA,NA,residential,NA,8,15,2021,4,NA,NA,105,5,For Sale,53,NA
-467 Shoreline,2021-04-15,NA,NA,residential,1,9,16,2021,4,NA,NA,105,5,Under Contract,53,NA
-247 Bridgeport,2021-04-15,NA,NA,residential,NA,10,17,2021,4,NA,NA,105,5,For Sale,53,NA
-143 Dewfield,2021-04-16,NA,NA,residential,NA,11,18,2021,4,NA,NA,106,4,For Sale,53,NA
+891 Vandenburg,2021-03-18,NA,NA,residential,1,6,10,2021,3,NA,NA,77,34,Under Contract,52,NA
+127 Dewfield,2021-04-05,NA,NA,residential,1,5,11,2021,4,NA,NA,95,16,Under Contract,54,NA
+603 Delany,2021-04-08,NA,NA,residential,1,5,12,2021,4,NA,NA,98,13,Under Contract,54,NA
+222 Bridgeport,2021-04-09,NA,NA,residential,1,6,13,2021,4,NA,NA,99,12,Under Contract,54,NA
+415 Pierview,2021-04-14,NA,NA,townhome,NA,7,14,2021,4,NA,NA,104,7,For Sale,53,NA
+463 Shoreline,2021-04-15,NA,NA,residential,NA,8,15,2021,4,NA,NA,105,6,For Sale,53,NA
+467 Shoreline,2021-04-15,NA,NA,residential,1,9,16,2021,4,NA,NA,105,6,Under Contract,53,NA
+247 Bridgeport,2021-04-15,NA,NA,residential,NA,10,17,2021,4,NA,NA,105,6,For Sale,53,NA
+143 Dewfield,2021-04-16,NA,NA,residential,NA,11,18,2021,4,NA,NA,106,5,For Sale,53,NA
