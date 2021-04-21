@@ -195,17 +195,17 @@ for (i in 1:nrow(homesales))
 }
 
 homesales$inventorytime = homesales$inventory / homesales$yearlysales * 12
-homesales$inventorytime[is.na(homesales$saledate)] = NA
+#homesales$inventorytime[is.na(homesales$saledate)] = NA
 homesales$inventorytime[homesales$yearlysales==0] = NA
 
 # define first sale + 1 year
 yearafterfirstlist = min(homesales$listingdate, na.rm=TRUE) + years(1)
 lastdate = max(homesales$listingdate, na.rm=TRUE) - months(6)
 
-homesales %>% filter(saledate > yearafterfirstlist) %>% 
+homesales %>% filter(listingdate > yearafterfirstlist) %>% 
                 group_by(listingyear,listingmonth) %>%  
-                summarise(avsales = mean(yearlysales, na.rm=TRUE)) %>% fill(avsales) %>%
-                mutate(date=as.Date(paste(listingyear,"-",listingmonth,"-01", sep=""), format="%Y-%m-%d")) %>%
+                summarise(avsales = mean(yearlysales, na.rm=TRUE)) %>% fill(avsales) %>%  
+                mutate(date=as.Date(paste(listingyear,"-",listingmonth,"-01", sep=""), format="%Y-%m-%d")) %>% 
                 ggplot() + aes(x=date, y=avsales) + geom_bar(stat="identity") +
                 scale_y_continuous(limit=c(0,60),breaks=seq(0,60,10)) +
                 xlab("Date") + ylab("Number of home sales in the last 12 months") + labs(caption=source) +
@@ -213,7 +213,7 @@ homesales %>% filter(saledate > yearafterfirstlist) %>%
 
 ggsave("graphs/average-homesales-per-12-months.pdf")
 
-homesales %>% filter(saledate > yearafterfirstlist) %>% 
+homesales %>% filter(listingdate > yearafterfirstlist) %>% 
                 group_by(listingyear,listingmonth) %>% 
                 summarise(avinvtime = mean(inventorytime, na.rm=TRUE)) %>% 
                 mutate(date=as.Date(paste(listingyear,"-",listingmonth,"-01", sep=""), format="%Y-%m-%d")) %>%
