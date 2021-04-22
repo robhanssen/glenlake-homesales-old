@@ -213,15 +213,15 @@ homesales %>% filter(listingdate > yearafterfirstlist) %>%
 
 ggsave("graphs/average-homesales-per-12-months.pdf")
 
-homesales %>% filter(listingdate > yearafterfirstlist) %>% 
-                group_by(listingyear,listingmonth) %>% 
-                summarise(avinvtime = mean(inventorytime, na.rm=TRUE)) %>% 
-                mutate(date=as.Date(paste(listingyear,"-",listingmonth,"-01", sep=""), format="%Y-%m-%d")) %>%
-                ggplot() + aes(x=date, y=avinvtime) + 
+homesales %>% filter(listingdate > yearafterfirstlist) %>% rename(date=listingdate) %>%
+                # group_by(listingyear,listingmonth) %>% 
+                # summarise(avinvtime = mean(inventorytime, na.rm=TRUE)) %>% 
+                # mutate(date=as.Date(paste(listingyear,"-",listingmonth,"-01", sep=""), format="%Y-%m-%d")) %>%
+                ggplot() + aes(x=date, y=inventorytime) + 
                 geom_hline(yintercept=6, lty=2, color="red") + annotate("text", x=lastdate, y=6.5, label="Buyer's Market") + annotate("text", x=lastdate, y=5.5, label="Seller's Market")  +
                 geom_line() +
                 scale_y_continuous(limit=c(0,12),breaks=seq(0,12,2)) +
-                xlab("Date") + ylab("Average inventory time (months)") + labs(caption=source) +
+                xlab("Date") + ylab("Inventory time (months)") + labs(caption=source) +
                 ggtitle("Glen Lake average inventory time") + geom_smooth(method="loess", linetype="longdash", color="white") 
 
 
