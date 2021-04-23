@@ -142,7 +142,6 @@
 269 Bridgeport,01-13-2021,02-16-2021,240000,residential,
 610 Delany,02-04-2021,03-03-2021,385000,residential,
 419 Pierview,02-06-2021,03-26-2021,227000,townhome,
-#444 Shoreline,02-07-2021,,,residential,
 505 Witherspoon,03-05-2021,03-31-2021,372000,residential,
 636 Cordelia,03-08-2021,04-05-2021,275000,residential,
 599 Marchbank,03-09-2021,03-09-2021,220000,residential,
@@ -159,7 +158,9 @@
 143 Dewfield,04-16-2021,,,residential,1
 624 Cordelia,04-21-2021,,,residential,
 616 Marchbank,04-22-2021,,,residential,
-286 Bridgeport,04-22-2021,,,residential,
+286 Bridgeport,04-23-2021,,,residential,
+214 Stewarts Landing,04-23-2021,,,townhome,
+745 Maya,04-23-2021,,,residential,
 # Sharon Gowan?,,,,,
 # still expected to list,,,,,
 # 209 Stewarts Landing,04-xx-2021,,,townhome,
