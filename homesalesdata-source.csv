@@ -145,7 +145,7 @@
 505 Witherspoon,03-05-2021,03-31-2021,372000,residential,
 636 Cordelia,03-08-2021,04-05-2021,275000,residential,
 599 Marchbank,03-09-2021,03-09-2021,220000,residential,
-604 Marchbanks,03-16-2021,04-25-2021,269900,residential,1
+604 Marchbanks,03-16-2021,,,residential,1
 564 Shoreline,03-17-2021,04-19-2021,248000,residential,
 891 Vandenburg,03-18-2021,,,residential,1
 127 Dewfield,04-05-2021,,,residential,1
@@ -157,7 +157,7 @@
 247 Bridgeport,04-15-2021,,,residential,
 143 Dewfield,04-16-2021,,,residential,1
 624 Cordelia,04-21-2021,,,residential,1
-616 Marchbank,04-22-2021,,,residential,
+616 Marchbank,04-22-2021,,,residential,1
 286 Bridgeport,04-23-2021,,,residential,1
 214 Stewarts Landing,04-23-2021,,,townhome,
 745 Maya,04-23-2021,,,residential,1
