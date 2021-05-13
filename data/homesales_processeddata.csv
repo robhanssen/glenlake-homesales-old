@@ -161,5 +161,6 @@ address,listingdate,saledate,amount,hometype,undercontract,inventory,listingcoun
 286 Bridgeport,2021-04-23,NA,NA,residential,1,13,21,2021,4,NA,NA,113,20,Under Contract,53,2.9433962264150946
 214 Stewarts Landing,2021-04-23,NA,NA,townhome,1,14,22,2021,4,NA,NA,113,20,Under Contract,53,3.169811320754717
 745 Maya,2021-04-23,NA,NA,residential,1,15,23,2021,4,NA,NA,113,20,Under Contract,53,3.3962264150943398
-209 Stewarts Landing,2021-05-10,NA,NA,townhome,NA,15,24,2021,5,NA,NA,130,3,For Sale,51,3.5294117647058822
+209 Stewarts Landing,2021-05-10,NA,NA,townhome,1,15,24,2021,5,NA,NA,130,3,Under Contract,51,3.5294117647058822
 606 Shoreline,2021-05-10,NA,NA,residential,NA,16,25,2021,5,NA,NA,130,3,For Sale,51,3.764705882352941
+407 Seymour,2021-05-12,NA,NA,residential,NA,17,26,2021,5,NA,NA,132,1,For Sale,51,4
