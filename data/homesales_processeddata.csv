@@ -150,7 +150,7 @@ address,listingdate,saledate,amount,hometype,undercontract,inventory,listingcoun
 891 Vandenburg,2021-03-18,2021-04-30,256000,residential,NA,6,10,2021,3,2021,4,77,43,Sold,52,1.3846153846153846
 127 Dewfield,2021-04-05,NA,NA,residential,1,5,11,2021,4,NA,NA,95,42,Under Contract,54,1.1111111111111112
 603 Delany,2021-04-08,NA,NA,residential,1,5,12,2021,4,NA,NA,98,39,Under Contract,54,1.1111111111111112
-222 Bridgeport,2021-04-09,NA,NA,residential,1,6,13,2021,4,NA,NA,99,38,Under Contract,54,1.3333333333333333
+222 Bridgeport,2021-04-09,2021-05-14,339000,residential,1,6,13,2021,4,2021,5,99,35,Sold,54,1.3333333333333333
 415 Pierview,2021-04-14,NA,NA,townhome,1,7,14,2021,4,NA,NA,104,33,Under Contract,53,1.5849056603773586
 463 Shoreline,2021-04-15,NA,NA,residential,1,8,15,2021,4,NA,NA,105,32,Under Contract,53,1.8113207547169812
 467 Shoreline,2021-04-15,NA,NA,residential,1,9,16,2021,4,NA,NA,105,32,Under Contract,53,2.0377358490566038
@@ -162,5 +162,5 @@ address,listingdate,saledate,amount,hometype,undercontract,inventory,listingcoun
 214 Stewarts Landing,2021-04-23,NA,NA,townhome,1,14,22,2021,4,NA,NA,113,24,Under Contract,53,3.169811320754717
 745 Maya,2021-04-23,NA,NA,residential,1,15,23,2021,4,NA,NA,113,24,Under Contract,53,3.3962264150943398
 209 Stewarts Landing,2021-05-10,NA,NA,townhome,1,15,24,2021,5,NA,NA,130,7,Under Contract,51,3.5294117647058822
-606 Shoreline,2021-05-10,NA,NA,residential,NA,16,25,2021,5,NA,NA,130,7,For Sale,51,3.764705882352941
-407 Seymour,2021-05-12,NA,NA,residential,NA,17,26,2021,5,NA,NA,132,5,For Sale,51,4
+606 Shoreline,2021-05-10,NA,NA,residential,1,16,25,2021,5,NA,NA,130,7,Under Contract,51,3.764705882352941
+407 Seymour,2021-05-12,NA,NA,residential,1,17,26,2021,5,NA,NA,132,5,Under Contract,51,4

@@ -150,7 +150,7 @@
 891 Vandenburg,03-18-2021,04-30-2021,256000,residential,
 127 Dewfield,04-05-2021,,,residential,1
 603 Delany,04-08-2021,,,residential,1
-222 Bridgeport,04-09-2021,,,residential,1
+222 Bridgeport,04-09-2021,05-14-2021,339000,residential,1
 415 Pierview,04-14-2021,,,townhome,1
 463 Shoreline,04-15-2021,,,residential,1
 467 Shoreline,04-15-2021,,,residential,1
@@ -162,8 +162,8 @@
 214 Stewarts Landing,04-23-2021,,,townhome,1
 745 Maya,04-23-2021,,,residential,1
 209 Stewarts Landing,05-10-2021,,,townhome,1
-606 Shoreline,05-10-2021,,,residential,
-407 Seymour,05-12-2021,,,residential,
+606 Shoreline,05-10-2021,,,residential,1
+407 Seymour,05-12-2021,,,residential,1
 # still expected to list,,,,,
 # Sharon Gowan?,,,,,
 # 111 Bridgeville,05-13-2021,,,residential,
