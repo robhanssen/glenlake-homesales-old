@@ -12,16 +12,16 @@ averageturnover = totalsold / totalhomes
 dupes <- homesales %>% 
             filter(duplicated(address) | duplicated(address, fromLast = TRUE)) %>% 
             arrange(address) %>% 
-            group_by(address) %>%
+            group_by(address) %>% 
             mutate(lagtime = listingdate - lag(saledate), lagtime=time_length(lagtime, "months"), 
-                   streetname = substr(address, 5, 100)) %>%
+                   streetname = substr(address, 5, 100)) %>% 
             ungroup() %>%
             select(address:hometype, lagtime, streetname)
 
 dupes %>%   filter(!is.na(lagtime)) %>% 
-            arrange(hometype,address) %>% 
+            arrange(lagtime) %>% mutate(address = paste0(address, " (",round(lagtime,1),")")) %>%
             ggplot  + aes(x=fct_reorder(address,lagtime), y=lagtime, fill=hometype) + 
-            geom_col() + 
+            geom_bar(stat="identity") + 
             labs(y="Time between sale and next listing (in months)", x="Address", fill="Type of home") + 
             scale_y_continuous(breaks=12*1:10) +
             coord_flip()
