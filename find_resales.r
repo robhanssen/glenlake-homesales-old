@@ -19,10 +19,10 @@ dupes <- homesales %>%
             select(address:hometype, lagtime, streetname)
 
 dupes %>%   filter(!is.na(lagtime)) %>% 
-            arrange(lagtime) %>% mutate(address = paste0(address, " (",round(lagtime,1),")")) %>%
-            ggplot  + aes(x=fct_reorder(address,lagtime), y=lagtime, fill=hometype) + 
+            arrange(lagtime) %>% mutate(addresslabel = paste0(address, " (",round(lagtime,1),")")) %>%
+            ggplot  + aes(x=fct_reorder(addresslabel,lagtime), y=lagtime, fill=hometype) + 
             geom_bar(stat="identity") + 
-            labs(y="Time between sale and next listing (in months)", x="Address", fill="Type of home") + 
+            labs(y="Time between sale and next listing (in months)", x="Address (relisting time in months)", fill="Type of home") + 
             scale_y_continuous(breaks=12*1:10) +
             coord_flip()
 
