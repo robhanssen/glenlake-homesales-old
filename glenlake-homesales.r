@@ -258,3 +258,5 @@ homesales %>%   select(address, listingdate, saledate) %>%
                 ggplot() + aes(pdate,countup, color=datetype) + geom_line() + facet_wrap(.~year)
 
 ggsave("graphs/listings-and-sales-by-date.pdf", height=8, width=11)
+
+source("find_resales.r")
