@@ -46,7 +46,7 @@ homesales %>% inner_join(hometypes) %>%
                 summarize(countbystreet = n()) %>% ungroup() %>% 
                 right_join(glenlakehomes) %>% mutate(countbystreet = ifelse(is.na(countbystreet),0,countbystreet)) %>%
                 mutate(turnover = countbystreet / numberofhomes) %>% 
-                mutate(homecount = cut(numberofhomes, breaks=c(0,9,19,100), labels=c("<10 homes per street","11-20 homes per street",">20 homes per street"))) -> hometurnover
+                mutate(homecount = cut(numberofhomes, breaks=c(0,10,20,100), labels=c("10 homes or less per street","11-20 homes per street","over 20 homes per street"))) -> hometurnover
 
 turnoversd = with(hometurnover, sd(turnover) )
 turnoverlimits = averageturnover + c(-1,1) * turnoversd * qnorm(0.975) / sqrt(nrow(hometurnover))
@@ -65,9 +65,10 @@ caption = paste0(source,
                      round(100*turnoverlimits[1],0),
                      "-",
                      round(100*turnoverlimits[2],0),
-                     "%)")
+                     "%)",
+                     "\n PH: patio home; TH: townhome")
 
-hometurnover %>% View()
+hometurnover %>% #View()
               ggplot + aes(x=fct_reorder(streetname,turnover), y=turnover, fill=turnoverwarning) + 
                 scale_y_continuous(labels=percent_format(), breaks=.25*1:10) + 
                 geom_col() + facet_wrap(~homecount, scale="free_y") + 
