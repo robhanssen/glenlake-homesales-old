@@ -145,7 +145,7 @@ address,listingdate,saledate,amount,hometype,undercontract,inventory,listingcoun
 505 Witherspoon,2021-03-05,2021-03-31,372000,residential,NA,4,5,2021,3,2021,3,64,26,Sold,52,0.9230769230769231
 636 Cordelia,2021-03-08,2021-04-05,275000,residential,NA,4,6,2021,3,2021,4,67,28,Sold,52,0.9230769230769231
 599 Marchbank,2021-03-09,2021-03-09,220000,residential,NA,5,7,2021,3,2021,3,68,0,Sold,52,1.153846153846154
-604 Marchbanks,2021-03-16,NA,NA,residential,1,4,8,2021,3,NA,NA,75,64,Under Contract,53,0.9056603773584906
+604 Marchbanks,2021-03-16,2021-05-18,261000,residential,NA,4,8,2021,3,2021,5,75,63,Sold,53,0.9056603773584906
 564 Shoreline,2021-03-17,2021-04-19,248000,residential,NA,5,9,2021,3,2021,4,76,33,Sold,52,1.153846153846154
 891 Vandenburg,2021-03-18,2021-04-30,256000,residential,NA,6,10,2021,3,2021,4,77,43,Sold,52,1.3846153846153846
 127 Dewfield,2021-04-05,NA,NA,residential,1,5,11,2021,4,NA,NA,95,44,Under Contract,54,1.1111111111111112
@@ -164,3 +164,4 @@ address,listingdate,saledate,amount,hometype,undercontract,inventory,listingcoun
 209 Stewarts Landing,2021-05-10,NA,NA,townhome,1,15,24,2021,5,NA,NA,130,9,Under Contract,51,3.5294117647058822
 606 Shoreline,2021-05-10,NA,NA,residential,1,16,25,2021,5,NA,NA,130,9,Under Contract,51,3.764705882352941
 407 Seymour,2021-05-12,NA,NA,residential,1,17,26,2021,5,NA,NA,132,7,Under Contract,51,4
+111 Bridgeville,2021-05-19,NA,NA,residential,NA,16,27,2021,5,NA,NA,139,0,For Sale,50,3.84

@@ -22,7 +22,7 @@ dupes %>%   filter(!is.na(lagtime)) %>%
             arrange(hometype,address) %>% 
             ggplot  + aes(x=fct_reorder(address,lagtime), y=lagtime, fill=hometype) + 
             geom_col() + 
-            labs(y="Time betweens sale and next listing (in months)", x="Address", fill="Type of home") + 
+            labs(y="Time between sale and next listing (in months)", x="Address", fill="Type of home") + 
             scale_y_continuous(breaks=12*1:10) +
             coord_flip()
 
