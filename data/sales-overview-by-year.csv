@@ -10,9 +10,9 @@ saleyear,hometype,status,soldtotal
 2020,residential,Sold,40
 2020,patio home,Sold,4
 2020,townhome,Sold,7
-2021,residential,Sold,15
+2021,residential,Sold,16
 2021,patio home,Sold,1
 2021,townhome,Sold,1
-NA,residential,Under Contract,12
+NA,residential,Under Contract,11
 NA,residential,For Sale,2
 NA,townhome,Under Contract,3
