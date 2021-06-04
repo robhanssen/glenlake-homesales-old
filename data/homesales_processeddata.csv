@@ -158,7 +158,7 @@ address,listingdate,saledate,amount,hometype,undercontract,inventory,listingcoun
 247 Bridgeport,2021-04-15,NA,NA,residential,1,10,17,2021,4,NA,NA,105,50,Under Contract,53,2.264150943396227
 143 Dewfield,2021-04-16,NA,NA,residential,1,11,18,2021,4,NA,NA,106,49,Under Contract,53,2.4905660377358494
 624 Cordelia,2021-04-21,NA,NA,residential,1,11,19,2021,4,NA,NA,111,44,Under Contract,54,2.444444444444444
-616 Marchbank,2021-04-22,2021-05-28,276500,residential,1,12,20,2021,4,2021,5,112,36,Sold,53,2.716981132075472
+616 Marchbank,2021-04-22,2021-05-28,276500,residential,NA,12,20,2021,4,2021,5,112,36,Sold,53,2.716981132075472
 286 Bridgeport,2021-04-23,NA,NA,residential,1,13,21,2021,4,NA,NA,113,42,Under Contract,53,2.9433962264150946
 214 Stewarts Landing,2021-04-23,NA,NA,townhome,1,14,22,2021,4,NA,NA,113,42,Under Contract,53,3.169811320754717
 745 Maya,2021-04-23,2021-05-24,282000,residential,NA,15,23,2021,4,2021,5,113,31,Sold,53,3.3962264150943398
