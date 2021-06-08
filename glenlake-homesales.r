@@ -52,6 +52,9 @@ homesales$status[is.na(homesales$saledate)] = "For Sale"
 homesales$status[is.na(homesales$saledate) & homesales$undercontract==1] = "Under Contract"
 homesales$status = factor(homesales$status, levels=c("Sold", "Under Contract", "For Sale"))
 
+# unconfirmed sales for researching
+homesales %>% filter(undercontract==1 & !is.na(saledate)) %>% select(address:hometype,undercontract) %>% write_csv("data/unconfirmed_sales.csv")
+
 # update source tag
 lastupdate = max(max(homesales$listingdate, na.rm=TRUE), max(homesales$saledate, na.rm=TRUE))
 source <- paste(source,"\nLast updated: ",format(today(), format="%b %d, %Y"),"\nLatest data: ", format(lastupdate, format="%b %d, %Y"), sep="" )
