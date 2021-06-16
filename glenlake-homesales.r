@@ -54,6 +54,8 @@ homesales$status = factor(homesales$status, levels=c("Sold", "Under Contract", "
 
 # unconfirmed sales for researching
 homesales %>% filter(undercontract==1 & !is.na(saledate)) %>% select(address:hometype,undercontract) %>% write_csv("data/unconfirmed_sales.csv")
+# unsold homes
+homesales %>% filter(is.na(saledate)) %>% select(address,listingdate,timeonmarket,hometype,undercontract) %>% arrange(-timeonmarket) %>% write_csv("data/unsold_homes.csv")
 
 # update source tag
 lastupdate = max(max(homesales$listingdate, na.rm=TRUE), max(homesales$saledate, na.rm=TRUE))
