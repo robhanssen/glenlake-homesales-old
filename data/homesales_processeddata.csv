@@ -163,7 +163,7 @@ address,listingdate,saledate,amount,hometype,undercontract,inventory,listingcoun
 214 Stewarts Landing,2021-04-23,2021-06-15,226900,townhome,1,14,22,2021,4,2021,6,113,53,Sold,53,3.169811320754717
 745 Maya,2021-04-23,2021-05-24,282000,residential,NA,15,23,2021,4,2021,5,113,31,Sold,53,3.3962264150943398
 209 Stewarts Landing,2021-05-10,2021-06-07,199000,townhome,NA,15,24,2021,5,2021,6,130,28,Sold,51,3.5294117647058822
-606 Shoreline,2021-05-10,NA,NA,residential,1,16,25,2021,5,NA,NA,130,39,Under Contract,51,3.764705882352941
+606 Shoreline,2021-05-10,2021-06-18,310000,residential,1,16,25,2021,5,2021,6,130,39,Sold,51,3.764705882352941
 407 Seymour,2021-05-12,NA,NA,residential,1,17,26,2021,5,NA,NA,132,37,Under Contract,51,4
 111 Bridgeville,2021-05-19,NA,NA,residential,NA,16,27,2021,5,NA,NA,139,30,For Sale,50,3.84
 156 Dewfield,2021-05-21,NA,NA,residential,NA,17,28,2021,5,NA,NA,141,28,For Sale,51,4
