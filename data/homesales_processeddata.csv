@@ -165,9 +165,9 @@ address,listingdate,saledate,amount,hometype,undercontract,inventory,listingcoun
 209 Stewarts Landing,2021-05-10,2021-06-07,199000,townhome,NA,15,24,2021,5,2021,6,130,28,Sold,51,3.5294117647058822
 606 Shoreline,2021-05-10,2021-06-18,310000,residential,1,16,25,2021,5,2021,6,130,39,Sold,51,3.764705882352941
 407 Seymour,2021-05-12,2021-06-30,381500,residential,NA,17,26,2021,5,2021,6,132,49,Sold,51,4
-111 Bridgeville,2021-05-19,NA,NA,residential,1,16,27,2021,5,NA,NA,139,50,Under Contract,50,3.84
-156 Dewfield,2021-05-21,NA,NA,residential,1,17,28,2021,5,NA,NA,141,48,Under Contract,51,4
+111 Bridgeville,2021-05-19,NA,NA,residential,1,16,27,2021,5,NA,NA,139,51,Under Contract,50,3.84
+156 Dewfield,2021-05-21,NA,NA,residential,1,17,28,2021,5,NA,NA,141,49,Under Contract,51,4
 749 Maya,2021-05-24,2021-05-24,240000,residential,NA,17,29,2021,5,2021,5,144,0,Sold,52,3.9230769230769234
 596 Shoreline,2021-06-07,2021-06-30,251500,residential,NA,12,30,2021,6,2021,6,158,23,Sold,57,2.526315789473684
-418 Seymour,2021-06-30,NA,NA,residential,NA,5,31,2021,6,NA,NA,181,8,For Sale,62,0.967741935483871
-830 Culverhouse,2021-07-07,NA,NA,residential,NA,4,32,2021,7,NA,NA,188,1,For Sale,62,0.7741935483870968
+418 Seymour,2021-06-30,NA,NA,residential,NA,5,31,2021,6,NA,NA,181,9,For Sale,62,0.967741935483871
+830 Culverhouse,2021-07-07,NA,NA,residential,NA,4,32,2021,7,NA,NA,188,2,For Sale,62,0.7741935483870968
