@@ -170,4 +170,5 @@ address,listingdate,saledate,amount,hometype,undercontract,inventory,listingcoun
 749 Maya,2021-05-24,2021-05-24,240000,residential,NA,17,29,2021,5,2021,5,144,0,Sold,52,3.9230769230769234
 596 Shoreline,2021-06-07,2021-06-30,251500,residential,NA,12,30,2021,6,2021,6,158,23,Sold,57,2.526315789473684
 418 Seymour,2021-06-30,NA,NA,residential,1,5,31,2021,6,NA,NA,181,20,Under Contract,62,0.967741935483871
-830 Culverhouse,2021-07-07,NA,NA,residential,NA,4,32,2021,7,NA,NA,188,13,For Sale,62,0.7741935483870968
+830 Culverhouse,2021-07-07,NA,NA,residential,1,4,32,2021,7,NA,NA,188,13,Under Contract,62,0.7741935483870968
+275 Stewarts Landing,2021-07-15,NA,NA,patio home,1,5,33,2021,7,NA,NA,196,5,Under Contract,61,0.9836065573770492
