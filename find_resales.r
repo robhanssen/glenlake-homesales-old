@@ -22,26 +22,26 @@ dupes <- homesales %>%
             ungroup() %>%
             select(address:hometype, lagtime, streetname)
 
-caption = source
+caption <- source
 
 dupes %>%   filter(!is.na(lagtime)) %>% 
             arrange(lagtime) %>% mutate(addresslabel = paste0(address, " (",round(lagtime,1),")")) %>%
-            ggplot  + aes(x=fct_reorder(addresslabel,lagtime), y=lagtime, fill=hometype) + 
+            ggplot  + aes(x = fct_reorder(addresslabel, -lagtime), y = lagtime, fill = hometype) + 
             geom_bar(stat="identity") + 
             labs(y="Time between sale and next listing (in months)", x="Address (relisting time in months)", fill="Type of home", caption=caption) + 
             scale_y_continuous(breaks=12*1:10) +
             coord_flip()
 
-ggsave("graphs/home-resale-time.pdf", width=8, height=11)
+ggsave("graphs/home-resale-time.pdf", width = 8, height = 11)
 
-minsaleyear = with(homesales, min(saleyear, na.rm=TRUE))
-maxsaleyear = with(homesales, max(saleyear, na.rm=TRUE))
+minsaleyear = with(homesales, min(saleyear, na.rm = TRUE))
+maxsaleyear = with(homesales, max(saleyear, na.rm = TRUE))
 
-homesales %>% inner_join(hometypes) %>% 
-              mutate(streetname = substr(address, 5, 100), 
+homesales %>% inner_join(hometypes) %>%
+              mutate(streetname = substr(address, 5, 100),
                      streetname= ifelse(is.na(hometypeAB) | streetname=="Grays Harbor", 
-                                          streetname, 
-                                          paste(streetname, hometypeAB))) %>% 
+                                          streetname,
+                                          paste(streetname, hometypeAB))) %>%
                 group_by(streetname) %>% 
                 summarize(countbystreet = n()) %>% ungroup() %>% 
                 right_join(glenlakehomes) %>% mutate(countbystreet = ifelse(is.na(countbystreet),0,countbystreet)) %>%
