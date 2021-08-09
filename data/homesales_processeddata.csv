@@ -175,3 +175,4 @@ address,listingdate,saledate,amount,hometype,undercontract,inventory,listingcoun
 124 Dewfield,2021-07-22,NA,NA,residential,1,6,34,2021,7,NA,NA,203,18,Under Contract,61,1.180327868852459
 227 Stewarts Landing,2021-08-05,NA,NA,patio home,1,6,35,2021,8,NA,NA,217,4,Under Contract,59,1.2203389830508475
 219 Bridgeport,2021-08-06,NA,NA,residential,NA,7,36,2021,8,NA,NA,218,3,For Sale,59,1.423728813559322
+556 Shoreline,2021-08-07,NA,NA,residential,NA,8,37,2021,8,NA,NA,219,2,For Sale,58,1.6551724137931034
