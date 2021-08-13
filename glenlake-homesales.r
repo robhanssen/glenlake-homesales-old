@@ -392,9 +392,6 @@ ggsave("graphs/average-homesales-per-12-months.pdf")
 homesales %>% 
         filter(listingdate > yearafterfirstlist) %>% 
         rename(date=listingdate) %>%
-                # group_by(listingyear,listingmonth) %>% 
-                # summarise(avinvtime = mean(inventorytime, na.rm=TRUE)) %>% 
-                # mutate(date=as.Date(paste(listingyear,"-",listingmonth,"-01", sep=""), format="%Y-%m-%d")) %>%
         ggplot() +
                 aes(x = date, y = inventorytime) +
                 geom_hline(yintercept = 6, lty = 2, color = "red") +
@@ -413,19 +410,6 @@ ggsave("graphs/average-inventory-time.pdf")
 
 # dump final data file
 write_csv(homesales, "data/homesales_processeddata.csv")
-
-# alldates <- tibble(listingdate = seq(yearafterfirstlist, today(), by="days"), yearlysales=0) %>% mutate(year=year(listingdate),month=month(listingdate))
-
-# for (i in 1:nrow(alldates))
-# {
-#         ldt = as.Date(alldates$listingdate[i])
-#         x <- saledate %>% filter( ldt - listingdate >= 0 & ldt - listingdate < 365) %>% summarise(count=n())
-#         alldates$yearlysales[i] =x$count[1]
-# }
-
-# alldates %>% left_join(homesales %>% select(listingdate, inventory)) %>% filter(!is.na(inventory)) %>% 
-#                 group_by(year, month) %>% summarise(yearlysalesav = mean(yearlysales),monthlyinvav=mean(inventory)) %>% 
-#                 ggplot() + aes( as.Date(paste0(year,"-",month,"-01")), monthlyinvav/yearlysalesav*12) +geom_point() + geom_smooth(method="loess")
 
 homesales %>%
         select(address, listingdate, saledate) %>% 
