@@ -12,11 +12,12 @@ library(tidyverse)
 library(lubridate)
 source("config.r")
 library(zoo)
+theme_set(theme_light())
 #
 # read datafile
 #
 homesales <- read_csv(homesale_file, comment="#",
-        col_types = cols(listingdate = col_date(format = "%m-%d-%Y"), 
+        col_types = cols(listingdate = col_date(format = "%m-%d-%Y"),
                          saledate = col_date(format = "%m-%d-%Y")
                          )
                     ) %>% 
@@ -81,14 +82,14 @@ summation %>% mutate(dayofyear = yday(listingdate), year=year(listingdate), date
                 ggplot() + aes(date, inventory, color=factor(year)) + geom_line() + geom_point() + scale_y_continuous(limits=c(0,maxinventory)) +
                 scale_x_date(date_break="3 months",date_minor_breaks="1 month",date_labels = "%b %d") +
                 xlab("Date") + ylab("Current sale inventory") + ggtitle("Inventory of homes for sale in Glen Lake") + labs(color = "Year", caption=source)
-ggsave("graphs/home-inventory.pdf")
+ggsave("graphs/home-inventory.pdf", width = 11, height = 8)
 
 
 summation %>% mutate(dayofyear = yday(listingdate), year=year(listingdate), date=dayofyear-1+as.Date("2020-01-01", format="%Y-%m-%d")) %>% ungroup() %>%
                 ggplot() + aes(listingdate, inventory, color=factor(year)) + geom_line() + geom_point() + scale_y_continuous(limits=c(0,maxinventory)) +
                 scale_x_date(date_break="1 year",date_minor_breaks="3 month",date_labels = "%b %Y") +
                 xlab("Date") + ylab("Current sale inventory") + ggtitle("Inventory of homes for sale in Glen Lake") + labs(color = "Year", caption=source) + theme_light()
-ggsave("graphs/home-inventory-fullrange.pdf")
+ggsave("graphs/home-inventory-fullrange.pdf", width = 11, height = 8)
 
 # listed per year
 yearoverview <- homesales %>% group_by(listingyear,hometype, status) %>% summarise(listedtotal = n())
@@ -96,7 +97,7 @@ yearoverview %>% ggplot() + aes(x=factor(listingyear), y=listedtotal, fill=statu
                     xlab("Year of listing") + ylab("Homes listed") + ggtitle("Number of homes listed in Glen Lake") + labs(fill = "Sales status", caption=source) +
                     geom_text(aes(label=listedtotal), position=position_dodge(width=0.9), vjust=-1) 
 
-ggsave("graphs/listing-overview-by-year.pdf")
+ggsave("graphs/listing-overview-by-year.pdf", width = 11, height = 8)
 write_csv(yearoverview, "data/listing-overview-by-year.csv")
 
 # sold per year
