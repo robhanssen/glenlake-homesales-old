@@ -368,8 +368,8 @@ homesales$inventorytime <- homesales$inventory / homesales$yearlysales * 12
 homesales$inventorytime[homesales$yearlysales == 0] <- NA
 
 # define first sale + 1 year
-yearafterfirstlist <- min(homesales$listingdate, na.rm=TRUE) + years(1)
-lastdate <- max(homesales$listingdate, na.rm=TRUE) - months(6)
+yearafterfirstlist <- min(homesales$listingdate, na.rm = TRUE) + years(1)
+lastdate <- max(homesales$listingdate, na.rm = TRUE) - months(6)
 
 homesales %>% 
                 filter(listingdate > yearafterfirstlist) %>%
@@ -419,9 +419,9 @@ homesales %>%
                dayofyear = yday(date), 
                pdate = dayofyear + as.Date("2020-01-01"),
                y = ifelse(datetype == "listingdate", 1, -1)
-               ) %>% 
+               ) %>%
         group_by(year, datetype) %>%
-        summarize(pdate = pdate, 
+        summarize(pdate = pdate,
                   countup = cumsum(y),
                   countup = abs(countup)
                   ) %>%
