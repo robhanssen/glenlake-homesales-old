@@ -389,9 +389,9 @@ homesales %>%
 
 ggsave("graphs/average-homesales-per-12-months.pdf")
 
-homesales %>% 
+homesales %>%
         filter(listingdate > yearafterfirstlist) %>% 
-        rename(date=listingdate) %>%
+        rename(date = listingdate) %>%
         ggplot() +
                 aes(x = date, y = inventorytime) +
                 geom_hline(yintercept = 6, lty = 2, color = "red") +
