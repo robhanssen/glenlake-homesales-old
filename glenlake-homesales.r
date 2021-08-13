@@ -355,7 +355,7 @@ ggsave("graphs/sales-price-distribution.pdf")
 
 homesales$yearlysales <- 0
 
-for (i in 1:nrow(homesales)) {
+for (i in seq_len(nrow(homesales))) {
         ldt <- as.Date(homesales$listingdate[i])
         x <- homesales %>%
                 filter(ldt - saledate >= 0 & ldt - saledate < 365) %>%
