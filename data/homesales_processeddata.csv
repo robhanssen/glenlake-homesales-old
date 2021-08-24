@@ -178,4 +178,5 @@ address,listingdate,saledate,amount,hometype,undercontract,inventory,listingcoun
 556 Shoreline,2021-08-07,NA,NA,residential,NA,8,37,2021,8,NA,NA,219,17,For Sale,58,1.6551724137931034
 601 Shoreline,2021-08-11,NA,NA,residential,1,9,38,2021,8,NA,NA,223,13,Under Contract,58,1.8620689655172415
 754 Maya,2021-08-11,NA,NA,residential,1,10,39,2021,8,NA,NA,223,13,Under Contract,58,2.0689655172413794
-394 Shoreline,2021-08-19,NA,NA,residential,NA,11,40,2021,8,NA,NA,231,5,For Sale,56,2.357142857142857
+394 Shoreline,2021-08-19,NA,NA,residential,1,11,40,2021,8,NA,NA,231,5,Under Contract,56,2.357142857142857
+908 Palmdale,2021-08-24,NA,NA,residential,NA,12,41,2021,8,NA,NA,236,0,For Sale,55,2.618181818181818
