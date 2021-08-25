@@ -43,6 +43,13 @@ ggsave("graphs/home-resale-time.pdf", width = 8, height = 11)
 
 minsaleyear <- with(homesales, min(saleyear, na.rm = TRUE))
 maxsaleyear <- with(homesales, max(saleyear, na.rm = TRUE))
+data_time_length <- with(homesales,
+                     time_length(
+                                 difftime(max(listingdate, na.rm = TRUE),
+                                 min(listingdate, na.rm = TRUE)),
+                                 unit = "year"
+                                 )
+                     )
 
 homesales %>% 
        inner_join(hometypes) %>%
@@ -56,7 +63,9 @@ homesales %>%
        ungroup() %>%
        right_join(glenlakehomes) %>%
        mutate(countbystreet = ifelse(is.na(countbystreet), 0, countbystreet)) %>%
-       mutate(turnover = countbystreet / numberofhomes) %>%
+       mutate(turnover = countbystreet / numberofhomes,
+              residencetime = data_time_length / turnover 
+               ) %>%
        mutate(homecount = cut(numberofhomes,
                               breaks = c(0, 10, 20, 100), 
                               labels = c("10 homes or less per street",
@@ -105,3 +114,19 @@ hometurnover %>%
               theme(legend.position = "none")
 
 ggsave("graphs/turnover-by-street.pdf", width=11, height=8)
+
+hometurnover %>%
+       ggplot +
+              aes(x = fct_reorder(streetname, residencetime), y = residencetime, fill = turnoverwarning) +
+              #scale_y_continuous(labels = comma_format(), breaks = 1:10) + 
+              geom_col() +
+              facet_wrap(~ homecount, scale = "free_y") +
+              ggtitle("Residence time by street") +
+              labs(x="Street", y = "Average residence time (in years)") +
+              #geom_hline(yintercept = turnoverlimits, lty = 2, color = "gray50") +                
+              scale_fill_manual(values=colorset) +
+              coord_flip() +
+              theme_light() +
+              theme(legend.position = "none")
+
+ggsave("graphs/residencetime-by-street.pdf", width=11, height=8)
