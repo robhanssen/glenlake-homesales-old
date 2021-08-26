@@ -1,14 +1,13 @@
 address,listingdate,timeonmarket,hometype,undercontract
-111 Bridgeville,2021-05-19,98,residential,1
-418 Seymour,2021-06-30,56,residential,1
-830 Culverhouse,2021-07-07,49,residential,1
-275 Stewarts Landing,2021-07-15,41,patio home,1
-124 Dewfield,2021-07-22,34,residential,1
-227 Stewarts Landing,2021-08-05,20,patio home,1
-219 Bridgeport,2021-08-06,19,residential,1
-556 Shoreline,2021-08-07,18,residential,NA
-601 Shoreline,2021-08-11,14,residential,1
-754 Maya,2021-08-11,14,residential,1
-394 Shoreline,2021-08-19,6,residential,1
-908 Palmdale,2021-08-24,1,residential,NA
-211 Bridgeport,2021-08-25,0,residential,NA
+418 Seymour,2021-06-30,57,residential,1
+830 Culverhouse,2021-07-07,50,residential,1
+275 Stewarts Landing,2021-07-15,42,patio home,1
+124 Dewfield,2021-07-22,35,residential,1
+227 Stewarts Landing,2021-08-05,21,patio home,1
+219 Bridgeport,2021-08-06,20,residential,1
+556 Shoreline,2021-08-07,19,residential,NA
+601 Shoreline,2021-08-11,15,residential,1
+754 Maya,2021-08-11,15,residential,1
+394 Shoreline,2021-08-19,7,residential,1
+908 Palmdale,2021-08-24,2,residential,NA
+211 Bridgeport,2021-08-25,1,residential,NA
