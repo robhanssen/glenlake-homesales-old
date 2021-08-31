@@ -369,7 +369,7 @@ homesales$inventorytime[homesales$yearlysales == 0] <- NA
 
 # define first sale + 1 year
 yearafterfirstlist <- min(homesales$listingdate, na.rm = TRUE) + years(1)
-lastdate <- max(homesales$listingdate, na.rm = TRUE) - months(6)
+lastdate <- max(homesales$listingdate, na.rm = TRUE) %m-% months(6)
 
 homesales %>% 
                 filter(listingdate > yearafterfirstlist) %>%
