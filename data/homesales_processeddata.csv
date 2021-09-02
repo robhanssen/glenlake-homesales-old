@@ -172,7 +172,7 @@ address,listingdate,saledate,amount,hometype,undercontract,inventory,listingcoun
 418 Seymour,2021-06-30,NA,NA,residential,1,5,31,2021,6,NA,NA,181,64,Under Contract,62,0.967741935483871
 830 Culverhouse,2021-07-07,2021-08-25,360000,residential,NA,4,32,2021,7,2021,8,188,49,Sold,62,0.7741935483870968
 275 Stewarts Landing,2021-07-15,NA,NA,patio home,1,5,33,2021,7,NA,NA,196,49,Under Contract,61,0.9836065573770492
-124 Dewfield,2021-07-22,NA,NA,residential,1,6,34,2021,7,NA,NA,203,42,Under Contract,61,1.180327868852459
+124 Dewfield,2021-07-22,2021-09-01,318900,residential,1,6,34,2021,7,2021,9,203,41,Sold,61,1.180327868852459
 227 Stewarts Landing,2021-08-05,2021-09-01,235000,patio home,1,6,35,2021,8,2021,9,217,27,Sold,59,1.2203389830508475
 219 Bridgeport,2021-08-06,2021-08-27,371000,residential,NA,7,36,2021,8,2021,8,218,21,Sold,59,1.423728813559322
 556 Shoreline,2021-08-07,NA,NA,residential,NA,8,37,2021,8,NA,NA,219,26,For Sale,58,1.6551724137931034
