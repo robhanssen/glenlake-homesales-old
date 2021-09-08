@@ -1,9 +1,10 @@
 address,listingdate,timeonmarket,hometype,undercontract
-418 Seymour,2021-06-30,69,residential,1
-275 Stewarts Landing,2021-07-15,54,patio home,1
-556 Shoreline,2021-08-07,31,residential,NA
-601 Shoreline,2021-08-11,27,residential,1
-754 Maya,2021-08-11,27,residential,1
-394 Shoreline,2021-08-19,19,residential,1
-908 Palmdale,2021-08-24,14,residential,1
-211 Bridgeport,2021-08-25,13,residential,NA
+418 Seymour,2021-06-30,70,residential,1
+275 Stewarts Landing,2021-07-15,55,patio home,1
+556 Shoreline,2021-08-07,32,residential,NA
+601 Shoreline,2021-08-11,28,residential,1
+754 Maya,2021-08-11,28,residential,1
+394 Shoreline,2021-08-19,20,residential,1
+908 Palmdale,2021-08-24,15,residential,1
+211 Bridgeport,2021-08-25,14,residential,NA
+522 Inner Banks,2021-09-07,1,residential,NA

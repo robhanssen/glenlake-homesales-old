@@ -130,3 +130,21 @@ hometurnover %>%
               theme(legend.position = "none")
 
 ggsave("graphs/residencetime-by-street.pdf", width=11, height=8)
+
+# market value
+
+homesales %>%
+       mutate(year = saleyear) %>%
+       group_by(year, hometype) %>%
+       summarize(marketvalue = sum(amount, na.rm = TRUE), .groups = "drop") %>%
+       ggplot + 
+              aes(x = year, y = marketvalue / 1e3, fill = factor(hometype, levels = c("townhome", "patio home", "residential"))) + 
+              geom_col() +
+              scale_y_continuous(labels = dollar_format()) + 
+              labs(title = "Glen Lake total market value",
+                   x = "Year",
+                   y = "Total market value (in thousands of USD)",
+                   fill = "Home type",
+                   caption = source)
+
+ggsave("graphs/market-value.pdf", width=11, height=8)
