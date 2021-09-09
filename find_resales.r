@@ -211,6 +211,19 @@ homesales %>%
 
 ggsave("graphs/market-value-by-dayofyear.pdf", width=11, height=8)
 
+
+this_year = year(today())
+
+lwr <- modeldata %>% 
+       filter(saleyear == this_year, dayofyear == max(dayofyear)) %>%
+       pull(.lower) / 1e6
+
+upr <- modeldata %>% 
+       filter(saleyear == this_year, dayofyear == max(dayofyear)) %>%
+       pull(.upper) / 1e6
+
+subtitle = paste0("Expected value for ", this_year, " is between $", round(lwr, 1), "M and $", round(upr, 1),"M.")
+
 valuebyyear %>%
        filter(marketvalue == max(marketvalue)) %>%
        mutate(predicted = ifelse(saleyear != year(today()), TRUE, FALSE)) %>%
@@ -218,9 +231,10 @@ valuebyyear %>%
               aes(x = saleyear, y = marketvalue, fill = predicted) +
               geom_col() + 
               geom_errorbar(aes(y = .fitted, ymin = .lower, ymax = .upper, fill = TRUE), width = .2, data=modeldata %>% filter(dayofyear == max(dayofyear))) + 
-              geom_point(aes(x = saleyear, y = .fitted, fill = TRUE), data = modeldata %>% filter(dayofyear == max(dayofyear))) + 
+              # geom_point(aes(x = saleyear, y = .fitted, fill = TRUE), data = modeldata %>% filter(dayofyear == max(dayofyear))) + 
               scale_y_continuous(labels = scales::dollar_format()) + 
               labs(title = "Glen Lake total market value expectation",
+                   subtitle = subtitle,  
                    x = "Year",
                    y = "Total market value (in USD)",
                    fill = "Predicted value",
