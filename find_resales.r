@@ -145,6 +145,87 @@ homesales %>%
                    x = "Year",
                    y = "Total market value (in thousands of USD)",
                    fill = "Home type",
-                   caption = source)
+                   caption = source)  + 
+       annotate("text", x = maxyear, y = 1000, label = paste(maxyear, "YTD", sep = "\n"))
 
 ggsave("graphs/market-value.pdf", width=11, height=8)
+
+
+marketmodels <- function(tbl) {
+       lm(marketvalue ~ dayofyear, data = tbl)
+}
+
+valuebyyear <- homesales %>% 
+       filter(!is.na(saleyear)) %>%
+       mutate(dayofyear = yday(saledate)) %>%
+       arrange(saledate) %>%
+       group_by(saleyear) %>%
+       mutate(marketvalue = cumsum(amount)) %>% select(saledate, saleyear, dayofyear, marketvalue)
+
+valuebyyear_model <- valuebyyear %>%
+       nest() %>% 
+       mutate(marketmodel = map(data, marketmodels))
+
+augmentdata <- function(tbl) {
+       tbl %>% broom::augment(
+                            newdata = tibble(dayofyear = c(1,365)),
+                            interval = "confidence"
+                            )
+}
+
+modeldata <-
+       valuebyyear_model %>%
+       mutate(modeldata = map(marketmodel,
+                           augmentdata)
+                           ) %>%
+       unnest(modeldata)
+
+modelinfo <-
+    valuebyyear_model %>%
+    mutate(modelinfo = map(marketmodel, broom::glance)) %>%
+    unnest(modelinfo)
+
+modelparameters <-
+    valuebyyear_model %>%
+    mutate(modelparameters = map(marketmodel, broom::tidy)) %>%
+    unnest(modelparameters)
+
+homesales %>%
+       select(saledate, saleyear, amount) %>%
+       filter(!is.na(saledate)) %>%
+       arrange(saledate)  %>%
+       mutate(dayofyear = yday(saledate)) %>%
+       group_by(saleyear) %>%
+       mutate(marketvalue = cumsum(amount)) %>% ungroup() %>%
+       ggplot + 
+              aes(x = dayofyear, y = marketvalue, color = factor(saleyear)) + 
+              geom_line() +
+              scale_y_continuous(labels = dollar_format()) + 
+              labs(title = "Glen Lake total market value",
+                   x = "Day of year",
+                   y = "Total market value (in thousands of USD)",
+                   color = "Year",
+                   caption = source) + 
+       scale_color_discrete()  +
+       geom_line(data = modeldata, aes(y=.fitted), lty = 2)
+
+ggsave("graphs/market-value-by-dayofyear.pdf", width=11, height=8)
+
+valuebyyear %>%
+       filter(marketvalue == max(marketvalue)) %>%
+       mutate(predicted = ifelse(saleyear != year(today()), TRUE, FALSE)) %>%
+       ggplot + 
+              aes(x = saleyear, y = marketvalue, fill = predicted) +
+              geom_col() + 
+              geom_errorbar(aes(y = .fitted, ymin = .lower, ymax = .upper, fill = TRUE), width = .2, data=modeldata %>% filter(dayofyear == max(dayofyear))) + 
+              geom_point(aes(x = saleyear, y = .fitted, fill = TRUE), data = modeldata %>% filter(dayofyear == max(dayofyear))) + 
+              scale_y_continuous(labels = scales::dollar_format()) + 
+              labs(title = "Glen Lake total market value expectation",
+                   x = "Year",
+                   y = "Total market value (in USD)",
+                   fill = "Predicted value",
+                   caption = source) +
+       annotate("text", x = maxyear, y = 1e6, label = paste(maxyear, "Prediction", sep = "\n")) + 
+       theme(legend.position = "none")
+
+ggsave("graphs/market-value-prediction.pdf", width=11, height=8)
