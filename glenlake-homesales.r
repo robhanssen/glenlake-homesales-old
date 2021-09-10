@@ -306,7 +306,7 @@ salecounter %>%
                 labs(color = "Year", caption = source) +
                 ggtitle("Glen Lake cumulative numbers of home sales by year")
 
-ggsave("graphs/sales-by-dayofyear.pdf")
+# ggsave("graphs/sales-by-dayofyear.pdf")
 
 
 # sales price by hometype
