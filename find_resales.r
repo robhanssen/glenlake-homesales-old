@@ -132,18 +132,18 @@ hometurnover %>%
 ggsave("graphs/residencetime-by-street.pdf", width=11, height=8)
 
 # market value
-
+maxyear = 2021
 homesales %>%
        mutate(year = saleyear) %>%
        group_by(year, hometype) %>%
        summarize(marketvalue = sum(amount, na.rm = TRUE), .groups = "drop") %>%
        ggplot + 
-              aes(x = year, y = marketvalue / 1e3, fill = factor(hometype, levels = c("townhome", "patio home", "residential"))) + 
+              aes(x = year, y = marketvalue, fill = factor(hometype, levels = c("townhome", "patio home", "residential"))) + 
               geom_col() +
-              scale_y_continuous(labels = dollar_format()) + 
+              scale_y_continuous(labels = dollar_format(scale = 1e-3, prefix = "$", suffix="K")) + 
               labs(title = "Glen Lake total market value",
                    x = "Year",
-                   y = "Total market value (in thousands of USD)",
+                   y = "Total market value (in USD)",
                    fill = "Home type",
                    caption = source)  + 
        annotate("text", x = maxyear, y = 1000, label = paste(maxyear, "YTD", sep = "\n"))
@@ -194,10 +194,10 @@ valuebyyear %>%
        ggplot +
               aes(x = dayofyear, y = marketvalue, color = factor(saleyear)) + 
               geom_line() +
-              scale_y_continuous(labels = dollar_format()) + 
+              scale_y_continuous(labels = dollar_format(scale = 1e-3, prefix = "$", suffix = "K")) + 
               labs(title = "Glen Lake total market value",
                    x = "Day of year",
-                   y = "Total market value (in thousands of USD)",
+                   y = "Total market value (in USD)",
                    color = "Year",
                    caption = source) +
        scale_color_discrete()  +
@@ -227,7 +227,7 @@ valuebyyear %>%
               aes(x = saleyear, y = marketvalue, fill = predicted) +
               geom_col() + 
               geom_errorbar(aes(y = .fitted, ymin = .lower, ymax = .upper, fill = TRUE), width = .2, data=modeldata %>% filter(dayofyear == max(dayofyear))) +
-              scale_y_continuous(labels = scales::dollar_format()) + 
+              scale_y_continuous(labels = scales::dollar_format(scale = 1e-3, prefix = "$", suffix = "K")) + 
               labs(title = "Glen Lake total market value expectation",
                    subtitle = subtitle,
                    x = "Year",
