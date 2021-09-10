@@ -434,3 +434,4 @@ homesales %>%
 ggsave("graphs/listings-and-sales-by-date.pdf", height = 8, width = 11)
 
 source("find_resales.r")
+source("predictions.r")

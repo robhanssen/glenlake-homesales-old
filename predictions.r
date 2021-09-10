@@ -120,7 +120,7 @@ valuebyyear %>%
        annotate("text", x = this_year, y = 1e6, label = paste(this_year, "Prediction", sep = "\n")) + 
        theme(legend.position = "none")
 
-ggsave("graphs/market-value-prediction.pdf", width=11, height=8)
+ggsave("predictions/market-value-prediction.pdf", width = 11, height = 8)
 
 
 ### number of homesales by year
@@ -206,7 +206,7 @@ salecounter %>%
        theme(legend.position = "none") + 
        theme_light()
 
-ggsave("graphs/homesales-prediction.pdf", width = 11, height = 8)
+ggsave("predictions/homesales-prediction.pdf", width = 11, height = 8)
 
 
 
