@@ -89,6 +89,15 @@ homesales %>%
         arrange(-timeonmarket) %>%
         write_csv("data/unsold_homes.csv")
 
+# homes on market
+homesales %>%
+        filter(is.na(saledate), is.na(undercontract)) %>%
+        select(address, listingdate, timeonmarket, hometype, undercontract) %>%
+        arrange(-timeonmarket) %>%
+        write_csv("data/homes_on_market.csv")
+
+
+
 # update source tag
 lastupdate <- max(
                 max(homesales$listingdate, na.rm = TRUE),
