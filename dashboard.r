@@ -73,7 +73,8 @@ saleprice <-
                            labels = scales::dollar_format(scale = 1 / 1000, suffix = "K")) +
         labs(x = "Year",
              y = "Median sale price (in $)",
-             title = "Median sale price by year") +
+             title = "Median sale price by year",
+             caption = paste0("Last updated on ", max_date)) +
         scale_fill_manual(values = colorscale) +
         theme(legend.position = "none")
 
@@ -100,8 +101,8 @@ averageinventorytime <-
         geom_col(alpha = alpha) +
         labs(x = "Year",
              y = "Average Inventory Time (in months)",
-             title = "Average Inventory Time by year",
-             caption = paste0("Last updated on ", max_date)) +
+             title = "Average Inventory Time by year"
+             ) +
         # annotate("label", x = "2017", y = .5, label = "NO\nDATA") +
         scale_fill_manual(values = colorscale) +
         annotate("label",
