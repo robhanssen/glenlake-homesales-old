@@ -11,6 +11,7 @@ homesales <-
             saleyear = factor(saleyear))
 
 max_date <- max(max(homesales$listingdate), max(homesales$saledate, na.rm = TRUE))
+max_year <- factor(year(max_date))
 max_date <- format(max_date, format = "%b %d, %Y")
 
 num_years <- homesales %>% distinct(listingyear) %>% nrow(.)
@@ -28,7 +29,8 @@ homeslisted <-
              y = "Homes listed",
              title = "Number of homes listed by year") +
         scale_fill_manual(values = colorscale) +
-        theme(legend.position = "none")
+        theme(legend.position = "none") +
+        annotate("text", x = max_year, y = 2, label = "YTD")
 
 homessold <-
     homesales %>%
@@ -42,7 +44,8 @@ homessold <-
              y = "Homes sold",
              title = "Number of homes sold by year") +
         scale_fill_manual(values = colorscale) +
-        theme(legend.position = "none")
+        theme(legend.position = "none") +
+        annotate("text", x = max_year, y = 2, label = "YTD")        
 
 timeonmarket <-
     homesales %>%
@@ -66,7 +69,8 @@ saleprice <-
     ggplot +
         aes(x = saleyear, y = saleprice, fill = saleyear) +
         geom_col(alpha = alpha) +
-        scale_y_continuous(labels = scales::dollar_format(scale = 1 / 1000, suffix = "K")) +
+        scale_y_continuous(breaks = 50000 * 0:20, 
+                           labels = scales::dollar_format(scale = 1 / 1000, suffix = "K")) +
         labs(x = "Year",
              y = "Median sale price (in $)",
              title = "Median sale price by year") +
@@ -81,8 +85,8 @@ averageinventorysize <-
         aes(x = listingyear, y = inventory, fill = listingyear) +
         geom_col(alpha = alpha) +
         labs(x = "Year",
-             y = "Average number of homes on the market",
-             title = "Average inventory size") +
+             y = "Average number of homes for sale",
+             title = "Average  number of homes for sale") +
         scale_fill_manual(values = colorscale) +
         theme(legend.position = "none")
 
@@ -103,7 +107,7 @@ averageinventorytime <-
         annotate("label",
                  x = "2017",
                  y = 6,
-                 label = "buyer's\nmarket\n\nseller's\n market") +
+                 label = "buyer's\nmarket\n\nseller's\nmarket") +
         geom_hline(yintercept = 6, lty = 3) +
         theme(legend.position = "none")
 
