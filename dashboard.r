@@ -4,7 +4,6 @@ library(patchwork)
 theme_set(theme_light())
 
 alpha <- .5
-color <- "darkgreen"
 
 homesales <-
     read_csv("data/homesales_processeddata.csv") %>%
@@ -14,13 +13,12 @@ homesales <-
 max_date <- max(max(homesales$listingdate), max(homesales$saledate, na.rm = TRUE))
 max_date <- format(max_date, format = "%b %d, %Y")
 
-num_years = homesales %>% distinct(listingyear) %>% nrow(.)
+num_years <- homesales %>% distinct(listingyear) %>% nrow(.)
 
 colorscale <- scales::seq_gradient_pal("blue", "red", "Lab")(seq(0, 1, length.out = num_years))
 
-
 homeslisted <-
-    homesales %>% 
+    homesales %>%
     group_by(listingyear) %>%
     summarize(count = n()) %>%
     ggplot +
@@ -28,7 +26,7 @@ homeslisted <-
         geom_col(alpha = alpha) +
         labs(x = "Year",
              y = "Homes listed",
-             title = "Number of homes listed by year") + 
+             title = "Number of homes listed by year") +
         scale_fill_manual(values = colorscale) +
         theme(legend.position = "none")
 
@@ -61,14 +59,14 @@ timeonmarket <-
         theme(legend.position = "none")
 
 saleprice <-
-    homesales %>% 
+    homesales %>%
     filter(!is.na(saleyear)) %>%
     group_by(saleyear) %>%
     summarize(saleprice = median(amount), na.rm = TRUE) %>%
     ggplot +
         aes(x = saleyear, y = saleprice, fill = saleyear) +
         geom_col(alpha = alpha) +
-        scale_y_continuous(labels = scales::dollar_format(scale = 1/1000, suffix = "K")) + 
+        scale_y_continuous(labels = scales::dollar_format(scale = 1 / 1000, suffix = "K")) +
         labs(x = "Year",
              y = "Median sale price (in $)",
              title = "Median sale price by year") +
@@ -76,7 +74,7 @@ saleprice <-
         theme(legend.position = "none")
 
 averageinventorysize <-
-    homesales %>% 
+    homesales %>%
     group_by(listingyear) %>%
     summarize(inventory = mean(inventory)) %>%
     ggplot +
@@ -85,11 +83,11 @@ averageinventorysize <-
         labs(x = "Year",
              y = "Average number of homes on the market",
              title = "Average inventory size") +
-        scale_fill_manual(values = colorscale) + 
+        scale_fill_manual(values = colorscale) +
         theme(legend.position = "none")
 
 averageinventorytime <-
-    homesales %>% 
+    homesales %>%
     group_by(listingyear) %>%
     summarize(inventorytime = median(inventorytime, na.rm = TRUE)) %>%
     mutate(inventorytime = ifelse(listingyear == "2017", 0, inventorytime)) %>%
@@ -99,9 +97,14 @@ averageinventorytime <-
         labs(x = "Year",
              y = "Average Inventory Time (in months)",
              title = "Average Inventory Time by year",
-             caption = paste0("Last updated on ", max_date)) + 
+             caption = paste0("Last updated on ", max_date)) +
         annotate("label", x = "2017", y = .5, label = "NO\nDATA") +
         scale_fill_manual(values = colorscale) +
+        annotate("label",
+                 x = "2017",
+                 y = 6,
+                 label = "buyer's\nmarket\n\nseller's\n market") +
+        geom_hline(yintercept = 6, lty = 3) +
         theme(legend.position = "none")
 
 overview <- (homeslisted + homessold + saleprice) / (timeonmarket + averageinventorysize + averageinventorytime)
