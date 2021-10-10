@@ -1,8 +1,9 @@
 address,listingdate,timeonmarket,hometype,undercontract
-754 Maya,2021-08-11,50,residential,1
-908 Palmdale,2021-08-24,37,residential,1
-211 Bridgeport,2021-08-25,36,residential,NA
-522 Inner Banks,2021-09-07,23,residential,1
-520 Shoreline,2021-09-09,21,residential,1
-544 Shoreline,2021-09-17,13,residential,NA
-711 Grays Harbor,2021-09-27,3,patio home,1
+211 Bridgeport,2021-08-25,45,residential,NA
+522 Inner Banks,2021-09-07,32,residential,1
+520 Shoreline,2021-09-09,30,residential,1
+711 Grays Harbor,2021-09-27,12,patio home,1
+444 Shoreline,2021-10-07,2,residential,NA
+120 Dewfield,2021-10-08,1,residential,NA
+505 Inner Banks,2021-10-09,0,residential,NA
+556 Shoreline,2021-10-09,0,residential,NA
