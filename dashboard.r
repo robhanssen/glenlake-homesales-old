@@ -107,8 +107,8 @@ averageinventorytime <-
         scale_fill_manual(values = colorscale) +
         annotate("label",
                  x = "2017",
-                 y = 6,
-                 label = "buyer's\nmarket\n\nseller's\nmarket",
+                 y = 5.85,
+                 label = "buyer's\nseller's\nmarket",
                  fill = NA) +
         geom_hline(yintercept = 6, lty = 3) +
         theme(legend.position = "none")
