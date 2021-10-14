@@ -1,7 +1,8 @@
 address,listingdate,timeonmarket,hometype,undercontract
-211 Bridgeport,2021-08-25,48,residential,NA
-522 Inner Banks,2021-09-07,35,residential,1
-520 Shoreline,2021-09-09,33,residential,1
-711 Grays Harbor,2021-09-27,15,patio home,1
-120 Dewfield,2021-10-08,4,residential,1
-505 Inner Banks,2021-10-09,3,residential,NA
+211 Bridgeport,2021-08-25,50,residential,NA
+522 Inner Banks,2021-09-07,37,residential,1
+520 Shoreline,2021-09-09,35,residential,1
+711 Grays Harbor,2021-09-27,17,patio home,1
+120 Dewfield,2021-10-08,6,residential,1
+505 Inner Banks,2021-10-09,5,residential,NA
+479 Shoreline,2021-10-13,1,residential,NA
