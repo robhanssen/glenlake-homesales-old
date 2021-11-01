@@ -188,4 +188,4 @@ address,listingdate,saledate,amount,hometype,undercontract,inventory,listingcoun
 479 Shoreline,2021-10-13,NA,NA,residential,1,7,46,2021,10,NA,NA,286,19,Under Contract,56,1.5
 205 Stewarts Landing,2021-10-17,NA,NA,townhome,NA,6,47,2021,10,NA,NA,290,15,For Sale,57,1.263157894736842
 570 Shoreline,2021-10-19,NA,NA,residential,NA,7,48,2021,10,NA,NA,292,13,For Sale,57,1.4736842105263157
-295 Bridgeport,2021-10-22,NA,NA,residential,NA,8,49,2021,10,NA,NA,295,10,For Sale,56,1.7142857142857142
+295 Bridgeport,2021-10-22,NA,NA,residential,1,8,49,2021,10,NA,NA,295,10,Under Contract,56,1.7142857142857142
