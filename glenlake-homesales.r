@@ -70,11 +70,26 @@ homesales %>% mutate(
                         status = "Sold"
 ) -> homesales
 
+
+# OLD CODE REPLACE BY CASE_WHEN CONSTRUCTS
+#
+# homesales$timeonmarket[is.na(homesales$saledate)] <- today() - homesales$listingdate[is.na(homesales$saledate)]
+# homesales$status[is.na(homesales$saledate)] <- "For Sale"
+# homesales$status[is.na(homesales$saledate) & homesales$undercontract == 1] <- "Under Contract"
+# homesales$status <- factor(homesales$status, levels = c("Sold", "Under Contract", "For Sale"))
+
 # data clean-up for unsold homes
-homesales$timeonmarket[is.na(homesales$saledate)] <- today() - homesales$listingdate[is.na(homesales$saledate)]
-homesales$status[is.na(homesales$saledate)] <- "For Sale"
-homesales$status[is.na(homesales$saledate) & homesales$undercontract == 1] <- "Under Contract"
-homesales$status <- factor(homesales$status, levels = c("Sold", "Under Contract", "For Sale"))
+homesales <-
+        homesales %>%
+        mutate(timeonmarket = case_when(is.na(saledate) ~ today() - listingdate,
+                                        TRUE ~ timeonmarket
+                                        ),
+                status = case_when(is.na(saledate) & undercontract == 1 ~ "Under Contract",
+                                        is.na(saledate) ~ "For Sale",
+                                        TRUE ~ status
+                                        )
+                )
+
 
 # unconfirmed sales for researching
 homesales %>%
