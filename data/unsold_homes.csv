@@ -1,9 +1,8 @@
 address,listingdate,timeonmarket,hometype,undercontract
-211 Bridgeport,2021-08-25,76,residential,1
-711 Grays Harbor,2021-09-27,43,patio home,1
-505 Inner Banks,2021-10-09,31,residential,NA
-479 Shoreline,2021-10-13,27,residential,1
-205 Stewarts Landing,2021-10-17,23,townhome,NA
-570 Shoreline,2021-10-19,21,residential,1
-295 Bridgeport,2021-10-22,18,residential,1
-418 Seymour,2021-11-07,2,residential,NA
+211 Bridgeport,2021-08-25,81,residential,1
+505 Inner Banks,2021-10-09,36,residential,NA
+479 Shoreline,2021-10-13,32,residential,1
+205 Stewarts Landing,2021-10-17,28,townhome,NA
+570 Shoreline,2021-10-19,26,residential,1
+295 Bridgeport,2021-10-22,23,residential,1
+418 Seymour,2021-11-07,7,residential,NA
