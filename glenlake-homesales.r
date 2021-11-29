@@ -88,7 +88,8 @@ homesales <-
                                         is.na(saledate) ~ "For Sale",
                                         TRUE ~ status
                                         )
-                )
+                ) %>%
+        mutate(status = factor(status, levels = c("Sold", "Under Contract", "For Sale")))
 
 
 # unconfirmed sales for researching
@@ -319,16 +320,17 @@ salecounter <- saledate %>%
 
 maxsales <- ceiling(max(salecounter$salecount) / 10) * 10
 
-salecounter %>% 
-        ggplot() + 
+salecounter %>%
+        ggplot() +
                 aes(x = date, y = salecount, color = factor(year)) +
                 geom_line() +
                 geom_point() +
                 scale_x_date(date_break = "3 months", date_minor_breaks = "1 month", date_labels = "%b %d") +
-                xlab("Date") +
-                ylab("Cumulative number of home sales per year") +
-                labs(color = "Year", caption = source) +
-                ggtitle("Glen Lake cumulative numbers of home sales by year")
+                labs(x = "Date",
+                     y = "Cumulative number of home sales per year",
+                     color = "Year",
+                     caption = source,
+                     title = "Glen Lake cumulative numbers of home sales by year")
 
 # ggsave("graphs/sales-by-dayofyear.pdf")
 
@@ -346,12 +348,15 @@ medianprice %>%
         ggplot(aes(x = saleyear, y = medianprice, fill = hometype)) +
         geom_bar(stat = "identity", position = "dodge") +
         facet_wrap(. ~ hometype) +
-        xlab("Year of sale") +
-        ylab("Median sale price") +
-        ggtitle("Yearly median sale price of homes") +
-        labs(fill = "Home type", caption=source) +
-        geom_text(aes(label = paste("$", round(medianprice, 0))), position = position_dodge(width = 0.9), vjust = -1) +
-        annotate("text", x = maxyear,y = 10000, label = paste(maxyear, "YTD", sep = ""))
+        scale_y_continuous(labels = scales::dollar_format(scale = 1e-3, suffix = "K"),
+                           breaks = 1e5 * 0:10) +
+        labs(title = "Yearly median sale price of homes",
+             x = "Year of sale",
+             y = "Median sale price (in $)",
+             fill = "Home type",
+             caption = source) +
+        geom_text(aes(label = paste0("$", round(medianprice / 1000, 0),"K")), position = position_dodge(width = 0.9), vjust = -1) +
+        annotate("text", x = maxyear,y = 30000, label = paste(maxyear, "YTD", sep = ""), angle = 90)
 
 ggsave("graphs/median-saleprice.pdf", width = 11, height = 8)
 
@@ -360,12 +365,14 @@ homesales %>%
         ggplot(aes(x = factor(saleyear), y = amount, fill = hometype)) +
         geom_violin(draw_quantiles = .5) +
         facet_wrap(. ~ hometype) +
-        xlab("Year of sale") +
-        ylab("Sales price") + 
         geom_jitter(width = .1, alpha = .2) +
         theme(legend.position = "none")  +
         labs(caption = source) +
-        ggtitle("Glen Lake sales price distribution by year and hometype")
+        scale_y_continuous(labels = scales::dollar_format(scale = 1e-3, suffix = "K"),
+                           breaks = 1e5 * 0:10) +
+        labs(title = "Glen Lake sales price distribution by year and hometype",
+             x = "Year",
+             y = "Sales price (in $)")
 
 ggsave("graphs/sales-price-distribution.pdf")
 
