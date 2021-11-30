@@ -5,8 +5,8 @@ library(broom)
 source("config.r")
 
 homesales <- read_csv("data/homesales_processeddata.csv")
-glenlakehomes <- read_csv("glenlakehomes.csv")
-hometypes <- read_csv("hometypes.csv")
+glenlakehomes <- read_csv("sources/glenlakehomes.csv")
+hometypes <- read_csv("sources/hometypes.csv")
 
 totalhomes <- with(glenlakehomes, sum(numberofhomes))
 totalsold <-  nrow(homesales)
@@ -207,7 +207,3 @@ salecounter %>%
        theme_light()
 
 ggsave("predictions/homesales-prediction.pdf", width = 11, height = 8)
-
-
-
-

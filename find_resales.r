@@ -4,8 +4,8 @@ library(scales)
 source("config.r")
 
 # homesales <- read_csv("data/homesales_processeddata.csv")
-glenlakehomes <- read_csv("glenlakehomes.csv")
-hometypes <- read_csv("hometypes.csv")
+glenlakehomes <- read_csv("sources/glenlakehomes.csv")
+hometypes <- read_csv("sources/hometypes.csv")
 
 totalhomes <- with(glenlakehomes, sum(numberofhomes))
 totalsold <-  nrow(homesales)
