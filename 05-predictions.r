@@ -2,9 +2,9 @@ library(tidyverse)
 library(lubridate)
 library(scales)
 library(broom)
-source("config.r")
+source("01-config.r")
 
-homesales <- read_csv("data/homesales_processeddata.csv")
+#homesales <- read_csv("data/homesales_processeddata.csv")
 glenlakehomes <- read_csv("sources/glenlakehomes.csv")
 hometypes <- read_csv("sources/hometypes.csv")
 

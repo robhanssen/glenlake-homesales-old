@@ -6,7 +6,8 @@ theme_set(theme_light())
 alpha <- .5
 
 homesales <-
-    read_csv("data/homesales_processeddata.csv") %>%
+    homesales %>%
+#    read_csv("data/homesales_processeddata.csv") %>%
     mutate(listingyear = factor(listingyear),
             saleyear = factor(saleyear))
 

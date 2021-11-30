@@ -1,7 +1,7 @@
 library(tidyverse)
 library(lubridate)
 library(scales)
-source("config.r")
+source("01-config.r")
 
 # homesales <- read_csv("data/homesales_processeddata.csv")
 glenlakehomes <- read_csv("sources/glenlakehomes.csv")
