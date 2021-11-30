@@ -3,7 +3,7 @@ library(lubridate)
 library(scales)
 source("config.r")
 
-homesales <- read_csv("data/homesales_processeddata.csv")
+# homesales <- read_csv("data/homesales_processeddata.csv")
 glenlakehomes <- read_csv("glenlakehomes.csv")
 hometypes <- read_csv("hometypes.csv")
 
