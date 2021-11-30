@@ -20,7 +20,7 @@ timeonmarket %>%
                   vjust = -1) +
         facet_wrap(hometype ~ status, ncol = 3)
 
-write_csv(timeonmarket, "data/median-time-on-market.csv")
+
 ggsave("graphs/median-time-on-market.pdf")
 
 # # boxplot of time on market by year and hometype

@@ -13,8 +13,6 @@ max_median <-
         mutate(scaled_max = (medianprice %/% 1e5 + 1) * 1e5) %>%
         pull(scaled_max)
 
-write_csv(medianprice, "data/median-price.csv")
-
 medianprice %>%
         ggplot(aes(x = saleyear, y = medianprice, fill = hometype)) +
         geom_bar(stat = "identity", position = "dodge") +

@@ -2,13 +2,13 @@ library(tidyverse)
 
 
 # listed per year
-yearoverview <-
+yearlistingoverview <-
         homesales %>%
         group_by(listingyear, hometype, status) %>%
         summarise(listedtotal = n(),
                   .groups = "drop")
 
-yearoverview %>%
+yearlistingoverview %>%
         ggplot() +
         aes(x = factor(listingyear), y = listedtotal, fill = status) +
         geom_bar(stat = "identity", position = "dodge") +
@@ -25,13 +25,13 @@ yearoverview %>%
 ggsave("graphs/listing-overview-by-year.pdf", width = 11, height = 8)
 
 # sold per year
-yearoverview <-
+yearsalesoverview <-
         homesales %>%
         group_by(saleyear, hometype, status) %>%
         summarise(soldtotal = n(),
                   .groups = "drop")
 
-yearoverview %>%
+yearsalesoverview %>%
         filter(!is.na(saleyear)) %>%
         ggplot() +
         aes(x = factor(saleyear), y = soldtotal, fill = hometype) +
