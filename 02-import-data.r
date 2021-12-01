@@ -32,6 +32,8 @@ homesales <-
                 ) %>%
         arrange(listingdate)
 
+save(file = "Rdata/homesales.Rdata", homesales)
+
 # update source tag
 lastupdate <-
         homesales %>%

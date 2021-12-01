@@ -4,7 +4,8 @@ library(scales)
 library(broom)
 source("01-config.r")
 
-#homesales <- read_csv("data/homesales_processeddata.csv")
+load("Rdata/homesales.Rdata")
+
 glenlakehomes <- read_csv("sources/glenlakehomes.csv")
 hometypes <- read_csv("sources/hometypes.csv")
 
@@ -32,7 +33,14 @@ homesales %>%
 
 ggsave("graphs/market-value.pdf", width=11, height=8)
 
+# median last day of sale in a year
 
+last_sale_day <-
+       homesales %>%
+       group_by(saleyear) %>%
+       slice_max(dayofyear, n = 1) %>%
+       pull(dayofyear) %>%
+       median(.)
 
 marketmodels <- function(tbl) {
        lm(marketvalue ~ dayofyear, data = tbl)
@@ -51,7 +59,7 @@ valuebyyear_model <- valuebyyear %>%
 
 augmentdata <- function(tbl) {
        tbl %>% broom::augment(
-                            newdata = tibble(dayofyear = c(1,365)),
+                            newdata = tibble(dayofyear = c(1,last_sale_day)),
                             interval = "confidence"
                             )
 }
