@@ -37,8 +37,10 @@ ggsave("graphs/market-value.pdf", width=11, height=8)
 
 last_sale_day <-
        homesales %>%
+       mutate(dayofyear = yday(saledate)) %>%
        group_by(saleyear) %>%
        slice_max(dayofyear, n = 1) %>%
+       select(address:amount, dayofyear) %>%
        pull(dayofyear) %>%
        median(.)
 
