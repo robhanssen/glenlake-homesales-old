@@ -1,5 +1,5 @@
 address,listingdate,timeonmarket,hometype,undercontract
-211 Bridgeport,2021-08-25,103,residential,1
-505 Inner Banks,2021-10-09,58,residential,1
-205 Stewarts Landing,2021-10-17,50,townhome,1
-418 Seymour,2021-11-07,29,residential,1
+211 Bridgeport,2021-08-25,110,residential,NA
+505 Inner Banks,2021-10-09,65,residential,1
+205 Stewarts Landing,2021-10-17,57,townhome,1
+418 Seymour,2021-11-07,36,residential,1
