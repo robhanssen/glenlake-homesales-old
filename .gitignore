@@ -3,3 +3,6 @@ test.r
 scratchpad.r
 
 Rdata/*.Rdata
+*.pdf
+*.png
+!dashboard.png
