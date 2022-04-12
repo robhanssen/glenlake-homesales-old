@@ -1,8 +1,9 @@
 address,listingdate,timeonmarket,hometype,undercontract
-804 Nola,2022-03-05,36,residential,1
-103 Walkers Bluff,2022-03-09,32,residential,1
-246 Bridgeport,2022-03-10,31,residential,1
-556 Marchbanks,2022-03-18,23,residential,1
-444 Shoreline,2022-03-25,16,residential,1
-460 Shoreline,2022-04-03,7,residential,1
-580 Marchbanks,2022-04-05,5,residential,1
+804 Nola,2022-03-05,38,residential,1
+103 Walkers Bluff,2022-03-09,34,residential,1
+246 Bridgeport,2022-03-10,33,residential,1
+556 Marchbanks,2022-03-18,25,residential,1
+444 Shoreline,2022-03-25,18,residential,1
+460 Shoreline,2022-04-03,9,residential,1
+580 Marchbanks,2022-04-05,7,residential,1
+122 Dunleith,2022-04-11,1,residential,NA
