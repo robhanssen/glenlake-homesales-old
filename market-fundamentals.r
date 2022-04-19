@@ -42,7 +42,15 @@ sold_last_year %>%
     aes(date, homesold) +
     geom_line() +
     scale_x_date() +
-    scale_y_continuous(limits = c(0, NA), breaks = 10 * 0:100)
+    scale_y_continuous(limits = c(0, NA), breaks = 10 * 0:100) +
+    labs(
+            x = "Date",
+            y = "Number of home sales in the last 12 months",
+            title = "Glen Lake average home sales in 12 months",
+            caption = source
+    )
+
+ggsave("graphs/average-homesales-per-12-months.png")
 
 
 current_market_size <-
@@ -55,6 +63,7 @@ current_market_size <-
     mutate(homesonmarket = cumsum(y)) %>%
     select(-y)
 
+note_date <- last(datelist) - days(180)
 
 inner_join(current_market_size, sold_last_year) %>%
     filter(date >= first(datelist) + years(1)) %>%
@@ -68,5 +77,10 @@ inner_join(current_market_size, sold_last_year) %>%
     geom_smooth(method = "loess", se = FALSE, lty = "dashed", color = "gray50") +
     labs(
         x = "Date",
-        y = "Inventory rate (in months)"
-    )
+        y = "Inventory rate (in months)",
+        caption = source
+    ) +
+    annotate("text", x = note_date, y = 6.5, label = "Buyer's Market") +
+    annotate("text", x = note_date, y = 5.5, label = "Seller's Market")
+
+ggsave("graphs/average-inventory-time.png", width = 8, height = 6)
