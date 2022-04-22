@@ -1,9 +1,8 @@
 address,listingdate,timeonmarket,hometype,undercontract
-804 Nola,2022-03-05,46,residential,1
-556 Marchbanks,2022-03-18,33,residential,1
-444 Shoreline,2022-03-25,26,residential,1
-460 Shoreline,2022-04-03,17,residential,1
-580 Marchbanks,2022-04-05,15,residential,1
-108 Dunleith,2022-04-11,9,residential,NA
-576 Marchbanks,2022-04-13,7,residential,1
-115 Bridgeville,2022-04-15,5,residential,NA
+804 Nola,2022-03-05,48,residential,1
+556 Marchbanks,2022-03-18,35,residential,1
+460 Shoreline,2022-04-03,19,residential,1
+580 Marchbanks,2022-04-05,17,residential,1
+108 Dunleith,2022-04-11,11,residential,1
+576 Marchbanks,2022-04-13,9,residential,1
+115 Bridgeville,2022-04-15,7,residential,NA
