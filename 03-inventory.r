@@ -38,8 +38,8 @@ inventory_minmax <-
         mutate(display_date = normal_date(date, max_year),
                 mn = month(display_date)) %>%
         group_by(mn) %>%
-        summarize(max_inv = max(inventory),
-                min_inv = min(inventory),
+        summarize(med_inv = median(inventory, na.rm = TRUE),
+                mean_inv = mean(inventory, , na.rm = TRUE),
                 .groups = "drop") %>% 
         mutate(display_date = as.Date(paste0(max_year, "-01-01")) + days(ml))
 
@@ -52,7 +52,7 @@ normal_date <- function(date, projected_year) {
 year_range <- unique(homesales$listingyear)
 year_length <- length(year_range)
 color_range <- c(rep("gray50", year_length - 1), "black")
-alpha_range <- c(rep(.01, year_length - 2), .5, .9)
+alpha_range <- c(rep(.11, year_length - 2), .5, .9)
 
 inventorycalc %>%
         mutate(display_date = normal_date(date, max_year)) %>%
@@ -63,16 +63,17 @@ inventorycalc %>%
                 color = factor(year),
                 alpha = factor(year)
         ) +
-        geom_ribbon(
+        geom_line(
                 data = inventory_minmax,
                 aes(
-                        ymin = min_inv,
-                        ymax = max_inv,
-                        y = NULL,
+                        # ymin = med_inv,
+                        y = mean_inv,
+                        # y = NULL,
                         color = NULL,
                         alpha = NULL
                 ),
-                alpha = .1
+                lty = 2,
+                alpha = max(alpha_range)
         ) +
         geom_line() +
         geom_point(data = . %>% filter(year(date) == max_year)) +
