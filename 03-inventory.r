@@ -1,3 +1,4 @@
+message("03-inventory.r")
 library(tidyverse)
 
 
@@ -23,7 +24,7 @@ inventorycalc %>%
         labs(
                 x = "Date",
                 y = "Home inventory",
-                caption = source,
+                caption = caption,
                 title = "Inventory of homes for sale in Glen Lake"
         ) +
         scale_x_date(date_breaks = "1 year", date_label = "%Y") +
@@ -81,7 +82,7 @@ inventorycalc %>%
                 x = "Date",
                 y = "Home inventory",
                 color = "Year",
-                caption = source,
+                caption = caption,
                 title = "Inventory of homes for sale in Glen Lake"
         ) +
         scale_x_date(date_breaks = "3 months", date_label = "%b") +
@@ -149,13 +150,14 @@ homesales %>%
                 x = "Date",
                 y = "Number of home sales in the last 12 months",
                 title = "Glen Lake average home sales in 12 months",
-                caption = source
+                caption = caption
         ) +
         geom_smooth(method = "loess", linetype = "longdash", color = "white")
 
 ggsave("graphs/average-homesales-per-12-months.pdf")
 
-homesales %>%
+p <-
+        homesales %>%
         filter(listingdate > yearafterfirstlist) %>%
         rename(date = listingdate) %>%
         ggplot() +
@@ -167,8 +169,10 @@ homesales %>%
         scale_y_continuous(limit = c(0, 12), breaks = seq(0, 12, 2)) +
         xlab("Date") +
         ylab("Inventory time (months)") +
-        labs(caption = source) +
-        ggtitle("Glen Lake average inventory time") +
-        geom_smooth(method = "loess", linetype = "longdash", color = "white")
+        labs(caption = caption_source) +
+        ggtitle("Glen Lake average inventory time") #+
+        #geom_smooth(method = "loess", linetype = "longdash", color = "white")
 
-ggsave("graphs/average-inventory-time.pdf")
+message("saving image")
+ggsave("graphs/average-inventory-time.pdf", plot = p)
+message("saving image saved")

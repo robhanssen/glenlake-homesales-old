@@ -1,3 +1,4 @@
+message("04-time-on-market.r")
 library(tidyverse)
 
 # median time on market by year and hometype
@@ -16,7 +17,7 @@ timeonmarket %>%
                 y = "Median time on market (in days)",
                 title = "Median time on market for homes in Glen Lake",
                 fill = "Home type",
-                caption = source
+                caption = caption
         ) +
         geom_text(aes(label = round(mediantimeonmarket, 0)),
                 position = position_dodge(width = 0.9),
@@ -39,7 +40,7 @@ homesales %>%
                 y = "Time on market (in days)",
                 title = "Distribution of time on market for sold homes in Glen Lake",
                 fill = "Home type",
-                caption = source
+                caption = caption
         ) +
         scale_y_continuous(limits = c(0, 350))
 

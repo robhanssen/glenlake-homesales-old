@@ -1,3 +1,4 @@
+message("03-listings-and-sales.r")
 library(tidyverse)
 
 
@@ -18,7 +19,7 @@ yearlistingoverview %>%
         labs(
                 x = "Year of listing",
                 y = "Homes listed",
-                caption = source,
+                caption = caption,
                 title = "Number of homes listed in Glen Lake",
                 fill = "Sales status"
         ) +
@@ -47,7 +48,7 @@ yearsalesoverview %>%
         labs(
                 x = "Year of sale",
                 y = "Homes sold",
-                caption = source,
+                caption = caption,
                 title = "Number of homes sold in Glen Lake",
                 fill = "Home type"
         ) +
@@ -83,7 +84,7 @@ soldhomes %>%
                 y = "Turn-over rate (in %)",
                 title = "Turn-over rate in Glen Lake",
                 fill = "Hometype",
-                caption = source
+                caption = caption
         ) +
         scale_y_continuous(labels = scales::percent_format()) +
         geom_text(aes(label = scales::percent(percent, accuracy = .1)), position = position_dodge(width = 0.9), vjust = -1) +
@@ -132,7 +133,7 @@ homesales %>%
                 y = "Cumulative number of listings per year",
                 title = "Glen Lake cumulative numbers of listings by year",
                 color = "Year",
-                caption = source
+                caption = caption
         ) +
         scale_color_manual(values = color_range) +
         scale_alpha_manual(values = alpha_range) +
@@ -180,7 +181,7 @@ homesales %>%
                 y = "Cumulative number of sales per year",
                 title = "Glen Lake cumulative numbers of sales by year",
                 color = "Year",
-                caption = source
+                caption = caption
         ) +
         scale_color_manual(values = color_range) +
         scale_alpha_manual(values = alpha_range) +

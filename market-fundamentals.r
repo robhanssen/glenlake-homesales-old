@@ -1,3 +1,4 @@
+message("market-fundamentals.r")
 library(tidyverse)
 library(lubridate)
 theme_set(theme_light())
@@ -52,7 +53,7 @@ sold_last_year_by_month %>%
         x = "Date",
         y = "Number of home sales in the last 12 months",
         title = "Glen Lake average home sales in 12 months",
-        caption = source
+        caption = caption_source
     )
 
 ggsave("graphs/average-homesales-per-12-months.png")
@@ -88,7 +89,7 @@ inner_join(current_market_size, sold_last_year) %>%
     labs(
         x = "Date",
         y = "Inventory rate (in months)",
-        caption = source
+        caption = caption_source
     ) +
     annotate("text", x = note_date, y = 6.5, label = "Buyer's Market") +
     annotate("text", x = note_date, y = 5.5, label = "Seller's Market")
@@ -110,7 +111,7 @@ sold_last_year_by_month %>%
         x = "Date",
         y = "Average residence time (in years)",
         title = "Glen Lake average residence time",
-        caption = source
+        caption = caption_source
     )
 
 ggsave("graphs/average-residence-time.png", width = 8, height = 6)
@@ -142,7 +143,7 @@ current_market_size %>%
     labs(
         x = "Date",
         y = "Inventory rate (in months)",
-        caption = source
+        caption = caption_source
     ) +
     annotate("text", x = note_date, y = 6.5, label = "Buyer's Market") +
     annotate("text", x = note_date, y = 5.5, label = "Seller's Market")

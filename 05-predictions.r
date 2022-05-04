@@ -1,3 +1,4 @@
+message("05-predictions.r")
 library(tidyverse)
 library(lubridate)
 library(scales)
@@ -39,7 +40,7 @@ homesales %>%
               x = "Year",
               y = "Total market value (in USD)",
               fill = "Home type",
-              caption = source
+              caption = caption_source
        ) +
        annotate("text",
               x = maxyear,
@@ -118,7 +119,7 @@ valuebyyear %>%
               x = "Day of year",
               y = "Total market value (in USD)",
               color = "Year",
-              caption = source
+              caption = caption_source
        ) +
        scale_color_discrete() +
        geom_line(data = modeldata, aes(y = .fitted), lty = 2) +
@@ -175,7 +176,7 @@ valuebyyear %>%
               x = "Year",
               y = "Total market value (in USD)",
               fill = "Predicted value",
-              caption = source
+              caption = caption_source
        ) +
        annotate("text",
               x = this_year,
@@ -248,7 +249,7 @@ salecounter %>%
               x = "Day of year",
               y = "Numbers of homes sold (cumulative)",
               color = "Year",
-              caption = source
+              caption = caption_source
        ) +
        theme_light()
 
@@ -299,7 +300,7 @@ salecounter %>%
               x = "Year",
               y = "Total home sales",
               fill = "Predicted value",
-              caption = source
+              caption = caption_source
        ) +
        annotate("text",
               x = this_year,

@@ -1,3 +1,4 @@
+message("04-write-data.r")
 # unconfirmed sales for researching
 homesales %>%
         filter(undercontract == 1 & !is.na(saledate)) %>%

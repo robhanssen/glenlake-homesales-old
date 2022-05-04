@@ -1,3 +1,4 @@
+message("marketvalue.r")
 library(tidyverse)
 theme_set(theme_light())
 

@@ -1,3 +1,4 @@
+message("05-find-resales.r")
 library(tidyverse)
 library(lubridate)
 library(scales)
@@ -24,7 +25,7 @@ dupes <- homesales %>%
        ungroup() %>%
        select(address:hometype, lagtime, streetname)
 
-caption <- source
+caption <- caption_source
 
 dupes %>%
        filter(!is.na(lagtime)) %>%
@@ -117,7 +118,7 @@ colorset <- c(
 
 
 caption <- paste0(
-       source,
+       caption_source,
        "\nDotted line: neigborhood average (",
        round(100 * turnoverlimits[1], 0),
        "-",

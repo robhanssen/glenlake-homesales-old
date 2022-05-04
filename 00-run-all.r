@@ -3,7 +3,6 @@ library(lubridate)
 library(zoo)
 theme_set(theme_light())
 
-
 source("01-config.r")
 source("02-import-data.r")
 source("03-listings-and-sales.r")

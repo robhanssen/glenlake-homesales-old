@@ -1,3 +1,4 @@
+message("03-sales-price.r")
 library(tidyverse)
 
 # sales price by hometype
@@ -32,7 +33,7 @@ medianprice %>%
                 x = "Year of sale",
                 y = "Median sale price (in $)",
                 fill = "Home type",
-                caption = source
+                caption = caption
         ) +
         geom_text(aes(label = scales::dollar(medianprice,
                 scale = 1e-3,
@@ -68,7 +69,7 @@ homesales %>%
                 title = "Glen Lake sales price distribution by year and hometype",
                 x = "Year",
                 y = "Sales price (in $)",
-                caption = source
+                caption = caption
         ) +
         theme(legend.position = "none")
 

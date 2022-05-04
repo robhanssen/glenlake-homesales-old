@@ -1,3 +1,4 @@
+message("02-import-data.r")
 # import data
 library(tidyverse)
 
@@ -42,7 +43,7 @@ lastupdate <-
         pull(date)
 
 
-source <- paste(source,
+caption <- paste(caption_source,
                 "\nLast updated: ",
                 format(today(),
                 format = "%b %d, %Y"),

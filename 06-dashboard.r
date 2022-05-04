@@ -1,3 +1,4 @@
+message("06-dashboard.r")
 library(tidyverse)
 library(lubridate)
 library(patchwork)
